@@ -6,5 +6,6 @@ rm -rf /srv/pajaro/*
 
 for f in `find . -name "*.md"`; do
   pandoc -s $f -t revealjs -o ${f/%.md/.html} -V revealjs-url=https://unpkg.com/reveal.js/ -V theme=dracula --include-in-header=estilos.css
+done
 
 cp *.html --parents /srv/pajaro
