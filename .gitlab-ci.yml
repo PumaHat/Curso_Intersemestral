@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - ./deploy
+  only:
+    - main
