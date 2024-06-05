@@ -3,6 +3,7 @@
 title: Terminal (bash)
 date: 2025-1
 ---
+# 
 
 ## Shell
 Una _shell_ o _intérprete_ de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de _forma interactiva_ como por _lotes_.
