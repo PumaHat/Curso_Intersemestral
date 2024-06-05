@@ -4,7 +4,7 @@ title: Terminal (bash)
 date: 2025-1
 ---
 
-## Shell
+# Shell
 Una _shell_ o _intérprete_ de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de _forma interactiva_ como por _lotes_.
 
 ![shells](images/shell.png)
@@ -24,7 +24,7 @@ La primera forma de interactuar con una shell es mediante una _terminal_: interf
 
 Las terminales actuales basan su funcionamiento en la forma en la que trabajan los _teletipos_: dispositivos para enviar mensajes. 
 
-![teletipo](images/teletipos.png)
+![](images/teletipos.png)
 
 ## Teletype Model 33
 
@@ -44,13 +44,13 @@ Las terminales actuales basan su funcionamiento en la forma en la que trabajan l
 * Dado a que es un software, el sistema nos provee de varias terminales virtuales, accesibles desde /dev/ttyx
 	* Y desde C-M-<fx> (Ctrl-Alt-<Fx>)
 	
-## Emulador de terminal 
+# Emulador de terminal 
 
 En entornos gráficos, también podemos mostrar una **terminal** dentro de una ventana gráfica. El programa que permite esto es el _emulador de terminal_.
 
 Normalmente permiten funciones adicionales, como varias pestañas, formato del texto, y secuencias ASCII que solo están disponibles en entornos gráficos.
 
-### Emuladores más populares
+## Emuladores más populares
 
 * Gnome Terminal
 * kitty
@@ -60,9 +60,9 @@ Normalmente permiten funciones adicionales, como varias pestañas, formato del t
 * Windows Terminal
 * xterm y term
 
-## Tipos de shells
+# Tipos de shells
 
-### Basadas en Bourne-shell
+## Basadas en Bourne-shell
 
 Creada en 1979 en los Bell Labs. Es la familia más popular hoy en día. Varios detalles, como el uso de $, fueron propuestos por éste.
 
@@ -73,13 +73,13 @@ Creada en 1979 en los Bell Labs. Es la familia más popular hoy en día. Varios 
 * Friendly-interactive shell (fish)
 
 
-### Basadas en C-shell
+## Basadas en C-shell
 
 Creada en la Universidad de Berkeley, toma su sintaxis del lenguaje C.
 
 La shell más utilizada es tcsh.
 
-## Bash
+# Bash
 
 * Bash es el emulador de terminal del proyecto GNU
 * Creado por Brian Fox en 1989
