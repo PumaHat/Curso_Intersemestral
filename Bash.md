@@ -4,13 +4,14 @@ title: Terminal (bash)
 date: 2025-1
 ---
 
-# Shell
+# Shells
+
+## Introducción
 Una _shell_ o _intérprete_ de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de _forma interactiva_ como por _lotes_.
 
-![shells](images/shell.png)
+![](images/shell.png)
 
-## Ejecución interactiva: terminales
-
+## Terminales
 La primera forma de interactuar con una shell es mediante una _terminal_: interfaz de texto que permite introducir comandos y mostrar el resultado.
 
 * Terminales hardware
@@ -19,6 +20,8 @@ La primera forma de interactuar con una shell es mediante una _terminal_: interf
 * Terminales software
 	* Terminales de texto
 	* Emuladores de terminal
+
+# Terminales hardware
 
 ## Teletipo
 
@@ -35,7 +38,9 @@ Las terminales actuales basan su funcionamiento en la forma en la que trabajan l
 * BASIC fue diseñado específicamente para escribirse en este teletipo.
 * Tomlinson usó el símbolo @ para las direcciones de correo por que estaba disponible en este teletipo.
 
-![teletipo33](images/tele33.png)
+![](images/tele33.png)
+
+# Terminales software
 
 ## Terminal de texto
 
@@ -44,7 +49,7 @@ Las terminales actuales basan su funcionamiento en la forma en la que trabajan l
 * Dado a que es un software, el sistema nos provee de varias terminales virtuales, accesibles desde /dev/ttyx
 	* Y desde C-M-<fx> (Ctrl-Alt-<Fx>)
 	
-# Emulador de terminal 
+## Emulador de terminal 
 
 En entornos gráficos, también podemos mostrar una **terminal** dentro de una ventana gráfica. El programa que permite esto es el _emulador de terminal_.
 
@@ -81,13 +86,14 @@ La shell más utilizada es tcsh.
 
 # Bash
 
+## Generalidades
 * Bash es el emulador de terminal del proyecto GNU
 * Creado por Brian Fox en 1989
 * Es la shell más popular en los sistemas Linux
 * Bash cumple todas las características descritas por POSIX, pero incluye muchas extensiones
 * Cheatsheet de la sintaxis: [Bash scripting](https://devhints.io/bash)
 
-![script en bash](images/bash.png)
+![](images/bash.png)
 
  
 
