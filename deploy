@@ -9,4 +9,4 @@ for f in `find . -name "*.md"`; do
 done
 
 cp *.html --parents /srv/pajaro
-cp *.jpg *.png  --parents /srv/pajaro
+cp images  --parents /srv/pajaro/
