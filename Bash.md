@@ -3,7 +3,6 @@
 title: Terminal (bash)
 date: 2025-1
 ---
-# 
 
 ## Shell
 Una _shell_ o _intérprete_ de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de _forma interactiva_ como por _lotes_.
@@ -80,7 +79,7 @@ Creada en la Universidad de Berkeley, toma su sintaxis del lenguaje C.
 
 La shell más utilizada es tcsh.
 
-# Bash
+## Bash
 
 * Bash es el emulador de terminal del proyecto GNU
 * Creado por Brian Fox en 1989
