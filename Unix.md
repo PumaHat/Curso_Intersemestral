@@ -6,4 +6,6 @@ date: 2025-1
 ---
 
 ## Titulo 1
-Hola mundo  
+
+
+## Título 2
