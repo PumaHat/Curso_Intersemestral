@@ -240,9 +240,9 @@ chmod _permisos objetivo_
 
 Consiste en un número octal de tres dígitos, un dígito por agente.
 
-![foto]()
+![foto](images/bash.png)
 
-### Operaciones con chmod
+## Operaciones con chmod
 
 Establecer permisos base con chmod es sencillo, ejemplos:
 	* chmod 644 archivo.txt
@@ -253,8 +253,8 @@ Establecer los bits setuid, setgid y sticky se hace anteponiendo un dígito octa
 
 Consiste en una cadena de letras, donde cada letra especifica un permiso. Además, incluye otros datos.
 
-![foto]()
+![foto](images/bash.png)
 
 ### Tipo de inodo
 
-jad
+xd
