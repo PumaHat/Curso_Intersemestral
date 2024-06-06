@@ -5,6 +5,7 @@ Fecha del curso: 29 de julio al 2 de agosto
 
 * Día 1: Unix (generalidades del sistema)
 	* Procesos
+	* Servicios
 * Día 2: Sistema de archivos 
 	* Permisos
 	* Montar imágenes
