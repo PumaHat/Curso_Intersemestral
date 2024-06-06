@@ -173,8 +173,7 @@ En el archivo /etc/fstab están listados los sistemas de archivos que el SO ya c
 	* **mount** monta sistemas de archivos.
 	* **umount** revierte esa operación.
 
----	
-	# mount -t ext4 -o ro,loop /tmp/imagen5.img /mnt/tmp/
+## mount -t ext4 -o ro,loop /tmp/imagen5.img /mnt/tmp/
 
 # Permisos unix
 
@@ -190,7 +189,6 @@ En el archivo /etc/fstab están listados los sistemas de archivos que el SO ya c
 
 Estos dos comandos nos permitirán modificar el usuario y grupo dueño de un archivo: chown y chgrp.
 
----
 _comando_ [-RL | -h] _usuario|grupo objetivo_
 
 * Parámetros específicos:
@@ -226,7 +224,6 @@ Existe forma de otorgar ciertos permisos _‘elevados’_ a un usuario común **
 
 El comando para modificar permisos en archivos es _chmod_.
 
----
 chmod _permisos objetivo_
 
 * Parámetros específicos:
