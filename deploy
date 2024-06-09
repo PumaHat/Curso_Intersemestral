@@ -1,0 +1,8 @@
+#!/bin/bash
+shopt -s globstar
+set -e
+
+rm -rf /srv/pajaro/*
+cp *.html --parents /srv/pajaro
+cp -r images /srv/pajaro
+cp -r assets /srv/pajaro
