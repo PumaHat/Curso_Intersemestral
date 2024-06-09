@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Introducción a Linux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/reset.css" />
+    <link rel="stylesheet" href="assets/reveal.css" />
+    <link rel="stylesheet" href="assets/theme/dracula.css" />
+    <link rel="stylesheet" href="assets/highlight/monokai.css" />
+    <style>/*<![CDATA[*/
+      @font-face {
+        font-family: PHCT;
+        src: url(PHCT_FONT.ttf);
+      }
+      .reveal {
+        --r-main-font: "Fira Sans", sans-serif;
+        --r-heading-font: "PHCT";
+      }
+
+
+/*]]>*/</style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <div style="display: flex; height: 250px; justify-content: center">
+              <img src="images/Tux.svg" style="margin-right: 2-em;"/>
+              <svg version="1.1" viewBox="0 0 560 652" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st2{fill:#67b32e}.st3{fill:#fff}</style><path class="st2" d="m104 299 47 72h52l20 17 9 63-5-67 13 5-73-62h-37z"/><path class="st2" d="m454 301-45 70-53-1-20 18-8 63 4-66-12 4 72-63 37 1z"/><path class="st3" d="M35 334c5 3 11 4 16 1l10-7 112-87s7-7 10 0c2 3 2 8 1 11a37 37 0 0 0 1 19c3 8 3 14 3 14s-87 47-157 130l3 18 3 35 86 74S-5 458 0 443l26-70c2-6 3-12 3-19-1-6 1-12 5-18z"/><path class="st3" d="m523 334c-4 3-10 4-15 1l-10-7-112-87s-7-7-10 0c-2 3-2 8-1 11a37 37 0 0 1-1 19c-3 8-3 14-3 14s87 48 157 130l-4 18-2 35-86 74s128-84 123-98l-26-71c-2-6-3-12-3-19 1-6-1-12-5-18a91 91 0 0 1-2-2z"/><path class="st3" d="m46 223s44 32 83-33c0 0 15-34 16-43l1-60s7-8 19-13c13-5 29-12 34-7 5 4 8 10 5 17s-15 74-12 92c3 14 1 33 0 43-1 3-3 7-6 9-20 14-102 69-141 104-1 2-4 1-6 0-4-5-9-13-4-24 8-15 8-29 6-33-2-5-16-22 5-52z"/><path class="st3" d="m281 209h-1c-23 0-45 4-67 12-12 5-23 11-23 17l-1 24s2 14 6 19c0 0 49-16 63-17h22"/><path class="st3" d="m512 223s-44 32-83-33c0 0-16-34-17-43l-1-60s-6-8-19-13-29-12-34-7c-5 4-7 10-4 17s15 74 11 92c-3 14-1 33 1 43 0 3 2 7 5 9 21 14 102 69 141 104 2 2 5 1 6 0 4-5 9-13 4-24-7-15-7-29-6-33 2-5 16-22-4-52z"/><path class="st3" d="m275 41c10 0 20 1 30 5 9 3 22 7 28 7s13 4 17 7c3 2 3 5 2 7-4 5-8 12-5 18a262 262 0 0 1 13 83v51c1 2-1 3-3 2-10-6-40-21-81-18h5c-40-3-70 12-80 18-2 1-4 0-4-2v-51a262 262 0 0 1 13-83c3-6-1-13-4-18-2-2-1-5 1-7 4-3 11-7 18-7 5 0 18-4 28-7 9-4 19-6 29-6v1"/><path class="st3" d="m276 209h2c22 0 45 4 66 12 13 5 23 11 24 17l1 24s-2 14-7 19c0 0-48-16-62-17h-20"/><path class="st3" d="m219 500 15 24 23 9 1 22 20 16v-49z"/><path class="st3" d="m283 522-1 49 21-16v-22l23-10 15-23z"/><path class="st3" d="m185 474-8 21 5 26 15 19-18-16-6-28z"/><path class="st3" d="m375 475 8 21-5 26-15 18 18-16 6-28z"/><path class="st3" d="m83 422 10 38 29 35z"/><path class="st3" d="m478 421-10 38-28 36z"/><path class="st3" d="M142 92v-7l-38-11-24-24L41 0v152l15 42-8 23 4 3 6-26-9-42 30 35 10 2-29-40-8-80 50 96 8 10L43 6l35 49 37 48-8-25z"/><path class="st3" d="m418 92v-6l37-12 25-24 39-50-1 152-14 42 8 24-4 2-6-26 8-42-29 35-10 2 28-40 8-80-49 96-8 10 67-169-35 49-37 49 8-26z"/><path class="st3" d="m227 644 9-9 44 8 41-7 10 9-52 7z"/><path class="st3" d="m87 362-2 2 16 28z"/><path class="st3" d="m471 366 2 2-16 27z"/><path class="st3" d="m280 260c-2-4-2 20-2 38l1 34c1 1 3 2 2-35 0-13 1-38-1-37z"/><path class="st3" d="m328 541 95 14 3 3-3 2-95-15c-2 0-3-1-3-2 0-2 2-2 3-2z"/><path class="st3" d="m318 555 101 46c1 0 2 2 1 3l-3 1-101-46-2-3z"/><path class="st3" d="m314 574 84 48 1 3-3 1-84-48-1-3z"/><path class="st3" d="m229 542-95 14c-2 0-3 2-3 3l3 2 96-15 2-2c0-2-1-2-3-2z"/><path class="st3" d="m239 556-100 46c-2 0-3 2-2 3l4 1 100-46c2 0 3-2 2-3z"/><path class="st3" d="m243 575-83 48c-2 1-2 3-2 3l4 1 83-49c2 0 2-2 2-2z"/><g transform="translate(-28 -57)"><path class="st3" d="m404 648-10-4-8 8 10 6z"/><path class="st3" d="m407 645 3-4-9-4-4 3z"/><path class="st3" d="m381 658 10 6 2-3-9-6z"/><path class="st3" d="m477 556-1-10-7 17-39 42 9 1 26-30-5 20 85-78v-33l5-9-13-15-16 45z"/><path class="st3" d="m429 618-10-2-15 18 9 4z"/><path class="st3" d="m358 702 30-35-10-6-29 32z"/><path class="st3" d="m208 645 10-4-4-4-9 5z"/><path class="st3" d="m202 638 9-4-15-17-10 2z"/><path class="st3" d="m219 658 9-5-7-9-10 5z"/><path class="st3" d="m189 609-10 2 3 4 10-2z"/><path class="st3" d="m265 692-29-31-10 6 29 34z"/><path class="st3" d="m145 561-8-16v9l-45-49-15-45-14 14 5 10 1 32 84 79-4-20 27 32 9-2z"/></g></svg>
+            </div>
+            <h1><span style="font-size: smaller">Introducción a Linux</span></h1>
+            <p>PumaHat Cybersecurity Team</p>
+          </section>
+          <section>
+            <h2>Instructores</h2>
+          </section>
+          <section>
+            <h2>Horario de clase</h2>
+            <dl>
+              <dt>Inicia</dt><dd>29 de julio de 2024</dd>
+              <dt>Termina</dt><dd>2 de agosto de 2024</dd>
+              <dt>Horario</dt><dd></dd>
+            </dl>
+          </section>
+
+          <section>
+            <h2>Objetivos</h2>
+            <p>El alumno adquirirá los conocimientos necesarios para desenvolverse en un entorno linux incluyendo la gestión de archivos y procesos, la utilización de comandos básicos, y la automatización de tareas mediante scripts de shell.</p>
+          </section>
+          <section>
+            <h2>Temario</h2>
+            <ol>
+              <li>Unix</li>
+              <li>Sistemas de Archivos</li>
+              <li>Sistemas de Paquetes</li>
+              <li>Terminal</li>
+              <li>Comandos de terminal</li>
+            </ol>
+          </section>
+        </section>
+        <!--PRIMER TEMA-->
+        <section>
+          <section>
+            <h1>Unix</h1>
+          </section>
+          <section>
+            <h2>Generalidades</h2>
+          </section>
+          <section>
+            <h2>Caracteristicas</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Historia</h2>
+          </section>
+          <section>
+            <h2>Unix</h2>
+          </section>
+        </section>
+        <!--SEGUNDO TEMA-->
+        <section>
+          <section>
+            <h1>Sistemas de Archivos</h1>
+          </section>
+          <section>
+            <h2>Antecedentes</h2>
+            <div>
+              <strong>Todo es una secuencia o 'stream' de bytes</strong>
+              <ul>
+                <li>Los primeros dispositivos no reconocían archivos, solo almacenaban conjuntos de datos:
+                  <ul>
+                    <li><i>Analógicos</i>: discos de vinilo, cintas de casette.</li>
+                    <li>En el nivel más bajo, los dispositivos <i>digitales</i> también almacenan solamente bytes.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/vinilos.png" alt="discos de vinilo">
+              <img src="images/casette.png" alt="casette">
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>¿Qué es un archivo?</h2>
+            <strong>Abstracción o TAD que el SO propone para un conjunto de bytes en un dispositivo.</strong>
+            <ul>
+              <li>El SO expone funciones al usuario para poder manipular el contenido de un archivo (o sea, los bytes asociados) sin preocuparse de cómo se guardan éstos en el dispositivo.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Operaciones sobre archivos</h2>
+            <ul>
+              <li>Crear (create)</li>
+              <li>Borrar (delete)</li>
+              <li>Abrir (open)</li>
+              <li>Cerrar (close)</li>
+              <li>Leer (read)</li>
+              <li>Escribir (write, flush)</li>
+              <li>Reposicionar (seek)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Archivos de texto y binarios</h2>
+            <strong>Los "archivos de texto" son archivos binarios que solo contienen un subconjunto de bytes, los que representan caracteres imprimibles.</strong>
+            <ul>
+              <li>Tradicionalmente, el conjunto de caracteres imprimibles _ASCII_.
+                <ul>
+                  <li>Ahora, con la adopción de Unicode, cualquier caracter Unicode válido que no sea un caracter de control.</li>
+                  <li>Aunque depende del contexto.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Formato de archivo</h2>
+            <strong>Los datos dentro de un archivo pueden estar ordenados de mil formas distintas, y corresponde a quien los crea decidir el orden de los datos en un archivo.</strong>
+            <ul>
+              <li>El formato de un tipo de archivo específico puede estar reglamentado por un estándar o especificación.</li>
+            </ul>
+            <img src="images/texto.png" alt="archivo de texto">
+            <img src="images/word.png" alt="archivo de texto 2">
+          </section>
+          <section>
+            <h2>Formatos libres y privativos</h2>
+            <ul>
+              <li>Existen formatos cuya especificación es libre y otros cuya especificación no lo es.</li>
+              <li>Existen formatos documentados, documentados a medias, y no documentados.</li>
+              <li>Generalmente, los formatos libres están bien documentados.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿Cómo determinar el tipo de un archivo?</h2>
+            <ul>
+              <li>
+                Extensiones de archivo
+                <ul>
+                  <li>Implementados originalmente por CP/M
+                  <ul><li>Y, por consiguiente, MS/DOS y Windows</li></ul>  
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Metadatos asociados a un archivo
+                <ul><li>Mac OS y typecodes</li></ul>
+              </li>
+              <li>Números mágicos
+                <ul><li>Forma seguida por los sistemas Unix</li></ul>
+              </li>
+            </ul>
+            <p><i>Hay que tener cuidado al hacer esto.</i></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Sistemas de archivos</h2>
+          </section>
+          <section>
+            <h2>¿Qué son?</h2>
+            <strong>Los sistemas de archivos organizan archivos.</strong>
+            <ul>
+              <li>Algunos sistemas de archivos buscan redundancia, mayor rapidez, tolerancia a fallos o protección por cifrado.</li>
+              <li>
+                Permiten guardar diversos datos sobre los archivos: <i>"metadatos"</i>:
+                <ul><li>Nombre, permisos, fechas (de acceso, de modificación), si son de alguna categoría especial, etc.</li></ul>
+              </li>
+              <li>
+                <strong>Ruta de archivo:</strong> existente para prácticamente cualquier SO.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿Cuáles existen?</h2>
+            <ul>
+              <li>FAT
+                <ul>
+                  <li>FAT16</li>
+                  <li>FAT32</li>
+                  <li>exFAT</li>
+                </ul>
+              </li>NTFS</li>
+              <li>ext*
+                <ul>
+                  <li>ext2</li>
+                  <li>ext3</li>
+                  <li>ext4</li>
+                </ul>
+              </li>
+              <li>HFS
+                <ul><li>HFS+</li></ul>
+              </li>
+              <li>UFS</li>
+              <li>ZFS</li>
+              <li>btrfs</li>
+              <li>cdfs
+                <ul><li>UDF (ISO 9600)</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿A qué se parece?</h2>
+            <p>En general, la abstracción del sistema de archivos se parece a un <i>archivero de oficina</i> en la vida real.</p>
+            <p>La nomenclatura puede variar un poco, dependiendo del enfoque y del tipo de usuario final: directorios en Unix vs carpetas en Windows.
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Sistemas de archivos virtuales</h2>
+          </section>
+          <section>
+            <h2>¿Qué son?</h2>
+            <ul>
+              <li>La idea de sistema de archivos tiene más usos, y puede ser usada para exponer datos que no necesariamente están en un <i>soporte</i>.</li>
+              <li>Los sistemas de archivos que funcionaban sobre datos en un soporte se categorizan ahora como <i>'sistemas de archivos de disco'</i>.
+              <ul>
+                <li>Sistemas de archivos de red: sshfs, nfs, ftp</li>
+                <li>Sistemas de archivos de propósito especial: tmpfs, swap, lufs, devfs, sysfs</li>
+              </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ejemplos</h2>
+            <ul>
+              <li>Las rutas de una URL tienen forma de ruta de archivo, pero no necesariamente tienen que ser archivos, por eso siempre hablamos de <i>recursos</i>.</li>
+              <li><strong>Filosofía Unix:</strong> todo es un archivo.</li>
+              <li>Archivos especiales: pipas, dispositivos.</li>
+              <li><strong>FUSE:</strong> crea tu propio sistema de archivos.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Organización de archivos</h2>
+          </section>
+          <section>
+            <h2>Tipos de sistemas de archivos</h2>
+            <ul>
+              <li>En un sistema de archivos generalmente queremos guardar <i>muchos</i> archivos.</li>
+              <li>Existen varios tipos de sistemas de archivos, según la forma de organizar archivos:
+                <ul>
+                  <li>Sistemas planos
+                    <ul><li>A pesar de lo simple, aún se usan: Amazon S3</li></ul>
+                  </li>
+                  <li>Sistemas con etiquetas</li>
+                  <li>Sistemas de profundidad fija</li>
+                  <li>Sistemas con <i>árbol de directorios</i></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Árbol de directorios</h2>
+            <ul>
+              <li>El directorio es una estructura para agrupar archivos de forma <i>jerárquica</i>.</li>
+              <li>Cada directorio está dentro de otro directorio, excepto el directorio raíz.</li>
+              <li>Cada archivo o directorio (inodo) tiene una <i>ruta</i> de búsqueda que lo identifica.</li>
+              <li>Por todo lo anterior, podemos representar al sistema de archivos como un <i>grafo dirigido</i>.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Árbol de directorios</h2>
+            <div>
+              <ul>
+                <li>En muchos sistemas, cada directorio contiene dos directorios especiales:
+                  <ul>
+                    <li><strong>.</strong> --&gt;> apunta a sí mismo</li>
+                    <li><strong>..</strong> --&gt;> apunta al directorio padre</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p>Excepto <strong>/gfdg</strong>, que apunta a si mismo</p>
+              <img src="images/grafo1.png" alt="árbol de directorios">
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Descriptores de archivo</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Ligaduras</h2>
+          </section>
+          <section>
+            <h2>Duras</h2>
+          </section>
+          <section>
+            <h2>Simbólicas</h2>
+          </section>
+          <section>
+            <h2>Accesos directos</h2>
+          </section>
+          <section>
+            <h2>Buffers</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Montaje</h2>
+          </section>
+          <section>
+            <h2>¿Pueden existir dos sistemas de archivos al mismo tiempo?</h2>
+            <ul>
+              <li>El sistema solo puede trabajar con un sistema de archivos a la vez, dado que solo hay un árbol de directorios.</li>
+            </ul>
+          </section>
+          <section>
+            <li>Para poder trabajar con otros sistemas de archivos, debemos <i>montarlos</i>.
+              <ul>
+                <li>Esto es <strong>hacer que un sistema de archivos esté accesible desde una ubicación determinada</strong>.</li>
+                <li>A esa ubicación le llamamos <strong>punto de montaje</strong>: un directorio dentro del sistema de archivos principal.</li>
+              </ul></li>
+              <li>Si el punto de montaje ya tenía archivos, éstos estarán ocultos.</li>
+          </section>
+          <section>
+            <h2>Archivo /etc/fstab</h2>
+            <p>En el archivo /etc/fstab están listados los sistemas de archivos que el SO ya conoce, y sabe donde montar.</p>
+            <img src="images/montaje.png" alt="montar Sistemas de Archivos">
+          </section>
+          <section>
+            <ul>
+              <li>Podemos montar cualquier tipo de sistema de archivos, sin importar su estructura subyacente, siempre y cuando haya algún <strong>controlador</strong> para dicho sistema.
+              <ul>
+                <li>Eso incluye imágenes y archivos regulares.</li>
+              </ul></li>
+              <li>Unix tiene dos utilidades para administrar montajes:
+                <ul>
+                  <li><strong>mount</strong> --&gt;> monta sistemas de archivos.</li>
+                  <li><strong>unmount</strong> --&gt;> revierte esa operación.</li>
+                </ul>
+              </li>
+            </ul>
+            <h2 style="font-size: smaller;">mount -t ext4 -o ro,loop /tmp/imagen5.img /mnt/tmp/</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Permisos unix</h2>
+          </section>
+          <section>
+            <h2>Propiedad</h2>
+            <ul>
+              <li>Todos los archivos y directorios en un sistema Unix pertenecen a un usuario y grupo en específico.</li>
+              <li>Solo el propietario de un archivo y el usuario root pueden cambiar estos permisos.</li>
+              <li>Esto es parte del estándar POSIX.
+              </li>
+            </ul>
+            <img src="images/permisos.png" alt="permisos">
+          </section>
+          <section>
+            <h2>chown, chgrp</h2>
+            <p>Estos dos comandos nos permitirán modificar el usuario y grupo dueño de un archivo: chown y chgrp.</p>
+            <p><i>comando</i> [-RL | -h] <i>usuario|grupo objetivo</i></p>
+            <ul>
+              <li>Parámetros específicos:
+                <ul>
+                  <li>-R aplica recursivamente</li>
+                  <li>-L atraviesa enlaces simbólicos a directorios</li>
+                  <li>-h aplica la acción sobre el enlace simbólico, en vez de sobre el objeto apuntado</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Permisos</h2>
+            <p>Todos los archivos y directorios en un sistema Unix tienen 3 tipos de permisos básicos, que indican qué usuarios pueden operar con ellos, y cómo:</p>
+            <table>
+              <tr>
+                <td>Permiso</td>
+                <td>Archivos</td>
+                <td>Directorios</td>
+              </tr>
+              <tr>
+                <td>Lectura (r)</td>
+                <td>Leer el archivo</td>
+                <td>Listar archivos dentro del directorio (ls)</td>
+              </tr>
+              <tr>
+                <td>Escritura (w)</td>
+                <td>Escribir sobre el archivo</td>
+                <td>Modificar entradas del directorio: crear, renombrar y borrar archivos</td>
+              </tr>
+              <tr>
+                <td>Ejecución (x)</td>
+                <td>Ejecutar el archivo</td>
+                <td>Moverte al directorio (cd), o buscar dentro del directorio</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>setuid y setgid</h2>
+            <p>Existe forma de otorgar ciertos permisos <i>‘elevados’</i> a un usuario común <strong>cuando ejecuta un programa</strong>.</p>
+            <ul>
+              <li><strong>Sobre ejecutables:</strong> otorga al usuario los permisos del dueño del ejecutable (setuid), o del grupo (setgid).</li>
+              <li><strong>Sobre directorios:</strong> setuid es ignorado, setgid obliga a que todos los archivos dentro del directorio tengan el mismo grupo dueño.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>sticky</h2>
+            <ul>
+              <li>Dos permisos diferentes, en realidad:
+                <ul>
+                  <li><strong>Sobre ejecutables:</strong> hace que un ejecutable se quede residente en memoria principal.</li>
+                  <li><strong>Sobre directorios:</strong> evita que un usuario modifique detalles sobre archivos que no posee.</li>
+                </ul>
+              </li>
+              <li>El uso sobre ejecutables ya no se implementa en casi ningún sistema Unix.
+                <ul><li>Sí en UnixWare y HP-UX</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>chmod</h2>
+            <p>El comando para modificar permisos en archivos es <i>chmod</i>.</p>
+            <p>chmod <i>permisos objetivo</i></p>
+            <ul>
+              <li>Parámetros específicos:
+                <ul>
+                  <li>-R aplica recursivamente</li>
+                  <li>-L atraviesa enlaces simbólicos a directorios</li>
+                  <li>chmod no cambia permisos de enlaces simbólicos, puesto que éstos nunca se ocupan en el sistema.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Notación</h2>
+          </section>
+          <section>
+            <h2>Notación numérica o absoluta</h2>
+            <p>Consiste en un número octal de tres dígitos, un dígito por agente.</p>
+            <img src="images/numerica.png" alt="notación numérica">
+          </section>
+          <section>
+            <h2>Operaciones con chmod</h2>
+            <p>Establecer permisos base con chmod es sencillo, ejemplos:</p>
+            <ul>
+              <li> chmod 644 archivo.txt</li>
+            </ul>
+            <p>Establecer los bits setuid, setgid y sticky se hace anteponiendo un dígito octal que establece los tres permisos en el orden descrito:</p>
+            <ul>
+              <li>chmod 1644 archivo.txt</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Notación simbólica</h2>
+            <p>Consiste en una cadena de letras, donde cada letra especifica un permiso. Además, incluye otros datos.</p>
+            <img src="images/simbolica.png" alt="notación simbólica">
+          </section>
+          <section>
+            <ul>
+              <li>En la posición para indicar el permiso ejecutable, pueden haber otros caracteres, que depende de si los bits especiales están activos:
+                <ul>
+                  <li>Si setuid o setgid están activos: s o S, dependiendo de si el archivo es o no ejecutable</li>
+                  <li>Si sticky está activo, t o T, dependiendo de si el archivo es o no ejecutable</li>
+                </ul>
+              </li>
+              <li>Pueden aparecer estos símbolos al final:
+                <ul>
+                  <li>+ si existen permisos adicionales
+                  </li>
+                  <li>- si existe un contexto SELinux
+                  </li>
+                  <li>@ si existen atributos de archivos extendidos</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Operaciones con chmod</h2>
+            <p>Añadir permisos:</p>
+            <ul>
+              <li><i>tipos+permisos</i></li>
+            </ul>
+            <p>Quitar permisos:</p>
+            <ul>
+              <li><i>tipos-permisos</i></li>
+            </ul>
+            <p>Establecer permisos:</p>
+            <ul>
+              <li><i>tipos=permisos</i></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tipo de inodo</h2>
+            <ul>
+              <li>Regular (-)</li>
+              <li>Directorio (d)</li>
+              <li>Enlace simbólico (l)</li>
+              <li>FIFO (p)</li>
+              <li>De bloque (b)</li>
+              <li>De caracter (c)</li>
+              <li>Socket (s)</li>
+            </ul>
+          </section>
+        </section>
+        <!--TERCER TEMA-->
+        <section>
+          <section>
+            <h1>Sistemas de Paquetes</h1>
+          </section>
+          <section>
+            <h2>Introducción</h2>
+            <ul>
+              <li>El sistema operativo no realiza funciones útiles para el usuario per se
+                <ul>
+                  <li>Se limita a gestionar los recursos del sistema…
+                  </li>
+                  <li>…y a proveer interfaces comunes para éstos.</li>
+                </ul>
+              </li>
+              <li>Necesita de sistemas para realizar tareas específicas para el usuario: aplicaciones
+                <ul>
+                  <li>Necesita de sistemas para administrar los sistemas anteriores, o realizar tareas de apoyo: utilidades.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <img src="images/GRUB.png" alt="GRUB">
+            <p>Fig: GRUB: una especie de SO con solo una interfaz de línea de comandos</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>¿Sistemas o programas?</h2>
+            <ul>
+              <li>Nótese que no hablamos de programas de aplicación, o programas de utilidades, sino de sistemas de aplicación y sistemas de utilidades.
+              </li>
+              <li>Hay qué notar la diferencia entre conceptos, será importante:
+                <ul>
+                  <li>Un programa es un conjunto de instrucciones: un ejecutable… o bibliotecas con código ejecutable.
+                  </li>
+                  <li>Un sistema puede ser un programa (generalmente lo es), pero no tiene por qué serlo.
+                    <ul>
+                      <li>Ejemplos: packs de íconos, documentación.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Sistemas</h2>
+            <ul>
+              <li>Un sistema se organiza generalmente en varios archivos, con distintas funcionalidades.
+                <ul>
+                  <li>Como mínimo, uno, aunque eso es algo raro.</li>
+                  <li>Ejecutables, bibliotecas, recursos multimedia de distintas clases.
+                  </li>
+                </ul>
+              </li>
+              <li>En cada sistema operativo existen formas distintas de organizar los archivos de los sistemas instalados.
+              <ul>
+                <li>En los sistemas Unix, comúnmente se sigue el estándar <strong>Filesystem Hierarchy Standard</strong>.</li>
+              </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Filesystem Hierarchy Standard (I)</h2>
+            <ul>
+              <li>Estándar que especifica la estructura de los directorios en el sistema de archivos de un sistema Unix.</li>
+              <li>Las distribuciones Linux popularizaron el estándar.</li>
+              <li>La mayor parte de las distribuciones lo siguen, con cambios menores.</li>
+            </ul>
+          </section>
+          <section>
+            <a href="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png">Imagen</a>
+            <ul>
+              <li>/: directorio raíz.</li>
+              <li>/bin: ejecutables que deben estar disponibles en modo monousuario.</li>
+              <li>/boot: archivos para el arranque.</li>
+              <li>/dev: inodos de dispositivo.</li>
+              <li>/etc: archivos de configuración.</li>
+              <li>/home: directorios personales de usuarios.</li>
+              <li>/lib: bibliotecas para los ejecutables en /bin.</li>
+              <li>/lib&lt;qual&gt;: bibliotecas específicas para los ejecutables en /bin, en sistemas que soportan más de un formato ejecutable.</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>/media: puntos de montaje para dispositivos removibles.</li>
+              <li>/mnt: puntos de montaje.</li>
+              <li>/opt: paquetes de aplicación variados.</li>
+              <li>/proc: sistemas de archivos virtuales que exponen información sobre procesos y el kernel.</li>
+              <li>/root: directorio personal del superusuario.</li>
+              <li>/run: información sobre la sesión existente del sistema.</li>
+              <li>/sbin: ejecutables para la administración del sistema.</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>/srv: datos que el sistema puede servir.</li>
+            <li>/sys: informaci&oacute;n sobre dispositivos y sus controladores.</li>
+            <li>/tmp: archivos temporales.</li>
+            <li>/usr: jerarqu&iacute;a secundaria: directorios para software de aplicaci&oacute;n y de utilidad administrados por el administrador de paquetes.</li>
+            <li>/usr/bin: ejecutables del software de aplicaci&oacute;n y de utilidad.</li>
+            <li>/usr/include: archivos de cabecera de C y C++.</li>
+            <li>/usr/lib: an&aacute;logo de /lib para ejecutables en /usr/bin.</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>/usr/libexec: ejecutables que no est&aacute;n pensados.</li>
+              <li>/usr/lib&lt;qual&gt;: an&aacute;logo de /lib&lt;qual&gt; para ejecutables en /usr/bin.</li>
+              <li>/usr/local: jerarqu&iacute;a terciaria: directorios para software de aplicaci&oacute;n y de utilidad administrados por el administrador de sistema.</li>
+              <li>/usr/sbin: an&aacute;logo de /sbin.</li>
+              <li>/usr/share: archivos de datos de aplicaci&oacute;n.</li>
+              <li>/usr/src: c&oacute;digo fuente.</li>
+              <li>/var: directorio para datos variables de una aplicaci&oacute;n.</li>
+              <li>/var/cache: archivos de cach&eacute;.</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>/var/lib: archivos de estados de programas.</li>
+              <li>/var/lock: archivos de bloqueo, representan recursos en uso.</li>
+              <li>/var/log: archivos de logs.</li>
+              <li>/var/mail: correos electr&oacute;nicos del usuario en espera de ser le&iacute;dos.</li>
+              <li>/var/spool: cola para tareas a procesar.</li>
+              <li>/var/tmp: archivos temporales que no deben borrarse entre reinicios.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Configuracion de usuario</h2>
+            <ul>
+              <li>Los directorios especificados por FSH en general solo son modificables por el sistema.
+                <ul>
+                  <li>Un no-superusuario no puede personalizar su propia configuración en estos directorios.
+                  </li>
+                </ul>
+              </li>
+              <li>Tradicionalmente, cada aplicación usaba un directorio oculto en el directorio de usuario.
+                <ul>
+                  <li>Esto llenaba muchas veces el directorio de usuario, y no había un orden dentro de cada directorio de aplicación.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>XDG Base Directory Specification</h2>
+            <ul>
+              <li>El proyecto Freedesktop.org propuso un estándar para especificar directorios para datos de un sistema específicos para un usuario:
+                <ul>
+                  <li>XDG_DATA_HOME ($HOME/.local/share): /usr/share</li>
+                  <li>XDG_CONFIG_HOME ($HOME/.config): /etc</li>
+                  <li>XDG_STATE_HOME ($HOME/.local/state): /var/lib</li>
+                  <li>XDG_CACHE_HOME ($HOME/.cache): /var/cache</li>
+                  <li>XDG_RUNTIME_DIR</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>Y también para especificar directorios para los datos personales del usuario:
+                <ul>
+                  <li>XDG_DESKTOP_DIR ($HOME/Desktop)
+                  </li>
+                  <li>XDG_DOCUMENTS_DIR ($HOME/Documents)</li>
+                  <li>XDG_DOWNLOAD_DIR ($HOME/Downloads)</li>
+                  <li>XDG_MUSIC_DIR ($HOME/Music)
+                  </li>
+                  <li>XDG_PICTURES_DIR ($HOME/Pictures)</li>
+                  <li>XDG_PUBLICSHARE_DIR ($HOME/Public)</li>
+                  <li>XDG_TEMPLATES_DIR ($HOME/Templates)</li>
+                  <li>XDG_VIDEOS_DIR ($HOME/Videos)</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <!--CUARTO TEMA-->
+        <section>
+          <section> 
+            <h1>Terminal (bash)</h1>
+          </section>
+          <section>
+            <h2>Shell</h2>
+            <p>Una <i>shell</i> o <i>intérprete</i> de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de <i>forma interactiva</i> como por <i>lotes</i>.</p>
+            <img src="images/shell.png" alt="shell">
+          </section>
+          <section>
+            <h2>Terminales</h2>
+            <p>La primera forma de interactuar con una shell es mediante una <i>terminal</i>: interfaz de texto que permite introducir comandos y mostrar el resultado.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Tipos de terminales</h2>
+            <h3>Terminales de hardware</h3>
+            <ul>
+              <li>Teletipos</li>
+              <li>VDUs</li>
+            </ul>
+            <h3>Terminales de software</h3>
+            <ul>
+              <li>Terminales de texto</li>
+              <li>Emuladores de terminal</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Terminales hardware</h2>
+          </section>
+          <section>
+            <h2>Teletipo</h2>
+            <p>Las terminales actuales basan su funcionamiento en la forma en la que trabajan los <i>teletipos</i>: dispositivos para enviar mensajes.</p>
+            <img src="images/teletipos.png" alt="teletipos"> 
+          </section>
+          <section>
+            <h2>Teletype Model 33</h2>
+            <ul>
+              <li>Diseñado en 1963 por Teletype Corp.</li>
+              <li>Bajo precio: fue muy popular entre las minicomputadoras.</li>
+              <li>Fue de las primeras en usar (y popularizar) ASCII.</li>
+              <li>Solo permitía mayúsculas, lo que influyó en la sintaxis de muchos lenguajes.</li>
+              <li>BASIC fue diseñado específicamente para escribirse en este teletipo.</li>
+              <li>Tomlinson usó el símbolo @ para las direcciones de correo por que estaba disponible en este teletipo.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Teletype Model 33</h2>
+            <img src="images/tele33.png" alt="Teletype Model 33">
+          </section>
+          <section>
+            <h2>Terminales software</h2>
+          </section>
+          <section>
+            <h2>Terminal de texto</h2>
+            <ul>
+              <li>En Unix, la terminal o consola de texto es el componente del sistema que nos permite interactuar con un shell.</li>
+              <li>Prácticamente las terminales soportan caracteres comodín, tuberías, sintaxis HERE, substitución de comandos, variables, y estructuras de control para iteraciones y condicionales.</li>
+              <li>Dado a que es un software, el sistema nos provee de varias terminales virtuales, accesibles desde /dev/ttyx</li>
+              <li>Y desde C-M-&lt;fx&gt; (Ctrl-Alt-&lt;Fx&gt;)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Emulador de terminal</h2>
+            <p>En entornos gráficos, también podemos mostrar una <strong>terminal</strong> dentro de una ventana gráfica. El programa que permite esto es el <i>emulador de terminal</i>.</p>
+          </section>
+          <section>
+            <h2>Emuladores más populares</h2>
+            <ul>
+              <li>Gnome Terminal</li>
+              <li>kitty</li>
+              <li>Konsole</li>
+              <li>rxvt</li>
+              <li>Windows Console</li>
+              <li>Windows Terminal</li>
+              <li>xterm y term</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Tipos de shells</h2>
+            <ul>
+              <li>Basadas en Bourne-shell</li>
+              <li>Basadas en C-shell</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Basadas en Bourne-shell</h2>
+            <p>Creada en 1979 en los Bell Labs. Es la familia más popular hoy en día. Varios detalles, como el uso de $, fueron propuestos por éste.</p>
+            <ul>
+              <li>Alquimist shell (ash y dash)</li>
+              <li>Bourne-again shell (bash)</li>
+              <li>Korn shell (ksh)</li>
+              <li>Z shell (zsh)</li>
+              <li>Friendly-interactive shell (fish)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Basadas en C-shell</h2>
+            <p>Creada en la Universidad de Berkeley, toma su sintaxis del lenguaje C.</p>
+            <p>La shell más utilizada es tcsh.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Bash</h1>
+            <img src="images/bash.png" alt="bash">
+          </section>
+          <section>
+            <h2>Generalidades</h2>
+            <ul>
+              <li>Bash es el emulador de terminal del proyecto GNU.</li>
+              <li>Creado por Brian Fox en 1989.</li>
+              <li>Es la shell más popular en los sistemas Linux.</li>
+              <li>Bash cumple todas las características descritas por POSIX, pero incluye muchas extensiones</li>
+              <li><a href="https://devhints.io/bash">Cheatsheet de la sintaxis</a></li>
+            </ul>
+          </section>
+        </section>
+        <!--QUINTO TEMA-->
+        <section>
+          <section>
+            <h1>Comandos de terminal</h1>
+          </section>
+          <section>
+            <h2>Generalidades</h2>
+          </section>
+          <section>
+            <h2>Caracteristicas</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Historia</h2>
+          </section>
+          <section>
+            <h2>Unix</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="assets/reveal.js"></script>
+    <script src="assets/highlight/highlight.js"></script>
+    <script>//<![CDATA[
+Reveal.initialize({
+  hash: true,
+  plugins: [ RevealHighlight ]
+});//]]>
+    </script>
+  </body>
+</html>
