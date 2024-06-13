@@ -64,22 +64,797 @@
         <!--PRIMER TEMA-->
         <section>
           <section>
-            <h1>Unix</h1>
+            <h1>Generalidades del sistema Linux</h1>
           </section>
           <section>
-            <h2>Generalidades</h2>
+            <h2>¿Por qué es importante conocer esto?</h2>
+            <ul style="font-size: smaller;">
+              <li>Es más fácil trabajar en un sistema que conoces
+                <ul>
+                  <li>¿Qué recursos provee el sistema?
+                  </li>
+                  <li>¿Cómo puedo adaptarlo a mis necesidades?</li>
+                  <li>¿Cómo preparo mi entorno de desarrollo?</li>
+                  <li>¿Cómo preparo mi entorno de pruebas?</li>
+                </ul>
+              </li>
+              <li>Es más fácil vulnerar un sistema que conoces
+                <ul>
+                  <li>¿Qué sistemas está ejecutando? ¿Cuáles son los más vulnerables?
+                  </li>
+                  <li>¿Hay alguna vulnerabilidad sin corregir? ¿Cómo puedo explotarla?</li>
+                </ul>
+              </li>
+            </ul>
           </section>
           <section>
-            <h2>Caracteristicas</h2>
+            <h2>Nomenclatura</h2>
+            <p>Existe una controversia en cuanto a cómo nombrar a un sistema operativo que utilice el kernel Linux y el software del proyecto de GNU.
+            </p>
+            <ul>
+              <li>GNU/Linux
+                <ul>
+                  <li>Linux es realmente el nombre de un kernel.</li>
+                  <li>La mayoría de los sistemas operativos para escritorio que utilizan el kernel Linux utilizan software del proyecto GNU para funcionar.
+                    <ul><li>glibc, coreutils</li></ul>
+                  </li>
+                  <li>Existen sistemas operativos que, sin embargo, no utilizan software del proyecto GNU:
+                    <ul><li>Android es el ejemplo más popular.</li></ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>Linux
+                <ul>
+                  <li>Algunos creen que esta disputa es solo un intento de ‘marcar territorio’.</li>
+                  <li>Además del software de GNU, hay muchas otras utilidades de diferentes fuentes que probablemente merezcan ser mencionadas.</li>
+                  <li>La marca ‘Linux’ es mucho más popular que su alternativa.</li>
+                </ul>
+              </li>
+            </ul>
           </section>
         </section>
         <section>
           <section>
             <h2>Historia</h2>
+            <ul>
+              <li>Conocer la historia de un sistema ayuda muchas veces a entender mejor muchas cosas:
+                <ul>
+                  <li>Por qué se tomaron ciertas decisiones de diseño.</li>
+                  <li>Por qué se utilizaron ciertas tecnologías y no otras.</li>
+                  <li>Por qué el <i>state of the art</i> es así.</li>
+                </ul>
+              </li>
+              <li>Una parte importante de la historia de Linux es la historia de Unix
+                <ul>
+                  <li>Porque Linux es parte de la familia Unix.</li>
+                  <li>∴ No se puede entender Linux sin entender antes Unix.
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </section>
           <section>
-            <h2>Unix</h2>
+            <h2>Unix (I)</h2>
+            <ul>
+              <li>Unix nació en 1969, en los Laboratorios Bell.</li>
+              <li>Su propósito era tener un SO multitarea, multiusuario, y muchas mejoras sobre SOs anteriores.</li>
+              <li>El lenguaje C se inventó, en parte, para poder hacer que Unix fuera portable: C y Unix son prácticamente hermanos.
+                <ul><li>Unix fue reescrito en C en 1973 para hacer al sistema portable.</li></ul>
+              </li>
+            </ul>
           </section>
+          <section>
+            <h2>Unix (II)</h2>
+            <ul style="font-size: smaller;">
+              <li>Los Laboratorios Bell eran parte de AT&T.</li>
+              <li>AT&T tenía una guerra legal con el Gobierno de los Estados Unidos.</li>
+              <li>Las leyes antitrust prohibían a AT&T entrar al mercado de los computadores.
+                <ul>
+                  <li>AT&T no podía vender computadores propios, por lo que licenció Unix a otros fabricantes como secreto comercial.
+                  </li>
+                </ul>
+              </li>
+              <li>El gobierno estadounidense consiguió finalmente dividir a AT&T en 1983.
+                <ul><li>AT&T pudo entrar al mercado de los computadores, y vender Unix directamente.</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>GNU</h2>
+            <ul>
+              <li>Richard Stallman inició el proyecto GNU en 1983, para crear una versión de un sistema Unix totalmente libre.
+                <ul>
+                  <li>Después, creó la Free Software Foundation en 1985…</li>
+                  <li>…y la licencia libre GPL en 1989.</li>
+                </ul>
+              </li>
+              <li>Para esa fecha, casi todos los componentes del sistema GNU estaban listos…
+                <ul><li>…excepto la parte del kernel (Hurd).</li></ul>
+              </li>
+              <li>El caso de Hurd se debió a la inesperada dificultad para implementar bien un microkernel.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Minix</h2>
+            <ul style="font-size: smaller;">
+              <li>Andrew S. Tanenbaum, profesor de ciencias de la computación, creó en 1986 un sistema operativo de tipo Unix muy simple para propósitos educativos: <i>Minix</i>.
+              </li>
+              <li>Minix funcionaba en plataformas Intel de 16 bits.
+                <ul><li>Pero Intel había ya lanzado al mercado un año antes el 80386, un procesador de 32 bits.
+                </li></ul>
+              </li>
+              <li>Linus Torvalds tuvo contacto con el sistema durante una clase de su universidad, en 1990.</li>
+              <li>La licencia de Minix, en ese entonces de código abierto pero privativa, le impedía experimentar con él.
+                <ul><li>Linus empezó a escribir un kernel para utilizar las funciones de su equipo, un 386 desde 1991.</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Inicios de Linux</h2>
+            <p>Linus finalmente anunció su proyecto en agosto de 1991, en el grupo de noticias comp.os.minix:</p>
+            <ul>
+              <li>Linux inicialmente tenía una licencia privativa.
+                <ul><li>En diciembre de 1992 finalmente cambió a la licencia GPLv2.</li></ul>
+              </li>
+              <li>Este cambio permitió que los desarrolladores del proyecto GNU adoptaran Linux como kernel del proyecto.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Regresando a Unix…</h2>
+            <ul>
+              <li>Como dijimos, Linux es un sistema Unix.
+                <ul>
+                  <li>¿Qué significa ser un sistema Unix?</li>
+                  <li>¿Existe acaso una definición formal que nos diga si algo es o no un sistema Unix?
+                    <ul>
+                      <li><strong>POSIX:</strong> estándar de la IEEE</li>
+                      <li><strong>Single Unix Specification:</strong>  certificación mantenida por el consorcio The Open Group
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>POSIX</h2>
+            <ul>
+              <li>Portable Operating System Interface.</li>
+              <li>Define varias interfaces tanto en espacio de kernel como en espacio de usuario para mantener la compatibilidad entre sistemas Unix:
+                <ul>
+                  <li>Posix C library</li>
+                  <li>Servicios esenciales: tuberías, señales, procesos y operaciones de archivos.</li>
+                  <li>Extensiones de tiempo real: relojes, asincronía, semáforos, planificación.</li>
+                  <li>Extensiones de hilos</li>
+                  <li>Comandos y utilidades: la shell, comandos como awk, echo, ed, etc.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Marca Unix</h2>
+            <ul>
+              <li>Actualmente, la marca “Unix” es propiedad de The Open Group.</li>
+              <li>Novell solo permite usar la marca a aquellos que cumplan la certificación “Single Unix Specification”, o SUS, y hayan pagado las regalías.
+              </li>
+              <li>Coloquialmente, llamamos sistema Unix a cualquier SO que cumpla todas o la mayoría de los requisitos, estén certificados o no: la familia Unix-like.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Unixes más populares</h2>
+            <p>Unix es actualmente la familia de SOs más utilizada en el mundo, y se suelen agrupar en dos grupos:</p>
+            <ul>
+              <li><strong>Sistemas UNIX certificados:</strong> Hay varios SO comerciales que están certificados.</li>
+              <li><strong>Sistemas no certificados</strong> o <strong>sistemas Unix-like:</strong> Y otros que no están certificados, pero aún así, son prácticamente sistemas Unix, por cumplir la mayoría o todos los requisitos que establece la SUS.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Certificados</h2>
+            <ul>
+              <li><strong>Solaris: </strong>versión de Sun/Oracle.
+              <ul><li>Existe una versión libre: <strong>Illumos</strong></li></ul></li>
+              <li><strong>AIX: </strong>versión de IBM.</li>
+              <li><strong>HP-UX: </strong>versión de Hewlett-Packard.</li>
+              <li><strong>macOS: </strong>versión de Apple</li>
+            </ul>
+          </section>
+          <section>
+            <h2>No certificados</h2>
+            <ul style="font-size: smaller;">
+              <li><strong>Familia BS: </strong>basados en la implementación de la Universidad de Berkeley:
+                <ul>
+                  <li><strong>FreeBSD: </strong>el integrante más famoso, diseñado para ser de propósito general.</li>
+                  <li><strong>OpenBSD: </strong>enfocado en la seguridad: ¡solo ha tenido dos agujeros de seguridad en muchos años!
+                  </li>
+                  <li><strong>NetBSD: </strong>enfocado en ser portable: ¡se puede ejecutar en más de 50 arquitecturas!</li>
+                </ul>
+              </li>
+              <li><strong>Familia GNU/Linux: </strong> los que usan el kernel Linux:
+                <ul>
+                  <li><strong>Distros basadas en Debian: </strong>como Ubuntu, Mint o Knoppix.</li>
+                  <li><strong>Distros basadas en Red Hat: </strong>como Fedora, Mandriva o CentOS.</li>
+                  <li><strong>Distros basadas en Arch Linux: </strong>como Manjaro o Antergos.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Diagrama</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" alt="BSD family">
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Estructura general de un sistema Linux</h2>
+          </section>
+          <section>
+            <h2 style="font-size:60px;">¿Espacios de usuario y de kernel?</h2>
+            <ul style="font-size: smaller;">
+              <li>Se refiere a los dos tipos de privilegios que un proceso puede tener.</li>
+              <li>Espacio de usuario (<i>userland</i>):
+                <ul>
+                  <li>Aplicaciones del usuario comunes.</li>
+                  <li>Cada proceso corre en su propio espacio de memoria virtual.</li>
+                  <li>No puede acceder a la memoria de otros procesos sin autorización.
+                    <ul><li>Puede pedirse autorización para compartir memoria con otro proceso.</li></ul>
+                  </li>
+                </ul>
+              </li>
+              <li>Espacio de kernel: 
+                <ul>
+                  <li>El propio kernel, la mayoría de controladores de dispositivo.</li>
+                  <li>Tiene acceso al espacio de memoria real.
+                  </li>
+                </ul>
+              </li>
+            </ul>  
+          </section>
+          <section>
+            <h2>Anillos de protección</h2>
+            <div>
+              <ul>
+                <li>Normalmente, esto se implementa sobre los anillos de protección del procesador.
+                  <ul><li>Normalmente, esto se implementa sobre los anillos de protección del procesador.</li></ul>
+                </li>
+                <li>Y a su vez, los anillos de protección se implementan sobre los modos de CPU:
+                  <ul><li>El 80386 es el primer procesador de la familia en incluir modos de ejecución (modo real, protegido y virtual).
+                  </li></ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg" alt="anillos del procesador">
+            </div>
+          </section>
+          <section>
+            <h2>Fallas en el mecanismo de protección</h2>
+            <ul>
+              <li>Muchos ataques de escalamiento de privilegios aprovechan fallas en el código que corre en modo privilegiado.
+                <ul><li>P.ej., código privilegiado que inadvertidamente carga código malicioso.</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>Otros ataques van más allá, y atacan directamente al mecanismo de protección del microprocesador:
+                <ul>
+                  <li>Meltdown: la caché de una operación de lectura
+                  </li>
+                  <li>Spectre: la predicción de saltos</li>
+                </ul>
+              </li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Meltdown_logo_with_text.svg" alt="logo de Meltdown">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Spectre_logo_with_text.svg" alt="logo de Spectre">
+          </section>
+          <section>
+            <h2>Meltdown (I)</h2>
+            <ul>
+              <li>Se basa en aprovechar una condición de carrera entre la ejecución de una instrucción, y la comprobación de privilegios, para leer regiones de memoria a la que no está autorizado.
+                <ul>
+                  <li>Normalmente, una instrucción que intente leer memoria no autorizada hará que el controlador de memoria dé inicio a la operación.</li>
+                  <li>Aunque el planificador intervendrá más adelante, al comprobar la ilegalidad, y el dato no llegará al proceso.
+                    <ul><li><strong>Pero la caché de la CPU será actualizada con el valor leído igualmente.</strong></li></ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Meltdown (II)</h2>
+            <ul>
+              <li>Normalmente, la caché de la CPU no es accesible a procesos no autorizados.
+                <ul><li>Pero, por un ataque previo, es posible saber si el valor de una dirección ha sido guardada en caché (aunque no tenga permisos de leer la dirección de memoria cacheada)</li></ul>
+              </li>
+              <li>Podemos intentar medir la velocidad con la que se leen ciertas direcciones, a través del <strong>direccionamiento indirecto por memoria</strong>, para suponer cuáles direcciones pudieron haber sido ya recientemente accedidas.
+                <ul><li>Se puede usar esta dirección ‘calculada’ como valor propiamente, aunque la CPU no devuelva el dato en sí.</li></ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Componentes en espacio de kernel</h2>
+          </section>
+          <section>
+            <h2>Linux Security Modules</h2>
+            <ul>
+              <li>Framework dentro del kernel que permite implementar modelos de seguridad.</li>
+              <li>Existe desde Linux 2.6.</li>
+              <li>En el kernel, permite que cuatro sistemas estén habilitados:
+                <ul>
+                  <li>AppArmor: Debian, Ubuntu.</li>
+                  <li>SELinux: RedHat, Android.</li>
+                  <li>Smack: MeeGo, Tizen.</li>
+                  <li>Tomoyo Linux.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Logical Volume Manager (I)</h2>
+            <ul>
+              <li>Framework dentro del kernel para la administración de volúmenes lógicos.</li>
+              <li>LVM permite, entre otras cosas, lo siguiente:
+                <ul>
+                  <li>Crear un volúmen lógico único a partir de múltiples volúmenes físicos o discos enteros.</li>
+                  <li>Manejar granjas de discos, que permitan añadir y quitar discos sin dar de baja el servicio.</li>
+                  <li>Permitir el redimensionado de particiones sin problemas.</li>
+                  <li>Realizar copias de seguridad con snapshots de volúmenes lógicos.</li>
+                  <li>Cifrar volúmenes lógicos con una contraseña.</li>
+                </ul>
+              </li>
+              <li>LVM mantiene tres conceptos para organizar el sistema: volúmenes y particiones físicas, grupos de volúmenes y volúmenes lógicos.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Logical Volume Manager (II)</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lvm.svg" alt="">
+          </section>
+          <section>
+            <h2>Netfilter</h2>
+            <ul>
+              <li>Framework dentro del kernel que permite realizar varias operaciones sobre la red, en forma de hooks.
+              </li>
+              <li>Se usa mucho para filtrado de paquetes y traducción de puertos y direcciones de red (NAT).</li>
+              <li>Netfilter empezó a usarse desde estas utilidades:
+                <ul>
+                  <li>iptables: desde 2.4.</li>
+                  <li>nftables: desde 3.13.</li>
+                </ul>
+              </li>
+              <li>Anteriormente, las siguientes utilidades estaban en el kernel:
+                <ul>
+                  <li>ipfirewal/ipfw: desde 1.1.</li>
+                  <li>ipchains: desde 2.2.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>iptables (I)</h2>
+            <ul>
+              <li>iptables es la utilidad más popular para implementar cortafuegos en Linux. Está dividido en varios módulos, uno para cada protocolo:
+                <ul>
+                  <li>iptables para IPv4.</li>
+                  <li>ip6tables para IPv6.</li>
+                  <li>arptables para ARP.</li>
+                  <li>ebtables para tramas Ethernet.</li>
+                </ul>
+              </li>
+              <li>Para cada protocolo se implementan cinco tablas, según el origen del paquete:
+                <ul>
+                  <li>PREROUTING, INPUT, FORWARD, OUTPUT, POSTROUTING</li>
+                  <li>Corresponden a los cinco hooks predeterminados de Netfilter.</li>
+                </ul>
+              </li>
+              <li>Cada regla puede tener tres posibles políticas:
+                <ul><li>ACCEPT, DROP, REJECT</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>iptables (II)</h2>
+            <p>
+              iptables -F INPUT <br>
+              iptables -A INPUT -m state --state <br> ESTABLISHED -j ACCEPT <br>
+              iptables -A INPUT -m state --state NEW -i lo -j ACCEPT <br>
+              iptables -A INPUT -m state --state NEW -i eth0 -p tcp -m multiport --dports 21,22,53,80,139,515,3128,8080 -j ACCEPT <br>
+              iptables -A INPUT -m state --state NEW -i eth0 -p udp -m multiport --dports 53,137,138,3130 -j ACCEPT <br>
+              iptables -P INPUT DROP <br>
+              <br>
+              iptables -F FORWARD <br>
+              iptables -P FORWARD DROP <br>
+              <br>
+              iptables -F OUTPUT <br>
+              iptables -P OUTPUT ACCEPT <br>
+            </p>
+          </section>
+          <section>
+            <h2>Advanced Linux Sound Architecture</h2>
+            <ul>
+              <li>Framework dentro del kernel que provee una interfaz para implementar controladores para tarjetas de audio.</li>
+              <li>Reemplaza a la antigua implementación de Open Sound System.
+              </li>
+              <li>Permite manejar múltiples canales de audio, y aprovechar la capacidad multiprocesamiento y multihilo.</li>
+              <li>Los <i>servidores de audio</i> usan ALSA por debajo para usar el hardware:
+                <ul>
+                  <li>sndio</li>
+                  <li>PulseAudio</li>
+                  <li>JACK</li>
+                  <li>PipeWire</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Componentes en espacio de usuario</h2>
+          </section>
+          <section>
+            <h2>init</h2>
+            <ul>
+              <li>Después de cargar el kernel, éste es el primer proceso lanzado, y el que inicia a todos los demás.</li>
+              <li>Adquiere el identificador 1, y si el proceso no puede ser iniciado, un kernel panic es lanzado.</li>
+              <li>Existen varios demonios que realizan esta función
+                <ul>
+                  <li>systemd</li>
+                  <li>openRC</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>systemd</h2>
+            <ul>
+              <li>Es un framework que provee diversos componentes del sistema.
+                <ul>
+                  <li>Su intención es unificar la forma en la que los sistemas Linux implementan y configuran los servicios.</li>
+                  <li>Su principal función es la de proveer el sistema init.</li>
+                </ul>
+              </li>
+              <li>La mayor parte de las distribuciones Linux han adoptado systemd.
+                <ul>
+                  <li>Aunque existen críticas sobre su amplio
+                    <ul><li>Existen distros que evitan systemd: Devuan</li></ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Componentes de systemd</h2>
+            <p>Además de funcionar como sistema init, los siguientes demonios pueden estar incluidos:</p>
+            <ul>
+              <li><strong>journald:</strong> registro de eventos.</li>
+              <li><strong>localed:</strong> <i>locales.</i></li>
+              <li><strong>logind:</strong> sesiones de usuario.</li>
+              <li><strong>hostnamed:</strong> hostname.</li>
+              <li><strong>networkd:</strong> configuración de interfaces de red.</li>
+              <li><strong>resolved:</strong> resolución de nombres local.</li>
+              <li><strong>tmpfiles:</strong> gestión de archivos temporales.</li>
+              <li><strong>udevd:</strong> administrador de dispositivos.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>cron</h2>
+            <ul>
+              <li>Un planificador de tareas (o job scheduler) es el sistema que permite al sistema operativo ejecutar tareas desatendidamente cuando se den ciertas condiciones.
+                <ul>
+                  <li>Normalmente, condiciones temporales.</li>
+                  <li>No confundir con el <i>planificador de procesos</i>, parte integral de cualquier sistema operativo multitarea.</li>
+                </ul>
+              </li>
+              <li>En Windows, tenemos a <i>at</i>, a <i>cron</i>, y a <i>Windows Task Scheduler</i>.</li>
+              <li>En Unix, el planificador de tareas predeterminado es <strong>cron</strong>.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>crontab</h2>
+            <ul>
+              <li>Las tareas que cron reconoce son especificadas en unos archivos de texto, conocidos colectivamente como crontabs.
+                <ul><li>Existe un crontab para el sistema, y pueden existir también uno para cada usuario.</li></ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Red</h2>
+            <p>En los sistemas Linux, la configuración de la red se logra mediante la conjunción de varios sistemas, describimos algunos aquí.</p>
+          </section>
+          <section>
+            <h2>NetworkManager</h2>
+            <ul>
+              <li>El demonio más utilizado para administrar y configurar interfaces de red.</li>
+              <li>El demonio está atento a cambios en el hardware, y en las condiciones de red; e informa a los clientes conectados.</li>
+              <li>La configuración se encuentra en /etc/NetworkManager/NetworkManager.conf</li>
+            </ul>
+            <div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/GNOME_Shell_NM_front-end_3.10.png
+              " alt="">
+            </div>
+          </section>
+          <section>
+            <h2>wpa_supplicant</h2>
+            <ul>
+              <li>Es la implementación más utilizada de un <i>supplicant IEEE 802.11i.
+                <ul>
+                  <li>La norma IEEE 802.11i es la que estandariza el protocolo WPA, para redes WiFi seguras.
+                  </li>
+                  <li>Un <i>supplicant</i>, en el contexto de las redes WiFi, es un dispositivo o sistema en busca de ser autentificado.</li>
+                </ul>
+              </i>.
+              </li>
+              <li>Su archivo de configuración se encuentra en /etc/wpa_supplicant/wpa_supplicant.conf</li>
+            </ul>
+          </section>
+          <section>
+            Ejemplo:
+            <code>
+              ctrl_interface=/run/wpa_supplicant
+              ctrl_interface_group=wheel
+              update_config=1
+              ap_scan=1
+              country=US
+
+              network={
+                  ssid="MYSSID"
+                  psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
+              }
+            </code>
+          </section>
+          <section>
+            <h2>netplan</h2>
+            <ul>
+              <li>Desde Ubuntu 17.10, este componente viene preinstalado para configurar muchos aspectos de la red.</li>
+              <li>Se basa en archivos YAML, almacenados en /etc/netplan/.</li>
+            </ul>
+            Ejemplo:
+            <code>
+              network:
+                version: 2
+                renderer: networkd
+                ethernets:
+                      enp3s0:
+                          dhcp4: no
+                          addresses:
+                              - 192.168.0.37/24
+                          nameservers:
+                              search: [mydomain, otherdomain]
+                              addresses: [8.8.8.8, 1.1.1.1]
+                          routes:
+                              - to: default
+                                via: 192.168.0.1
+            </code>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Entorno gráfico</h2>
+            <ul>
+              <li>La forma tradicional de comunicarse con el sistema operativo es a través de una shell de texto.
+                <ul><li>Pero también podemos tener shells gráficos.</li></ul>
+              </li>
+              <li>A diferencia de otros sistemas, como Windows, los componentes gráficos no están integrados en el sistema, y pueden no estar en el sistema.
+              </li>
+              <li>Tener una sesión gráfica implica el uso de varios componentes que deben trabajar juntos, siguiendo varios protocolos.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Sistemas de ventanas</h2>
+            <ul>
+              <li>Es el programa (o conjunto de programas) que maneja el dibujado de los elementos de una GUI en una pantalla. Específicamente, el paradigma WIMP.</li>
+              <li>El sistema de ventanas tiene como principal componente a servidor de ventanas: un programa que “escucha” peticiones de clientes, para dibujar elementos en la pantalla; y devuelve al cliente la entrada del usuario.</li>
+              <li>En este nivel, <i>ventana</i> es solo un recuadro para dibujar.</li>
+              <li>Sistemas de ventanas más comunes:
+                <ul>
+                  <li><strong>X11:</strong>el más usado actualmente.</li>
+                  <li><strong>Wayland:</strong> una alternativa algo menos popular</li>
+                  <li><strong>Mir:</strong> un intento de Canonical.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>X11</h2>
+            <ul>
+              <li>El sistema de ventanas más común en sistemas Unix.</li>
+              <li>Provee un framework para dibujar ‘primitivas’: componentes para mover y dibujar ventanas, y eventos del ratón y el teclado.</li>
+              <li>Soporta conexiones a través de la red.</li>
+              <li>Implementaciones:
+                <ul>
+                  <li><strong>X.Org:</strong>  la implementación de referencia en estos días.</li>
+                  <li><strong>XFree86:</strong> la más popular hasta 2004</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Administrador de ventanas (I)</h2>
+            <ul>
+              <li>O <i>window manager</i>, el sistema que permite al usuario manipular ventanas.
+                <ul>
+                  <li>Moverlas, cerrarlas, maximizarlas, etc.</li>
+                  <li>Dibuja los <i>decorados de ventana</i>.</li>
+                  <li>Provee el menú contextual.</li>
+                </ul>
+              </li>
+              <li>Puede tener otros elementos asociados: barras de tareas o docks, para controlar ventanas en uso, espacios de trabajo, fondos de escritorio…
+              </li>
+              <li>Tipos:
+                <ul>
+                  <li>Compositing WM</li>
+                  <li>Stacking WM</li>
+                  <li>Tiling WM</li>
+                  <li>Dynamic WM</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Administrador de ventanas (II)</h2>
+            <ul>
+              <li>Desktop Window Manager/dwm.exe</li>
+              <li>Enlightenment</li>
+              <li>IceWM</li>
+              <li>KWin (KDE)</li>
+              <li>Metacity (Gnome 2)</li>
+              <li>Mutter (Gnome 3)</li>
+              <li>Openbox (LXDE)</li>
+              <li>wmii</li>
+              <li>xfwm (xfce)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Entorno de escritorio (I)</h2>
+            <ul>
+              <li>La implementación completa de la <i>metáfora de escritorio</i>.</li>
+              <li>Consiste, como mínimo, en un administrador de ventanas, y habitualmente, en toda la distribución de programas diseñados para trabajar en conjunto con ese administrador.</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Elementary_OS_7.0_Horus.jpg" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Ubuntu_Unity_22.10_desktop_screenshot.png" alt="">
+          </section>
+          <section>
+            <h2>Entorno de escritorio (II)</h2>
+            <ul>
+              <li>Gnome</li>
+              <li>KDE Plasma</li>
+              <li>Cinnamon</li>
+              <li>Unity</li>
+              <li>Mate</li>
+              <li>LXDE/LXQt</li>
+              <li>Xfce</li>
+              <li>Windows Shell</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/LXDE_desktop_full.png" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Solus_4.1_Budgie.jpg" alt="">
+          </section>
+          <section>
+            <h2>LXDE</h2>
+            <ul>
+              <li>Diseñado para consumir pocos recursos.</li>
+              <li>Componentes:
+                <ul>
+                  <li>Administrador de archivos: PCManFM</li>
+                  <li>Lanzador: LXLauncher</li>
+                  <li>Panel: LXPanel</li>
+                  <li>Visor de imágenes: GPicView</li>
+                  <li>Administrador de pantallas: LXDM</li>
+                  <li>Editor de texto: Leafpad</li>
+                  <li>Administrador de ventanas: Openbox</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Gestor de pantallas X (I)</h2>
+            <ul>
+              <li>En general, cuando un sistema tiene una instancia de un servidor X, se espera iniciar esta sesión gráfica cuanto antes.
+                <ul>
+                  <li>Esto es, antes incluso del inicio de sesión.</li>
+                </ul>
+              </li>
+              <li>X no maneja la autentificacion de forma predeterminada.
+                <ul>
+                  <li>El componente que se encarga de eso es el <strong>gestor de pantallas</strong>, o <i>display manager</i>.</li>
+                </ul>
+              </li>
+              <li>El gestor de pantallas inicia al servidor X antes de iniciar sesión, y después, presenta la pantalla de sesión.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Gestor de pantallas X (II)</h2>
+            <ul>
+              <li>GDM (Gnome)</li>
+              <li>LightDM</li>
+              <li>SDDM (KDE, LXQt)</li>
+              <li>XDM</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Fedora_21_login_screen.png" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Fedora_login_screen.png" alt="">
+          </section>
+          <section>
+            <h2>Biblioteca de widgets (I)</h2>
+            <ul>
+              <li>El elemento principal en una  es el <i>widget</i>, un elemento gráfico que permite interactuar con la aplicación de alguna forma.
+                <ul><li>Botones, campos de texto, combos, etc.
+                </li></ul>
+              </li>
+              <li>Salvo en muy pocas ocasiones, no dibujamos a mano los widgets de nuestra aplicación:
+                <ul>
+                  <li>Esa tarea la realiza una <strong>biblioteca de widgets</strong> o <i>widget toolkit</i>.
+                  </li>
+                  <li>Las bibliotecas de widgets mantienen un estilo consistente entre todos sus elementos.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Biblioteca de widgets (II)</h2>
+            <p>Muchos widgets son multiplataforma, no dependen del sistema operativo:</p>
+            <ul>
+              <li>GTK</li>
+              <li>Qt</li>
+              <li>wxWidgets</li>
+              <li>Kivy</li>
+              <li>Tk</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Biblioteca de widgets (III)</h2>
+            <p>Los sistemas operativos que incluyen de serie sistemas gráficos incluyen también una biblioteca de widgets.</p>
+            <ul>
+              <li>Microsoft Windows
+                <ul>
+                  <li>Win32 API
+                    <ul>
+                      <li>Microsoft Foundation Classes</li>
+                      <li>Windows Template Library</li>
+                      <li>Windows Presentation Foundation</li>
+                    </ul>
+                  </li>
+                  <li>Windows UI Library</li>
+                </ul>
+              </li>
+              <li>Mac OS/OS X
+                <ul>
+                  <li>Carbon</li>
+                  <li>Cocoa</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Cargador de arranque</h2>
+            <ul>
+              <li>O <i>bootloader</i>, primer componente ejecutado por la CPU al operar.</li>
+              <li>Es la encargada de cargar el kernel Linux en la memoria principal.
+                <ul>
+                  <li>GRUB</li>
+                  <li>LILO</li>
+                  <li>SYSLINUX</li>
+                  <li>gummiboot/systemd-boot</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Otros sistemas</h2>
+          <ul>
+            <li><strong>CUPS:</strong> framework para servir impresoras.</li>
+            <li><strong>FUSE:</strong> Filesystem in Userspace</li>
+            <li><strong>SSH:</strong> sistema para conexiones remotas seguras.</li>
+            <li><strong>VNC:</strong> sistema para escritorios remotos.</li>
+          </ul>
         </section>
         <!--SEGUNDO TEMA-->
         <section>
@@ -591,15 +1366,20 @@
             </ul>
           </section>
           <section>
-            <h2>Filesystem Hierarchy Standard (I)</h2>
+            <h2>Filesystem Hierarchy Standard</h2>
+            <div>
+              <ul>
+                <li>Estándar que especifica la estructura de los directorios en el sistema de archivos de un sistema Unix.</li>
+                <li>Las distribuciones Linux popularizaron el estándar.</li>
+                <li>La mayor parte de las distribuciones lo siguen, con cambios menores.</li>
+              </ul>
+            </div>
+            <div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png" alt="tmp">
+            </div>
             <ul>
-              <li>Estándar que especifica la estructura de los directorios en el sistema de archivos de un sistema Unix.</li>
-              <li>Las distribuciones Linux popularizaron el estándar.</li>
-              <li>La mayor parte de las distribuciones lo siguen, con cambios menores.</li>
-            </ul>
           </section>
           <section>
-            <a href="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png">Imagen</a>
             <ul>
               <li>/: directorio raíz.</li>
               <li>/bin: ejecutables que deben estar disponibles en modo monousuario.</li>
@@ -740,6 +1520,290 @@
           </section>
           <section>
             <h2>Diferencias con un instalador</h2>
+            <table style="font-size: smaller;">
+              <tr>
+                <td>Instalador</td>
+                <td>ADP</td>
+              </tr>
+              <tr>
+                <td>es individual para cada programa</td>
+                <td>gestiona muchos programas (y sus relaciones)
+                </td>
+              </tr>
+              <tr>
+                <td>es creado por el programador del programa</td>
+                <td>provienen todos de la misma fuente</td>
+              </tr>
+              <tr>
+                <td>cada programador usa el formato que desee</td>
+                <td>establece un formato común</td>
+              </tr>
+              <tr>
+                <td>organiza el contenido de los paquetes a como desee el proveedor</td>
+                <td>organiza el contenido en ubicaciones específicas</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>Diferencias con una tienda de aplicaciones</h2>
+            <ul style="font-size: smaller;">
+              <li>Las tiendas de aplicaciones pueden considerarse una clase especial de administradores de paquetes.
+                <ul>
+                  <li>Pero limitadas a instalar software de aplicación.</li>
+                </ul>
+              </li>
+              <li>Están diseñadas generalmente con un propósito <i>comercial</i>.
+                <ul>
+                  <li>Permitir pagos por la aplicación.</li>
+                  <li>Ofrecer paquetes <i>monolíticos</i>, sin dependencias.</li>
+                  <li>Simplificar la experiencia, asemejándola a una tienda real.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>Los administradores de paquetes generalmente trabajan con código.
+                <ul>
+                  <li>Existen revisiones manuales de código antes de publicarse.</li>
+                  <li>En las tiendas de aplicaciones no, porque generalmente el código no está disponible.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Administradores y formatos</h2>
+            <ul>
+              <li>En general, un administrador de paquetes trabaja con un solo formato, pero no siempre es así.</li>
+              <li>Caso ejemplo: los paquetes .deb pueden diferir entre familias y subfamilias de Debian.
+                <ul>
+                  <li>Pueden cambiar el modo de organización de archivos.</li>
+                  <li>Pueden incluir versiones diferentes de dependencias.</li>
+                  <li>Aunque en todas las distros se use apt.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Administradores y formatos más usados</h2>
+            <ul>
+              <li>apk (Alpine Linux)</li>
+              <li>AppImage</li>
+              <li>APPX (Windows 8+)</li>
+              <li>Deb/dpkg (familia Debian)</li>
+              <li>Flatpak</li>
+              <li>Portage/ebuild (Gentoo)</li>
+              <li>Ports (BSD*)</li>
+              <li>RPM/DNF (Red Hat, Fedora)</li>
+              <li>RPM/Yum (Red Hat antes, familia SUSE)</li>
+              <li>Snap</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Application-x-deb.svg" alt="paquetería debian">
+          </section>
+          <section>
+            <h2>Repositorios</h2>
+            <ul style="font-size: smaller;">
+              <li>Los administradores de paquetes obtienen los paquetes de un conjunto de fuentes centralizadas.
+                <ul>
+                  <li>Generalmente provistas por la distribución/sistema operativo.</li>
+                </ul>
+              </li>
+              <li>A estas fuentes las llamamos <i>repositorios</i>.</li>
+              <li>Los repositorios pueden estar en Internet (HTTP, FTP), o pueden ser locales (CDs, disquetes)</li>
+              <li>En algunos sistemas, una fuente puede proveer varios ‘canales’.
+                <ul>
+                  <li>En el sistema de Debian, a estos canales se les llama ‘componentes’.</li>
+                </ul>
+              </li>
+              <li>En este curso, nos enfocaremos en el sistema provisto por Debian y todas sus distribuciones derivadas.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>dpkg (I)</h2>
+            <ul>
+              <li>La base del sistema de administración de paquetes de Debian.
+              </li>
+              <li>Se encarga de la instalación, eliminación y consulta de información del formato nativo: .deb.</li>
+              <li>En general, dpkg no se utiliza directamente, puesto que es una herramienta de bajo nivel.
+                <ul>
+                  <li>En su lugar, se usan frontends que gestionan cosas como la descarga, o las dependencias, y usan dpkg por debajo.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>dpkg (II)</h2>
+            <ul>
+              <li>Los comandos principales de dpkg son: 
+                <ul>
+                  <li>Para instalar un paquete <br>
+                    dpkg -i &lt;archivo&gt;
+                  </li>
+                  <li>Para listar los paquetes instalados <br>
+                  dpkg -l [patrón]
+                  </li>
+                  <li>Para desinstalar un paquete <br>
+                    dpkg -r &lt;paquete&gt;</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>deb</h2>
+            <ul>
+              <li>El formato usado por dpkg para manejar comandos.</li>
+              <li>Consiste en un archivador ar que contiene tres archivos en este orden:
+                <ul>
+                  <li>debian-binary, que contiene la versión a usar del formato.</li>
+                  <li>control.tar, que contiene los scripts de configuración y metadatos.</li>
+                  <li>data.tar, que contiene los archivos instalables.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>apt (I)</h2>
+            <ul>
+              <li>La interfaz de usuario predeterminada para dpkg.</li>
+              <li>apt tiene funciones que complementan y potencian a dpkg.</li>
+              <li>apt puede descargar los paquetes desde los repositorios:
+                <ul><li>La lista de repositorios está en <code>/etc/apt/sources.list</code></li></ul>
+              </li>
+              <li>apt administra las dependencias durante las operaciones:
+                <ul>
+                  <li>Resuelve la instalación de dependencias faltantes.</li>
+                  <li>Impide la instalación si hay conflictos entre paquetes.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>apt (II)</h2>
+            <ul style="font-size: smaller;">
+              <li>apt contiene varios subcomandos para administrar los paquetes:
+                <ul>
+                  <li>apt update: actualiza el listado de paquetes desde los repositorios.</li>
+                  <li>apt upgrade: actualiza los paquetes instalados en el sistema.</li>
+                  <li>apt full-upgrade: como apt upgrade, pero incluso cuando pueden eliminar paquetes.</li>
+                  <li>apt install: instala un paquete, y sus dependencias.</li>
+                  <li>apt remove: desinstala un paquete del sistema.</li>
+                  <li>apt search: busca paquetes por una expresión regular.</li>
+                  <li>apt show: muestra detalles sobre un paquete del repositorio.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Componentes en Debian y Ubuntu</h2>
+            <ul>
+              <li>Para Debian, los repositorios apt organizan los repositorios en tres componentes:
+                <ul>
+                  <li>main: paquetes con software libre.</li>
+                  <li>contrib: paquetes con software libres, pero que dependen de paquetes no disponibles en main.</li>
+                  <li>non-free: paquetes con software privativo.</li>
+                </ul>
+              </li>
+              <li>A diferencia de Debian, Ubuntu es mantenido por una empresa (Canonical), entonces también se diferencian los paquetes mantenidos por éste, y paquetes en los que no:</li>
+            </ul>
+          </section>
+          <section>
+            <table>
+              <tr>
+                <td></td>
+                <td>Software libre</td>
+                <td>Software privativo</td>
+              </tr>
+              <tr>
+                <td>Soporte por Canonical</td>
+                <td>main</td>
+                <td>restricted</td>
+              </tr>
+              <tr>
+                <td>Soporte comunitario</td>
+                <td>universe</td>
+                <td>multiverse</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>apt pinning</h2>
+            <ul>
+              <li>En una instalación, pueden existir varios repositorios que hagan referencia al mismo paquete.
+              </li>
+              <li>Podemos indicarle a apt qué versión debe instalar de todas las fuentes.
+                <ul><li>Para evitar incompatibilidades.</li>
+                <li>Para escoger especialmente una versión de un paquete.</li></ul>
+              </li>
+              <li>El archivo que registra estas preferencias se encuentra en /etc/apt/preferences.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Metapaquetes</h2>
+            <ul>
+              <li>Hay paquetes que merecen la pena instalar juntos por conveniencia, aunque no sean dependencias directas:
+                <ul>
+                  <li>Porque agrupan paquetes que comúnmente irían juntos, aunque puedan instalarse por separado: ubuntu-desktop, build-essential.
+                  </li>
+                  <li>Porque agrupan “versiones” de componentes: texlive-full, texlive-basic</li>
+                </ul>
+              </li>
+              <li>Para eso, existen los <i>metapaquetes</i>: paquetes virtuales que declaran dependencias hacia otros paquetes, provocando su instalación cuando el metapaquete sea instalado.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Paquete virtual</h2>
+            <ul style="font-size: smaller;">
+              <li>Hay paquetes que dependen de un sistema concreto.
+                <ul>
+                  <li>De ese sistema concreto, pueden existir varias versiones muy similares, que pueden ser utilizadas indistintamente.
+                  </li>
+                  <li>Pero el programa no puede declarar dependencias de tipo “uno de grupo” directamente.</li>
+                </ul>
+              </li>
+              <li>Para resolver el problema anterior, existen los paquetes virtuales
+                <ul>
+                  <li>Paquetes que no tienen contenido, sino que representan un nombre genérico para un grupo de paquetes.</li>
+                  <li>Se dice entonces que los paquetes del grupo “proveen” el paquete virtual.
+                  </li>
+                  <li>Si un paquete del grupo está instalado, la dependencia hacia el paquete virtual se considera resuelta.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Frontends para apt (I)</h2>
+            <ul>
+              <li>apt viene a simplificar mucho el uso de dpkg, sin embargo, es una utilidad de consola.
+                <ul>
+                  <li>Mucha gente sigue encontrando difícil el manejo de la consola.</li>
+                </ul>
+              </li>
+              <li>Existen muchos frontends que usan apt por debajo
+                <ul><li>Tal como apt usa dpkg por debajo.</li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Frontends para apt (II)</h2>
+            <div>
+              <ul>
+                <li>Synaptic</li>
+                <li>Ubuntu Software Center</li>
+                <li>aptitude</li>
+                <li>Apper</li>
+                <li>PackageKit</li>
+                <li>Gnome Software</li>
+                <li>KDE Discover</li>
+              </ul>
+            </div>
+            <div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Synaptic_Package_Manager.png" alt="">
+            </div>
           </section>
         </section>
         <!--CUARTO TEMA-->
