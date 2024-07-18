@@ -4,23 +4,11 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Introducción a Linux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/reset.css" />
     <link rel="stylesheet" href="assets/reveal.css" />
     <link rel="stylesheet" href="assets/theme/dracula.css" />
     <link rel="stylesheet" href="assets/highlight/monokai.css" />
-    <style>/*<![CDATA[*/
-      @font-face {
-        font-family: PHCT;
-        src: url("assets/PHCT_FONT.ttf");
-      }
-      .reveal {
-        --r-main-font: "Fira Sans", sans-serif;
-        --r-heading-font: "PHCT";
-      }
-
-
-/*]]>*/</style>
+    <link rel="stylesheet" href="assets/fonts.css" />
   </head>
   <body>
     <div class="reveal">
@@ -36,6 +24,9 @@
           </section>
           <section>
             <h2>Instructores</h2>
+            <ul>
+              <li>Alicia Aislinn González Nava</li>
+            </ul>
           </section>
           <section>
             <h2>Horario de clase</h2>
@@ -45,7 +36,6 @@
               <dt>Horario</dt><dd></dd>
             </dl>
           </section>
-
           <section>
             <h2>Objetivos</h2>
             <p>El alumno adquirirá los conocimientos necesarios para desenvolverse en un entorno linux incluyendo la gestión de archivos y procesos, la utilización de comandos básicos, y la automatización de tareas mediante scripts de shell.</p>
@@ -53,9 +43,9 @@
           <section>
             <h2>Temario</h2>
             <ol>
-              <li>Unix</li>
-              <li>Sistemas de Archivos</li>
-              <li>Sistemas de Paquetes</li>
+              <li>Generalidades del sistema Unix</li>
+              <li>Sistemas de archivos</li>
+              <li>Sistemas de paquetes</li>
               <li>Terminal</li>
               <li>Comandos de terminal</li>
             </ol>
@@ -64,24 +54,21 @@
         <!--PRIMER TEMA-->
         <section>
           <section>
-            <h1>Generalidades del sistema Linux</h1>
+            <h2>Tema 1:<br />Generalidades del sistema Unix</h2>
           </section>
           <section>
-            <h2>¿Por qué es importante conocer esto?</h2>
+            <h2>¿Por qué esto es importante?</h2>
             <ul style="font-size: smaller;">
               <li>Es más fácil trabajar en un sistema que conoces
                 <ul>
-                  <li>¿Qué recursos provee el sistema?
-                  </li>
+                  <li>¿Qué recursos provee el sistema?</li>
                   <li>¿Cómo puedo adaptarlo a mis necesidades?</li>
-                  <li>¿Cómo preparo mi entorno de desarrollo?</li>
                   <li>¿Cómo preparo mi entorno de pruebas?</li>
                 </ul>
               </li>
               <li>Es más fácil vulnerar un sistema que conoces
                 <ul>
-                  <li>¿Qué sistemas está ejecutando? ¿Cuáles son los más vulnerables?
-                  </li>
+                  <li>¿Qué sistemas está ejecutando? ¿Cuáles son los más vulnerables?</li>
                   <li>¿Hay alguna vulnerabilidad sin corregir? ¿Cómo puedo explotarla?</li>
                 </ul>
               </li>
@@ -89,38 +76,31 @@
           </section>
           <section>
             <h2>Nomenclatura</h2>
-            <p>Existe una controversia en cuanto a cómo nombrar a un sistema operativo que utilice el kernel Linux y el software del proyecto de GNU.
-            </p>
+            <p>Existe una controversia en cuanto a cómo nombrar a un sistema operativo que utilice el kernel Linux y el software del proyecto de GNU.</p>
+          </section>
+          <section>
+            <h2>Nomenclatura:<br /> GNU/Linux</h2>
             <ul>
-              <li>GNU/Linux
-                <ul>
-                  <li>Linux es realmente el nombre de un kernel.</li>
-                  <li>La mayoría de los sistemas operativos para escritorio que utilizan el kernel Linux utilizan software del proyecto GNU para funcionar.
-                    <ul><li>glibc, coreutils</li></ul>
-                  </li>
-                  <li>Existen sistemas operativos que, sin embargo, no utilizan software del proyecto GNU:
-                    <ul><li>Android es el ejemplo más popular.</li></ul>
-                  </li>
-                </ul>
+              <li>Linux es realmente el nombre de un kernel.</li>
+              <li>La mayoría de los sistemas operativos para escritorio que utilizan el kernel Linux utilizan software del proyecto GNU para funcionar (<i>glibc</i>, <i>coreutils</i>).</li>
+              <li>Existen sistemas operativos que, sin embargo, no utilizan software del proyecto GNU:
+                <ul><li>Android es el ejemplo más popular.</li></ul>
               </li>
             </ul>
           </section>
           <section>
+            <h2>Nomenclatura: Linux</h2>
             <ul>
-              <li>Linux
-                <ul>
-                  <li>Algunos creen que esta disputa es solo un intento de ‘marcar territorio’.</li>
-                  <li>Además del software de GNU, hay muchas otras utilidades de diferentes fuentes que probablemente merezcan ser mencionadas.</li>
-                  <li>La marca ‘Linux’ es mucho más popular que su alternativa.</li>
-                </ul>
-              </li>
+              <li>Algunos creen que esta disputa es solo un intento de "marcar territorio".</li>
+              <li>Además del software de GNU, hay muchas otras utilidades de diferentes fuentes que probablemente merezcan ser mencionadas.</li>
+              <li>La marca ‘Linux’ es mucho más popular que su alternativa.</li>
             </ul>
           </section>
         </section>
         <section>
           <section>
             <h2>Historia</h2>
-            <ul>
+            <ul style="font-size: smaller">
               <li>Conocer la historia de un sistema ayuda muchas veces a entender mejor muchas cosas:
                 <ul>
                   <li>Por qué se tomaron ciertas decisiones de diseño.</li>
@@ -128,11 +108,10 @@
                   <li>Por qué el <i>state of the art</i> es así.</li>
                 </ul>
               </li>
-              <li>Una parte importante de la historia de Linux es la historia de Unix
+              <li>Una parte importante de la historia de Linux es la historia de Unix:
                 <ul>
                   <li>Porque Linux es parte de la familia Unix.</li>
-                  <li>∴ No se puede entender Linux sin entender antes Unix.
-                  </li>
+                  <li>∴ <strong>No se puede entender Linux a profundidad sin entender antes Unix.</strong></li>
                 </ul>
               </li>
             </ul>
@@ -142,30 +121,66 @@
             <ul>
               <li>Unix nació en 1969, en los Laboratorios Bell.</li>
               <li>Su propósito era tener un SO multitarea, multiusuario, y muchas mejoras sobre SOs anteriores.</li>
-              <li>El lenguaje C se inventó, en parte, para poder hacer que Unix fuera portable: C y Unix son prácticamente hermanos.
+              <li>El lenguaje C se inventó, en parte, para poder hacer que Unix fuera <a href="#/portabilidad">portable</a>: C y Unix son prácticamente hermanos.
                 <ul><li>Unix fue reescrito en C en 1973 para hacer al sistema portable.</li></ul>
               </li>
             </ul>
           </section>
           <section>
+            <h2>Paréntesis: Derecho</h2>
+            <ul>
+              <li>El mundo de la informática no está aislado, tiene intersecciones con otras disciplinas.</li>
+              <li>Una que tiene y ha tenido efectos importantes en la historia de la informática es el <em>Derecho</em>.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿Por qué es importante?</h2>
+            <ul>
+              <li>Derechos de autor: licencias, obras derivadas, copyleft, <i>fair use</i></li>
+              <li>Patentes de software</li>
+              <li>Protección de datos personales</li>
+              <li>Leyes económicas: compañías, leyes <i>antitrust</i>.</li>
+              <li>Seguridad nacional: exportación de criptografía</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Algunos casos relevantes</h2>
+            <ul style="font-size: smaller">
+              <li>Derechos de autor:
+                <ul>
+                  <li>Ideas: <i>Apple Computer, Inc. v. Microsoft Corp.</i> (1994)</li>
+                  <li>APIs: <i>Google LLC v. Oracle America, Inc.</i> (2021)</li>
+                  <li>Distribución: <i>Metallica v. Napster, Inc.</i>, <i>A&M Records, Inc. v. Napster, Inc.</i> (2000)</li>
+                </ul>
+              </li>
+              <li>Monopolios según la ley <i>Sherman Antitrust</i>:
+                <ul>
+                  <li><i>Standard Oil Co. of New Jersey v. United States</i> (1911)</li>
+                  <li><i>United States v. AT&amp;T Co.</i> (1982)</li>
+                  <li><i>United States v. Microsoft Corp.</i> (2001)</li>
+                </ul>
+              <li>GPG: <i>Bernstein v. United States</i> (1995)</li>
+            </ul>
+          </section>
+          <section>
             <h2>Unix (II)</h2>
             <ul style="font-size: smaller;">
-              <li>Los Laboratorios Bell eran parte de AT&T.</li>
-              <li>AT&T tenía una guerra legal con el Gobierno de los Estados Unidos.</li>
-              <li>Las leyes antitrust prohibían a AT&T entrar al mercado de los computadores.
+              <li>Los Laboratorios Bell eran parte de AT&amp;T.</li>
+              <li>AT&amp;T tenía una guerra legal con el Gobierno de los Estados Unidos.</li>
+              <li>Las leyes antitrust prohibían a AT&amp;T entrar al mercado de los computadores.
                 <ul>
-                  <li>AT&T no podía vender computadores propios, por lo que licenció Unix a otros fabricantes como secreto comercial.
+                  <li>AT&amp;T no podía vender computadores propios, por lo que licenció Unix a otros fabricantes como secreto comercial.
                   </li>
                 </ul>
               </li>
-              <li>El gobierno estadounidense consiguió finalmente dividir a AT&T en 1983.
-                <ul><li>AT&T pudo entrar al mercado de los computadores, y vender Unix directamente.</li></ul>
+              <li>El gobierno estadounidense consiguió finalmente dividir a AT&amp;T en 1983.
+                <ul><li>AT&amp;T pudo entrar al mercado de los computadores, y vender Unix directamente.</li></ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>GNU</h2>
-            <ul>
+            <ul style="font-size: smaller">
               <li>Richard Stallman inició el proyecto GNU en 1983, para crear una versión de un sistema Unix totalmente libre.
                 <ul>
                   <li>Después, creó la Free Software Foundation en 1985…</li>
@@ -188,8 +203,8 @@
                 </li></ul>
               </li>
               <li>Linus Torvalds tuvo contacto con el sistema durante una clase de su universidad, en 1990.</li>
-              <li>La licencia de Minix, en ese entonces de código abierto pero privativa, le impedía experimentar con él.
-                <ul><li>Linus empezó a escribir un kernel para utilizar las funciones de su equipo, un 386 desde 1991.</li></ul>
+              <li>La licencia de Minix permitía ver su código, pero no modificarlo.
+                <ul><li>Linus empezó a escribir un kernel para utilizar las funciones de su equipo, un 386.</li></ul>
               </li>
             </ul>
           </section>
@@ -203,6 +218,8 @@
               <li>Este cambio permitió que los desarrolladores del proyecto GNU adoptaran Linux como kernel del proyecto.</li>
             </ul>
           </section>
+        </section>
+        <section>
           <section>
             <h2>Regresando a Unix…</h2>
             <ul>
@@ -211,9 +228,8 @@
                   <li>¿Qué significa ser un sistema Unix?</li>
                   <li>¿Existe acaso una definición formal que nos diga si algo es o no un sistema Unix?
                     <ul>
-                      <li><strong>POSIX:</strong> estándar de la IEEE</li>
-                      <li><strong>Single Unix Specification:</strong>  certificación mantenida por el consorcio The Open Group
-                      </li>
+                      <li><strong>POSIX</strong>: estándar de la IEEE.</li>
+                      <li><strong>Single Unix Specification</strong>:  certificación mantenida por el consorcio The Open Group.</li>
                     </ul>
                   </li>
                 </ul>
@@ -222,11 +238,11 @@
           </section>
           <section>
             <h2>POSIX</h2>
-            <ul>
-              <li>Portable Operating System Interface.</li>
-              <li>Define varias interfaces tanto en espacio de kernel como en espacio de usuario para mantener la compatibilidad entre sistemas Unix:
+            <ul style="font-size: smaller">
+              <li>Siglas de <em>Portable Operating System Interface</em>.</li>
+              <li>Define varias interfaces para mantener la compatibilidad entre sistemas Unix:
                 <ul>
-                  <li>Posix C library</li>
+                  <li>Biblioteca C POSIX</li>
                   <li>Servicios esenciales: tuberías, señales, procesos y operaciones de archivos.</li>
                   <li>Extensiones de tiempo real: relojes, asincronía, semáforos, planificación.</li>
                   <li>Extensiones de hilos</li>
@@ -238,10 +254,10 @@
           <section>
             <h2>Marca Unix</h2>
             <ul>
-              <li>Actualmente, la marca “Unix” es propiedad de The Open Group.</li>
-              <li>Novell solo permite usar la marca a aquellos que cumplan la certificación “Single Unix Specification”, o SUS, y hayan pagado las regalías.
+              <li>Actualmente, la marca <i>Unix</i> es propiedad de The Open Group.</li>
+              <li>Novell solo permite usar la marca a aquellos que cumplan la certificación SUS, y hayan pagado las regalías.
               </li>
-              <li>Coloquialmente, llamamos sistema Unix a cualquier SO que cumpla todas o la mayoría de los requisitos, estén certificados o no: la familia Unix-like.
+              <li>Coloquialmente, llamamos <em>sistema Unix</em> a cualquier SO que cumpla todos o la mayoría de los requisitos, estén certificados o no: la <strong>familia Unix-like</strong>.
               </li>
             </ul>
           </section>
@@ -250,7 +266,7 @@
             <p>Unix es actualmente la familia de SOs más utilizada en el mundo, y se suelen agrupar en dos grupos:</p>
             <ul>
               <li><strong>Sistemas UNIX certificados:</strong> Hay varios SO comerciales que están certificados.</li>
-              <li><strong>Sistemas no certificados</strong> o <strong>sistemas Unix-like:</strong> Y otros que no están certificados, pero aún así, son prácticamente sistemas Unix, por cumplir la mayoría o todos los requisitos que establece la SUS.
+              <li><strong>Sistemas no certificados</strong> o <strong>sistemas Unix-like:</strong> Otros no están certificados, pero aún así, son prácticamente sistemas Unix, por cumplir la mayoría o todos los requisitos que establece la SUS.
               </li>
             </ul>
           </section>
@@ -267,9 +283,9 @@
           <section>
             <h2>No certificados</h2>
             <ul style="font-size: smaller;">
-              <li><strong>Familia BS: </strong>basados en la implementación de la Universidad de Berkeley:
+              <li><strong>Familia BSD: </strong>basados en la implementación de la Universidad de Berkeley:
                 <ul>
-                  <li><strong>FreeBSD: </strong>el integrante más famoso, diseñado para ser de propósito general.</li>
+                  <li><strong>FreeBSD: </strong>el integrante más famoso, de propósito general.</li>
                   <li><strong>OpenBSD: </strong>enfocado en la seguridad: ¡solo ha tenido dos agujeros de seguridad en muchos años!
                   </li>
                   <li><strong>NetBSD: </strong>enfocado en ser portable: ¡se puede ejecutar en más de 50 arquitecturas!</li>
@@ -285,18 +301,69 @@
             </ul>
           </section>
           <section>
-            <h2>Diagrama</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" alt="BSD family">
+            <h2>Línea de tiempo de Unix</h2>
+            <img class="r-stretch" style="filter: drop-shadow(white 0px 0px 8px);" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" alt="Sistemas Unix" />
           </section>
         </section>
         <section>
           <section>
             <h2>Estructura general de un sistema Linux</h2>
+            <table class="not-reveal">
+              <tr style="background: #fff2cc;">
+                <th scope="row" rowspan="4" style="background: #d9d9d9;">Espacio de usuario</th>
+                <th scope="row">Aplicaciones de usuario</th>
+                <td colspan="5">bash, LibreOffice, GIMP, Firefox</td>
+              </tr>
+              <tr style="background: #c9daf8;">
+                <th scope="row">Componentes del sistema</th>
+                <td>init: <br />OpenRC, runit, systemd</td>
+                <td>Demonios de sistema:<br />polkitd, smbd, sshd, udevd</td>
+                <td>Sistema de ventanas:<br />X11, Wayland, SurfaceFlinger</td>
+                <td>Gráficos:<br />Mesa, Catalyst</td>
+                <td>Otras bibliotecas:<br />GTK, Qt…</td>
+              </tr>
+              <tr style="background: #d9ead3;">
+                <th scope="row" rowspan="2">Biblioteca estándar de C</th>
+                <td colspan="5">fopen, execv, malloc, memcpy, localtime, pthread_create, …</td>
+              </tr>
+              <tr style="background: #d9ead3;">
+                <td colspan="5">glibc, musl, uClibc, bionic…</td>
+              </tr>
+              <tr style="background: #f4cccc;">
+                <th scope="row" rowspan="3" style="background: #d9d9d9;">Espacio de kernel</th>
+                <th scope="row" rowspan="3">Kernel Linux</th>
+                <td colspan="5">System Call Interface:<br />stat, splice, dup, read, open, ioctl, write, mmap, close, exit, …<br />cerca de 380 llamadas al sistema</td>
+              </tr>
+              <tr style="background: #f4cccc;">
+                <td>Planificación</td>
+                <td>IPC</td>
+                <td>Administración de memoria</td>
+                <td>Sistemas de archivos virtuales</td>
+                <td>Red</td>
+              </tr>
+              <tr style="background: #f4cccc;">
+                <td colspan="5">Otros componentes:<br />ALSA, DRI, evdev, klibc, LVM, device mapper, Linux Network Scheduler, Netfilter<br />Linux Security Modules: SELinux, TOMOYO, AppArmor, Smack</td>
+              </tr>
+              <tr style="background: #b7b7b7">
+                <td colspan="7" style="font-weight: bold;">Hardware</td>
+              </tr>
+            </table>
           </section>
           <section>
-            <h2 style="font-size:60px;">¿Espacios de usuario y de kernel?</h2>
-            <ul style="font-size: smaller;">
+            <h2>¿Espacios de kernel y usuario? (I)</h2>
+            <ul>
               <li>Se refiere a los dos tipos de privilegios que un proceso puede tener.</li>
+              <li>Espacio de kernel: 
+                <ul>
+                  <li>El propio kernel, la mayoría de controladores de dispositivo.</li>
+                  <li>Tiene acceso al espacio de memoria real.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿Espacios de kernel y usuario? (II)</h2>
+            <ul>
               <li>Espacio de usuario (<i>userland</i>):
                 <ul>
                   <li>Aplicaciones del usuario comunes.</li>
@@ -306,56 +373,51 @@
                   </li>
                 </ul>
               </li>
-              <li>Espacio de kernel: 
-                <ul>
-                  <li>El propio kernel, la mayoría de controladores de dispositivo.</li>
-                  <li>Tiene acceso al espacio de memoria real.
-                  </li>
-                </ul>
-              </li>
-            </ul>  
           </section>
           <section>
-            <h2>Anillos de protección</h2>
-            <div>
+            <h2>Anillos de protección (I)</h2>
+            <ul style="font-size: smaller">
+              <li>Normalmente, lo anterior se implementa sobre los anillos de protección del procesador.
+                <ul><li>La arquitectura x86 contempla 4 anillos de protección (0-3).</li></ul>
+              </li>
+              <li>Y a su vez, los anillos de protección se implementan sobre los modos de CPU:
+                <ul><li>El 80386 es el primer procesador de la familia en incluir modos de ejecución (modo real, protegido y virtual).
+                </li></ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Anillos de protección (I)</h2>
+            <img class="r-stretch" style="filter: drop-shadow(white 0px 0px 8px);" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg" alt="Anillos de potección" />
+          </section>
+          <section>
+            <h2>Fallas en el mecanismo de protección (I)</h2>
+            <div class="cont-img">
               <ul>
-                <li>Normalmente, esto se implementa sobre los anillos de protección del procesador.
-                  <ul><li>Normalmente, esto se implementa sobre los anillos de protección del procesador.</li></ul>
-                </li>
-                <li>Y a su vez, los anillos de protección se implementan sobre los modos de CPU:
-                  <ul><li>El 80386 es el primer procesador de la familia en incluir modos de ejecución (modo real, protegido y virtual).
-                  </li></ul>
+                <li>Muchos ataques de escalamiento de privilegios aprovechan fallas en el código que corre en modo privilegiado.
+                  <ul><li>Por ejemplo, código privilegiado que inadvertidamente carga código malicioso.</li></ul>
                 </li>
               </ul>
-            </div>
-            <div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg" alt="anillos del procesador">
+              <img style="width: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/8/86/Meltdown_logo_with_text.svg" alt="logo de Meltdown" />
             </div>
           </section>
           <section>
-            <h2>Fallas en el mecanismo de protección</h2>
-            <ul>
-              <li>Muchos ataques de escalamiento de privilegios aprovechan fallas en el código que corre en modo privilegiado.
-                <ul><li>P.ej., código privilegiado que inadvertidamente carga código malicioso.</li></ul>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <ul>
-              <li>Otros ataques van más allá, y atacan directamente al mecanismo de protección del microprocesador:
-                <ul>
-                  <li>Meltdown: la caché de una operación de lectura
-                  </li>
-                  <li>Spectre: la predicción de saltos</li>
-                </ul>
-              </li>
-            </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Meltdown_logo_with_text.svg" alt="logo de Meltdown">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Spectre_logo_with_text.svg" alt="logo de Spectre">
+            <h2>Fallas en el mecanismo de protección (II)</h2>            
+            <div class="cont-img">
+              <ul>
+                <li>Otros ataques van más allá, y atacan directamente al mecanismo de protección del microprocesador:
+                  <ul>
+                    <li>Meltdown: la caché de una operación de lectura</li>
+                    <li>Spectre: la predicción de saltos</li>
+                  </ul>
+                </li>
+              </ul>
+              <img style="width: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Spectre_logo_with_text.svg" alt="logo de Spectre" />
+            </div>
           </section>
           <section>
             <h2>Meltdown (I)</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>Se basa en aprovechar una condición de carrera entre la ejecución de una instrucción, y la comprobación de privilegios, para leer regiones de memoria a la que no está autorizado.
                 <ul>
                   <li>Normalmente, una instrucción que intente leer memoria no autorizada hará que el controlador de memoria dé inicio a la operación.</li>
@@ -368,9 +430,9 @@
           </section>
           <section>
             <h2>Meltdown (II)</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>Normalmente, la caché de la CPU no es accesible a procesos no autorizados.
-                <ul><li>Pero, por un ataque previo, es posible saber si el valor de una dirección ha sido guardada en caché (aunque no tenga permisos de leer la dirección de memoria cacheada)</li></ul>
+                <ul><li>Pero podemos suponer que el valor de una dirección ha sido guardada en caché.</li></ul>
               </li>
               <li>Podemos intentar medir la velocidad con la que se leen ciertas direcciones, a través del <strong>direccionamiento indirecto por memoria</strong>, para suponer cuáles direcciones pudieron haber sido ya recientemente accedidas.
                 <ul><li>Se puede usar esta dirección ‘calculada’ como valor propiamente, aunque la CPU no devuelva el dato en sí.</li></ul>
@@ -399,7 +461,7 @@
           </section>
           <section>
             <h2>Logical Volume Manager (I)</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>Framework dentro del kernel para la administración de volúmenes lógicos.</li>
               <li>LVM permite, entre otras cosas, lo siguiente:
                 <ul>
@@ -410,12 +472,14 @@
                   <li>Cifrar volúmenes lógicos con una contraseña.</li>
                 </ul>
               </li>
-              <li>LVM mantiene tres conceptos para organizar el sistema: volúmenes y particiones físicas, grupos de volúmenes y volúmenes lógicos.</li>
             </ul>
           </section>
           <section>
             <h2>Logical Volume Manager (II)</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lvm.svg" alt="">
+            <div class="cont-img">
+              <p>LVM mantiene tres conceptos para organizar el sistema: <em>volúmenes y particiones físicas</em>, <em>grupos de volúmenes</em> y <em>volúmenes lógicos</em>.</p>
+              <img style="width: 500px; padding-left: 1em;" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lvm.svg" alt="Esquema de LVM" />
+            </div>
           </section>
           <section>
             <h2>Netfilter</h2>
@@ -438,53 +502,72 @@
             </ul>
           </section>
           <section>
-            <h2>iptables (I)</h2>
+            <h2>iptables</h2>
             <ul>
               <li>iptables es la utilidad más popular para implementar cortafuegos en Linux. Está dividido en varios módulos, uno para cada protocolo:
                 <ul>
-                  <li>iptables para IPv4.</li>
-                  <li>ip6tables para IPv6.</li>
-                  <li>arptables para ARP.</li>
-                  <li>ebtables para tramas Ethernet.</li>
+                  <li><i>iptables</i> para IPv4.</li>
+                  <li><i>ip6tables</i> para IPv6.</li>
+                  <li><i>arptables</i> para ARP.</li>
+                  <li><i>ebtables</i> para tramas Ethernet.</li>
                 </ul>
               </li>
-              <li>Para cada protocolo se implementan cinco tablas, según el origen del paquete:
-                <ul>
-                  <li>PREROUTING, INPUT, FORWARD, OUTPUT, POSTROUTING</li>
-                  <li>Corresponden a los cinco hooks predeterminados de Netfilter.</li>
-                </ul>
-              </li>
-              <li>Cada regla puede tener tres posibles políticas:
-                <ul><li>ACCEPT, DROP, REJECT</li></ul>
-              </li>
+              <li>Básicamente, para cada protocolo, se definen <em>tablas</em>, que contienen <em>cadenas</em> con <em>reglas</em> para tratar los paquetes.</li>
+              <li>Normalmente, la tabla que nos interesa es <i>filter</i>.</li>
             </ul>
           </section>
           <section>
-            <h2>iptables (II)</h2>
-            <p>
-              iptables -F INPUT <br>
-              iptables -A INPUT -m state --state <br> ESTABLISHED -j ACCEPT <br>
-              iptables -A INPUT -m state --state NEW -i lo -j ACCEPT <br>
-              iptables -A INPUT -m state --state NEW -i eth0 -p tcp -m multiport --dports 21,22,53,80,139,515,3128,8080 -j ACCEPT <br>
-              iptables -A INPUT -m state --state NEW -i eth0 -p udp -m multiport --dports 53,137,138,3130 -j ACCEPT <br>
-              iptables -P INPUT DROP <br>
-              <br>
-              iptables -F FORWARD <br>
-              iptables -P FORWARD DROP <br>
-              <br>
-              iptables -F OUTPUT <br>
-              iptables -P OUTPUT ACCEPT <br>
-            </p>
+            <h2>iptables: cadenas</h2>
+            <ul style="font-size: smaller">
+              <li>En cada tabla se implementan cinco cadenas, según el destino del paquete:
+                <dl class="lista-natural">
+                  <dt><code>PREROUTING</code></dt><dd>Paquetes antes de evaluarse su destino.</dd>
+                  <dt><code>INPUT</code></dt><dd>Paquetes a ser entregados en el dispositivo.</dd>
+                  <dt><code>FORWARD</code></dt><dd>Paquetes a ser reenrutados.</dd>
+                  <dt><code>OUTPUT</code></dt><dd>Paquetes a ser enviados.</dd>
+                  <dt><code>POSTROUTING</code></dt><dd>Paquetes después de ser evaluados.</dd>
+                </dl>
+              </li>
+              <li>Corresponden a los cinco hooks predeterminados de Netfilter, aunque puede que una tabla no las use todas.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>iptables: reglas</h2>
+            <ul>
+              <li>Las reglas contienen las condiciones de los paquetes que coinciden, y un destino, o un veredicto.</li>
+              <li>Cada regla puede tener tres posibles <em>veredictos</em>:
+                <dl class="lista-natural">
+                  <dt><code>ACCEPT</code></dt><dd>Se permite que el paquete avance.</dd>
+                  <dt><code>DROP</code><dd>El paquete se descartará.</dd>
+                  <dt><code>REJECT</code><dd>El paquete es rechazado, y seinforma de ello.</dd>
+                </dl>
+              </li>
+              <li>Cada cadena de las anteriores tiene una <em>política</em>: una regla predeterminada para los paquetes que no coinciden con ninguna regla de la cadena.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ejemplo de reglas</h2>
+            <pre class="iptables"><code data-line-numbers="" style="white-space: pre-wrap">iptables -F INPUT
+iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT
+iptables -A INPUT -m state --state NEW -i lo -j ACCEPT
+iptables -A INPUT -m state --state NEW -i eth0 -p tcp -m multiport --dports 21,22,53,80,139,515,3128,8080 -j ACCEPT
+iptables -A INPUT -m state --state NEW -i eth0 -p udp -m multiport --dports 53,137,138,3130 -j ACCEPT
+iptables -P INPUT DROP
+
+iptables -F FORWARD
+iptables -P FORWARD DROP
+
+iptables -F OUTPUT
+iptables -P OUTPUT ACCEPT</code></pre>
           </section>
           <section>
             <h2>Advanced Linux Sound Architecture</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>Framework dentro del kernel que provee una interfaz para implementar controladores para tarjetas de audio.</li>
-              <li>Reemplaza a la antigua implementación de Open Sound System.
-              </li>
+              <li>Reemplaza a la antigua implementación de Open Sound System.</li>
               <li>Permite manejar múltiples canales de audio, y aprovechar la capacidad multiprocesamiento y multihilo.</li>
-              <li>Los <i>servidores de audio</i> usan ALSA por debajo para usar el hardware:
-                <ul>
+              <li>Los <em>servidores de audio</em> usan ALSA por debajo para usar el hardware:
+                <ul style="column-count: 4;">
                   <li>sndio</li>
                   <li>PulseAudio</li>
                   <li>JACK</li>
@@ -502,8 +585,8 @@
             <h2>init</h2>
             <ul>
               <li>Después de cargar el kernel, éste es el primer proceso lanzado, y el que inicia a todos los demás.</li>
-              <li>Adquiere el identificador 1, y si el proceso no puede ser iniciado, un kernel panic es lanzado.</li>
-              <li>Existen varios demonios que realizan esta función
+              <li>Adquiere el <strong>PID</strong> 1, y si el proceso no puede ser iniciado, ocurre un <b>kernel panic</b>.</li>
+              <li>Existen varios demonios que realizan esta función:
                 <ul>
                   <li>systemd</li>
                   <li>openRC</li>
@@ -522,7 +605,7 @@
               </li>
               <li>La mayor parte de las distribuciones Linux han adoptado systemd.
                 <ul>
-                  <li>Aunque existen críticas sobre su amplio
+                  <li>Aunque existen críticas sobre su amplio alcance:
                     <ul><li>Existen distros que evitan systemd: Devuan</li></ul>
                   </li>
                 </ul>
@@ -563,6 +646,15 @@
                 <ul><li>Existe un crontab para el sistema, y pueden existir también uno para cada usuario.</li></ul>
               </li>
             </ul>
+            <pre><code># ┌───────────── minute (0–59)
+# │ ┌───────────── hour (0–23)
+# │ │ ┌───────────── day of the month (1–31)
+# │ │ │ ┌───────────── month (1–12)
+# │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday;
+# │ │ │ │ │              7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * [comando a ejecutar]</code></pre>
           </section>
         </section>
         <section>
@@ -572,68 +664,63 @@
           </section>
           <section>
             <h2>NetworkManager</h2>
-            <ul>
-              <li>El demonio más utilizado para administrar y configurar interfaces de red.</li>
-              <li>El demonio está atento a cambios en el hardware, y en las condiciones de red; e informa a los clientes conectados.</li>
-              <li>La configuración se encuentra en /etc/NetworkManager/NetworkManager.conf</li>
-            </ul>
-            <div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/GNOME_Shell_NM_front-end_3.10.png
-              " alt="">
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li>El demonio más utilizado para administrar y configurar interfaces de red.</li>
+                <li>El demonio está atento a cambios en el hardware, y en las condiciones de red; e informa a los clientes conectados.</li>
+                <li>La configuración se encuentra en <code>/etc/NetworkManager/NetworkManager.conf</code></li>
+              </ul>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/GNOME_Shell_NM_front-end_3.10.png" alt="NetworkManager frontend" style="width: 500px;" />
             </div>
           </section>
           <section>
             <h2>wpa_supplicant</h2>
             <ul>
-              <li>Es la implementación más utilizada de un <i>supplicant IEEE 802.11i.
+              <li>Es la implementación más utilizada de un <i>supplicant</i> IEEE 802.11i.
                 <ul>
-                  <li>La norma IEEE 802.11i es la que estandariza el protocolo WPA, para redes WiFi seguras.
-                  </li>
+                  <li>La norma IEEE 802.11i es la que estandariza el protocolo WPA, para redes WiFi seguras.</li>
                   <li>Un <i>supplicant</i>, en el contexto de las redes WiFi, es un dispositivo o sistema en busca de ser autentificado.</li>
                 </ul>
-              </i>.
               </li>
-              <li>Su archivo de configuración se encuentra en /etc/wpa_supplicant/wpa_supplicant.conf</li>
+              <li>Su archivo de configuración se encuentra en <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>.</li>
             </ul>
           </section>
           <section>
-            Ejemplo:
-            <code>
-              ctrl_interface=/run/wpa_supplicant
-              ctrl_interface_group=wheel
-              update_config=1
-              ap_scan=1
-              country=US
+            <h2>wpa_supplicant: ejemplo</h2>
+            <pre><code>ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+ap_scan=1
+country=US
 
-              network={
-                  ssid="MYSSID"
-                  psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
-              }
-            </code>
+network={
+    ssid="MYSSID"
+    psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
+}</code></pre>
           </section>
           <section>
             <h2>netplan</h2>
             <ul>
               <li>Desde Ubuntu 17.10, este componente viene preinstalado para configurar muchos aspectos de la red.</li>
-              <li>Se basa en archivos YAML, almacenados en /etc/netplan/.</li>
+              <li>Se basa en archivos YAML, almacenados en <code>/etc/netplan/</code>.</li>
             </ul>
-            Ejemplo:
-            <code>
-              network:
-                version: 2
-                renderer: networkd
-                ethernets:
-                      enp3s0:
-                          dhcp4: no
-                          addresses:
-                              - 192.168.0.37/24
-                          nameservers:
-                              search: [mydomain, otherdomain]
-                              addresses: [8.8.8.8, 1.1.1.1]
-                          routes:
-                              - to: default
-                                via: 192.168.0.1
-            </code>
+          </section>
+          <section>
+            <h2>netplan: ejemplo</h2>
+            <pre class="yaml"><code>network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp3s0:
+      dhcp4: no
+      addresses:
+        - 192.168.0.37/24
+      nameservers:
+        search: [mydomain, otherdomain]
+        addresses: [8.8.8.8, 1.1.1.1]
+      routes:
+        - to: default
+          via: 192.168.0.1</code></pre>
           </section>
         </section>
         <section>
@@ -643,21 +730,25 @@
               <li>La forma tradicional de comunicarse con el sistema operativo es a través de una shell de texto.
                 <ul><li>Pero también podemos tener shells gráficos.</li></ul>
               </li>
-              <li>A diferencia de otros sistemas, como Windows, los componentes gráficos no están integrados en el sistema, y pueden no estar en el sistema.
-              </li>
+              <li>A diferencia de otros sistemas, como Windows, los componentes gráficos no están integrados en el sistema, y éstos pueden no existir.</li>
               <li>Tener una sesión gráfica implica el uso de varios componentes que deben trabajar juntos, siguiendo varios protocolos.</li>
             </ul>
           </section>
           <section>
-            <h2>Sistemas de ventanas</h2>
+            <h2>Sistema de ventanas (I)</h2>
             <ul>
               <li>Es el programa (o conjunto de programas) que maneja el dibujado de los elementos de una GUI en una pantalla. Específicamente, el paradigma WIMP.</li>
-              <li>El sistema de ventanas tiene como principal componente a servidor de ventanas: un programa que “escucha” peticiones de clientes, para dibujar elementos en la pantalla; y devuelve al cliente la entrada del usuario.</li>
-              <li>En este nivel, <i>ventana</i> es solo un recuadro para dibujar.</li>
+              <li>Tiene dos componentes principales: el <strong>servidor de ventanas</strong>, un programa que "escucha" peticiones de <strong>clientes</strong>, para dibujar elementos en la pantalla; y devuelve al cliente la entrada del usuario.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Sistema de ventanas (II)</h2>
+            <ul>
+              <li>En este nivel, <i>ventana</i> es solo un recuadro en donde dibujar.</li>
               <li>Sistemas de ventanas más comunes:
                 <ul>
-                  <li><strong>X11:</strong>el más usado actualmente.</li>
-                  <li><strong>Wayland:</strong> una alternativa algo menos popular</li>
+                  <li><strong>X11:</strong> el más usado actualmente.</li>
+                  <li><strong>Wayland:</strong> una alternativa algo menos popular.</li>
                   <li><strong>Mir:</strong> un intento de Canonical.</li>
                 </ul>
               </li>
@@ -671,60 +762,72 @@
               <li>Soporta conexiones a través de la red.</li>
               <li>Implementaciones:
                 <ul>
-                  <li><strong>X.Org:</strong>  la implementación de referencia en estos días.</li>
-                  <li><strong>XFree86:</strong> la más popular hasta 2004</li>
+                  <li><strong>X.Org</strong>: la implementación de referencia en estos días.</li>
+                  <li><strong>XFree86</strong>: la más popular hasta 2004.</li>
                 </ul>
               </li>
             </ul>
           </section>
           <section>
-            <h2>Administrador de ventanas (I)</h2>
+            <h2>Administrador de ventanas</h2>
             <ul>
               <li>O <i>window manager</i>, el sistema que permite al usuario manipular ventanas.
                 <ul>
                   <li>Moverlas, cerrarlas, maximizarlas, etc.</li>
-                  <li>Dibuja los <i>decorados de ventana</i>.</li>
+                  <li>Dibuja los <em>decorados de ventana</em>.</li>
                   <li>Provee el menú contextual.</li>
                 </ul>
               </li>
               <li>Puede tener otros elementos asociados: barras de tareas o docks, para controlar ventanas en uso, espacios de trabajo, fondos de escritorio…
               </li>
-              <li>Tipos:
-                <ul>
-                  <li>Compositing WM</li>
-                  <li>Stacking WM</li>
-                  <li>Tiling WM</li>
-                  <li>Dynamic WM</li>
-                </ul>
-              </li>
             </ul>
           </section>
           <section>
-            <h2>Administrador de ventanas (II)</h2>
-            <ul>
-              <li>Desktop Window Manager/dwm.exe</li>
-              <li>Enlightenment</li>
-              <li>IceWM</li>
-              <li>KWin (KDE)</li>
-              <li>Metacity (Gnome 2)</li>
-              <li>Mutter (Gnome 3)</li>
-              <li>Openbox (LXDE)</li>
-              <li>wmii</li>
-              <li>xfwm (xfce)</li>
-            </ul>
+            <h2>Administrador de ventanas: tipos</h2>
+            <dl class="lista-natural">
+              <dt>Compositing WM</dt><dd>Ventanas creadas por compositores con efectos 2D y 3D.</dd>
+              <dt>Stacking WM</dt><dd>Ventanas que pueden dibujarse unas sobre otras.</dd>
+              <dt>Tiling WM</dt><dd>Ventanas acomodadas en mosaico.</dd>
+              <dt>Dynamic WM</dt><dd>La que puede aplicar más de un tipo anterior.</dd>
+            </dl>
           </section>
           <section>
-            <h2>Entorno de escritorio (I)</h2>
-            <ul>
-              <li>La implementación completa de la <i>metáfora de escritorio</i>.</li>
+            <h2>Administrador de ventanas: ejemplos</h2>
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li>Desktop Window Manager/dwm.exe</li>
+                <li>Enlightenment</li>
+                <li>IceWM</li>
+                <li>KWin (KDE)</li>
+                <li>Metacity (Gnome 2)</li>
+                <li>Mutter (Gnome 3)</li>
+                <li>Openbox (LXDE)</li>
+                <li>wmii</li>
+                <li>xfwm (xfce)</li>
+              </ul>
+              <img style="width: 500px;" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Windowmanager_ohne.png" alt="Ventanas sin administrador de ventanas" />
+            </div>
+          </section>
+          <section>
+            <h2>Entorno de escritorio</h2>
+            <ul style="font-size: smaller;">
+              <li>La implementación completa de la <em>metáfora de escritorio</em>.</li>
               <li>Consiste, como mínimo, en un administrador de ventanas, y habitualmente, en toda la distribución de programas diseñados para trabajar en conjunto con ese administrador.</li>
             </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Elementary_OS_7.0_Horus.jpg" alt="">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Ubuntu_Unity_22.10_desktop_screenshot.png" alt="">
+            <div class="galeria">
+              <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Elementary_OS_7.0_Horus.jpg" alt="Pantheon" />
+                <figcaption>Pantheon</figcaption>
+              </figure>
+              <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Ubuntu_Unity_22.10_desktop_screenshot.png" alt="Unity" />
+                <figcaption>Unity</figcaption>
+              </figure>
+            </div>
           </section>
           <section>
-            <h2>Entorno de escritorio (II)</h2>
-            <ul>
+            <h2>Entornos de escritorio</h2>
+            <ul style="column-count: 3;">
               <li>Gnome</li>
               <li>KDE Plasma</li>
               <li>Cinnamon</li>
@@ -734,12 +837,21 @@
               <li>Xfce</li>
               <li>Windows Shell</li>
             </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/LXDE_desktop_full.png" alt="">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Solus_4.1_Budgie.jpg" alt="">
+            <div class="galeria">
+              <figure>
+                <img style="height: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/LXDE_desktop_full.png" alt="LXDE" />
+                <figcaption>LXDE</figcaption>
+              </figure>
+              <figure>
+                <img style="height: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Solus_4.1_Budgie.jpg" alt="Budgie" />
+                <figcaption>Budgie</figcaption>
+              </figure>
+            </div>
           </section>
           <section>
-            <h2>LXDE</h2>
-            <ul>
+            <h2>Ejemplo de entorno: LXDE</h2>
+            <ul style="font-size: smaller;">
+              <li><em>¿Por qué de ejemplo?</em> Es bastante modular.</li>
               <li>Diseñado para consumir pocos recursos.</li>
               <li>Componentes:
                 <ul>
@@ -756,7 +868,7 @@
           </section>
           <section>
             <h2>Gestor de pantallas X (I)</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>En general, cuando un sistema tiene una instancia de un servidor X, se espera iniciar esta sesión gráfica cuanto antes.
                 <ul>
                   <li>Esto es, antes incluso del inicio de sesión.</li>
@@ -772,22 +884,38 @@
           </section>
           <section>
             <h2>Gestor de pantallas X (II)</h2>
-            <ul>
+            <ul style="column-count: 2;">
               <li>GDM (Gnome)</li>
               <li>LightDM</li>
               <li>SDDM (KDE, LXQt)</li>
               <li>XDM</li>
             </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Fedora_21_login_screen.png" alt="">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Fedora_login_screen.png" alt="">
+            <div class="galeria" style="height: 300px;">
+              <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Fedora_21_login_screen.png" alt="gdm" />
+                <figcaption>gdm</figcaption>
+              </figure>
+              <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Fedora_login_screen.png" alt="lightdm" />
+                <figcaption>lightdm</figcaption>
+              </figure>
+            </div>
+          </section>
+          <section>
+            <h2>Widget</h2>
+            <p>El elemento principal en una interfaz gráfica es el <strong>widget</strong>, un elemento gráfico que permite interactuar con la aplicación de alguna forma.</p>
+            <ul>
+              <li>Botones</li>
+              <li>Campos de texto</li>
+              <li>Combos</li>
+              <li>Casillas</li>
+              <li>Cuadros de diálogo</li>
+              <li>Radiobotones</li>
+            </ul>
           </section>
           <section>
             <h2>Biblioteca de widgets (I)</h2>
             <ul>
-              <li>El elemento principal en una  es el <i>widget</i>, un elemento gráfico que permite interactuar con la aplicación de alguna forma.
-                <ul><li>Botones, campos de texto, combos, etc.
-                </li></ul>
-              </li>
               <li>Salvo en muy pocas ocasiones, no dibujamos a mano los widgets de nuestra aplicación:
                 <ul>
                   <li>Esa tarea la realiza una <strong>biblioteca de widgets</strong> o <i>widget toolkit</i>.
@@ -811,7 +939,7 @@
           <section>
             <h2>Biblioteca de widgets (III)</h2>
             <p>Los sistemas operativos que incluyen de serie sistemas gráficos incluyen también una biblioteca de widgets.</p>
-            <ul>
+            <ul style="font-size: smaller; column-count: 2;">
               <li>Microsoft Windows
                 <ul>
                   <li>Win32 API
@@ -846,20 +974,21 @@
               </li>
             </ul>
           </section>
-        </section>
-        <section>
-          <h2>Otros sistemas</h2>
-          <ul>
-            <li><strong>CUPS:</strong> framework para servir impresoras.</li>
-            <li><strong>FUSE:</strong> Filesystem in Userspace</li>
-            <li><strong>SSH:</strong> sistema para conexiones remotas seguras.</li>
-            <li><strong>VNC:</strong> sistema para escritorios remotos.</li>
-          </ul>
+          <section>
+            <h2>Otros sistemas</h2>
+            <ul>
+              <li><strong>CUPS</strong>: framework para servir impresoras.</li>
+              <li><strong>FUSE</strong>: <i>Filesystem in Userspace</i>.</li>
+              <li><strong>SSH</strong>: sistema para conexiones remotas seguras.</li>
+              <li><strong>VNC</strong>: sistema para escritorios remotos.</li>
+              <li>Servidores: Web, correo, proxy, etc...</li>
+            </ul>
+          </section>
         </section>
         <!--SEGUNDO TEMA-->
         <section>
           <section>
-            <h1>Sistemas de Archivos</h1>
+            <h2>Tema 2:<br />Sistemas de Archivos</h2>
           </section>
           <section>
             <h2>Antecedentes</h2>
@@ -978,7 +1107,8 @@
                   <li>FAT32</li>
                   <li>exFAT</li>
                 </ul>
-              </li>NTFS</li>
+              </li>
+              <li>NTFS</li>
               <li>ext*
                 <ul>
                   <li>ext2</li>
@@ -1065,8 +1195,8 @@
               <ul>
                 <li>En muchos sistemas, cada directorio contiene dos directorios especiales:
                   <ul>
-                    <li><strong>.</strong> --&gt;> apunta a sí mismo</li>
-                    <li><strong>..</strong> --&gt;> apunta al directorio padre</li>
+                    <li><strong>.</strong> ⇒ apunta a sí mismo</li>
+                    <li><strong>..</strong> ⇒ apunta al directorio padre</li>
                   </ul>
                 </li>
               </ul>
@@ -1110,12 +1240,14 @@
             </ul>
           </section>
           <section>
-            <li>Para poder trabajar con otros sistemas de archivos, debemos <i>montarlos</i>.
+            <ul>
+              <li>Para poder trabajar con otros sistemas de archivos, debemos <i>montarlos</i>.
               <ul>
                 <li>Esto es <strong>hacer que un sistema de archivos esté accesible desde una ubicación determinada</strong>.</li>
                 <li>A esa ubicación le llamamos <strong>punto de montaje</strong>: un directorio dentro del sistema de archivos principal.</li>
               </ul></li>
               <li>Si el punto de montaje ya tenía archivos, éstos estarán ocultos.</li>
+            </ul>
           </section>
           <section>
             <h2>Archivo /etc/fstab</h2>
@@ -1130,8 +1262,8 @@
               </ul></li>
               <li>Unix tiene dos utilidades para administrar montajes:
                 <ul>
-                  <li><strong>mount</strong> --&gt;> monta sistemas de archivos.</li>
-                  <li><strong>unmount</strong> --&gt;> revierte esa operación.</li>
+                  <li><strong>mount</strong> ⇒ monta sistemas de archivos.</li>
+                  <li><strong>unmount</strong> ⇒ revierte esa operación.</li>
                 </ul>
               </li>
             </ul>
@@ -1377,7 +1509,6 @@
             <div>
               <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png" alt="tmp">
             </div>
-            <ul>
           </section>
           <section>
             <ul>
@@ -1949,6 +2080,23 @@
             <h2>Unix</h2>
           </section>
         </section>
+        <section>
+          <section id="portabilidad">
+            <h2>Portabilidad</h2>
+            <ul>
+              <li>En la informática, que un programa sea <i>portable</i> puede significar varias cosas:</li>
+              <li class="fragment">Poder ejecutarse sin necesidad de instalarse.</li>
+              <li class="fragment">Poder ejecutarse en varias plataformas.</li>
+              <li class="fragment">Poder ser compilado para varias plataformas.
+                <ul>
+                  <li>El código debe ser escrito en un lenguaje independiente de la plataforma.</li>
+                  <li>Las características usadas deben existir en las plataformas objetivo.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+
       </div>
     </div>
     <script src="assets/reveal.js"></script>

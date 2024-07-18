@@ -1,0 +1,135 @@
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 100;
+  src: url("firasans-it-100.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url("firasans-it-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url("firasans-it-700.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url("firasans-100.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("firasans-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("firasans-700.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: PHCT;
+  src: url("PHCT_FONT.ttf");
+}
+.reveal {
+  --r-main-font: "Fira Sans", sans-serif;
+  --r-heading-font: "PHCT";
+  --r-heading2-size: 1.75em;
+}
+.reveal pre {
+  width: 100%;
+}
+.reveal pre code {
+  padding: 1rem;
+}
+.reveal mark {
+  background: var(--r-italic-color);
+}
+h1 {
+  padding-bottom: 3rem;
+}
+h2 code {
+  font-size: .7em;
+}
+.txt-img {
+  display: flex;
+}
+.txt-img :is(ul, ol, dl, p):first-child {
+  font-size: smaller;
+}
+.galeria {
+  display: flex;
+  align-items: stretch;
+}
+.galeria img {
+  height: var(--a);
+  width: auto;
+}
+.galeria figcaption {
+  font-size: smaller;
+}
+.cont-img {
+  display: flex;
+  align-items: center;
+  --r-block-margin: 0;
+}
+.cont-img>:first-child {
+  flex-grow: 1;
+}
+.cont-img>img{
+  padding-inline: 1em;
+}
+.comp-codigo figure {
+  display: inline-block;
+  width: calc(50% - 2rem);
+  vertical-align: top;
+}
+.comp-codigo figure:not(:last-child){
+  margin-right: 1rem;
+}
+.lista-natural dt {
+  display: inline-block;
+}
+.lista-natural dd {
+  display: inline;
+  margin-left: 0;  
+}
+.lista-natural dt::after {
+  content: ": ";
+  white-space: preserve-spaces;
+}
+.lista-natural dd::after {
+  white-space: pre;
+  content: "\000a";
+}
+table.not-reveal {
+  color: black;
+  border: 1px black solid;
+  font-size: 1rem;
+}
+table.not-reveal :is(td, th){
+  border: 1px black solid;
+  text-align: center;
+  vertical-align: middle;
+  padding: .5em;
+}
