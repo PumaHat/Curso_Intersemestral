@@ -373,6 +373,7 @@
                   </li>
                 </ul>
               </li>
+            </ul>
           </section>
           <section>
             <h2>Anillos de protección (I)</h2>
@@ -992,9 +993,9 @@ network={
           </section>
           <section>
             <h2>Antecedentes</h2>
-            <div>
-              <strong>Todo es una secuencia o 'stream' de bytes</strong>
-              <ul>
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li><strong>Todo es una secuencia o 'stream' de bytes</strong>.</li>
                 <li>Los primeros dispositivos no reconocían archivos, solo almacenaban conjuntos de datos:
                   <ul>
                     <li><i>Analógicos</i>: discos de vinilo, cintas de casette.</li>
@@ -1002,17 +1003,17 @@ network={
                   </ul>
                 </li>
               </ul>
-            </div>
-            <div>
-              <img src="images/vinilos.png" alt="discos de vinilo">
-              <img src="images/casette.png" alt="casette">
+              <div>
+                <img style="width: 400px;" src="images/vinilos.png" alt="discos de vinilo" />
+                <img style="width: 400px;" src="images/casette.png" alt="casette" />
+              </div>
             </div>
           </section>
         </section>
         <section>
           <section>
             <h2>¿Qué es un archivo?</h2>
-            <strong>Abstracción o TAD que el SO propone para un conjunto de bytes en un dispositivo.</strong>
+            <p><strong>Abstracción o TAD que el SO propone para un conjunto de bytes en un dispositivo.</strong></p>
             <ul>
               <li>El SO expone funciones al usuario para poder manipular el contenido de un archivo (o sea, los bytes asociados) sin preocuparse de cómo se guardan éstos en el dispositivo.</li>
             </ul>
@@ -1031,9 +1032,9 @@ network={
           </section>
           <section>
             <h2>Archivos de texto y binarios</h2>
-            <strong>Los "archivos de texto" son archivos binarios que solo contienen un subconjunto de bytes, los que representan caracteres imprimibles.</strong>
+            <p><strong>Los <em>archivos de texto</em> son archivos binarios que solo contienen un subconjunto de bytes, los que representan caracteres imprimibles.</strong></p>
             <ul>
-              <li>Tradicionalmente, el conjunto de caracteres imprimibles _ASCII_.
+              <li>Tradicionalmente, el conjunto de caracteres imprimibles ASCII.
                 <ul>
                   <li>Ahora, con la adopción de Unicode, cualquier caracter Unicode válido que no sea un caracter de control.</li>
                   <li>Aunque depende del contexto.</li>
@@ -1043,41 +1044,42 @@ network={
           </section>
           <section>
             <h2>Formato de archivo</h2>
-            <strong>Los datos dentro de un archivo pueden estar ordenados de mil formas distintas, y corresponde a quien los crea decidir el orden de los datos en un archivo.</strong>
-            <ul>
-              <li>El formato de un tipo de archivo específico puede estar reglamentado por un estándar o especificación.</li>
-            </ul>
-            <img src="images/texto.png" alt="archivo de texto">
-            <img src="images/word.png" alt="archivo de texto 2">
+            <div class="cont-img">
+              <ul>
+                <li>Los datos dentro de un archivo pueden estar ordenados de mil formas distintas, y corresponde a quien los crea decidir el orden de los datos en un archivo.</li>
+                <li>El formato de un tipo de archivo específico puede estar reglamentado por un estándar o especificación.</li>
+              </ul>
+              <div>
+                <img style="width: 400px" src="images/texto.png" alt="archivo de texto" />
+                <img style="width: 400px" src="images/word.png" alt="archivo de texto 2" />
+              </div>
+            </div>
           </section>
           <section>
             <h2>Formatos libres y privativos</h2>
             <ul>
               <li>Existen formatos cuya especificación es libre y otros cuya especificación no lo es.</li>
-              <li>Existen formatos documentados, documentados a medias, y no documentados.</li>
+              <li>Existen formatos documentados, documentados a medias, no documentados...</li>
               <li>Generalmente, los formatos libres están bien documentados.</li>
             </ul>
           </section>
           <section>
             <h2>¿Cómo determinar el tipo de un archivo?</h2>
             <ul>
-              <li>
-                Extensiones de archivo
+              <li>Extensiones de archivo.
                 <ul>
-                  <li>Implementados originalmente por CP/M
-                  <ul><li>Y, por consiguiente, MS/DOS y Windows</li></ul>  
+                  <li>Implementados originalmente por CP/M.
+                    <ul><li>Y, por consiguiente, MS/DOS y Windows.</li></ul>
                   </li>
                 </ul>
               </li>
-              <li>
-                Metadatos asociados a un archivo
-                <ul><li>Mac OS y typecodes</li></ul>
+              <li>Metadatos asociados a un archivo.
+                <ul><li>Mac OS y typecodes.</li></ul>
               </li>
-              <li>Números mágicos
-                <ul><li>Forma seguida por los sistemas Unix</li></ul>
+              <li>Números mágicos.
+                <ul><li>Forma seguida por los sistemas Unix.</li></ul>
               </li>
             </ul>
-            <p><i>Hay que tener cuidado al hacer esto.</i></p>
           </section>
         </section>
         <section>
@@ -1086,21 +1088,32 @@ network={
           </section>
           <section>
             <h2>¿Qué son?</h2>
-            <strong>Los sistemas de archivos organizan archivos.</strong>
+            <p><strong>Los sistemas de archivos organizan archivos.</strong></p>
             <ul>
               <li>Algunos sistemas de archivos buscan redundancia, mayor rapidez, tolerancia a fallos o protección por cifrado.</li>
-              <li>
-                Permiten guardar diversos datos sobre los archivos: <i>"metadatos"</i>:
-                <ul><li>Nombre, permisos, fechas (de acceso, de modificación), si son de alguna categoría especial, etc.</li></ul>
+              <li>Permiten guardar diversos datos sobre los archivos: <strong>metadatos</strong>:
+                <ul>
+                  <li>Nombre, permisos, fechas (de acceso, de modificación), si son de alguna categoría especial, etc.</li>
+                  <li><strong>Ruta de archivo:</strong> existente para prácticamente cualquier SO.</li>
+                </ul>
               </li>
-              <li>
-                <strong>Ruta de archivo:</strong> existente para prácticamente cualquier SO.
+            </ul>
+          </section>
+          <section>
+            <h2>Terminología</h2>
+            <p>Hay qué diferenciar entre dos usos del término:</p>
+            <ul>
+              <li>El más común, que acabamos de ver: el de una estructura particular para organizar archivos, y datos sobre estos archivos.</li>
+              <li>Ocasionalmente, llamamos también así al sistema subyacente que tiene el kernel para reconocer archivos.
+                <ul>
+                  <li>Los sistemas de archivos de la primera definición usan como base este sistema.</li>
+                </ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>¿Cuáles existen?</h2>
-            <ul>
+            <ul style="column-count: 2;">
               <li>FAT
                 <ul>
                   <li>FAT16</li>
@@ -1128,54 +1141,34 @@ network={
             </ul>
           </section>
           <section>
-            <h2>¿A qué se parece?</h2>
-            <p>En general, la abstracción del sistema de archivos se parece a un <i>archivero de oficina</i> en la vida real.</p>
-            <p>La nomenclatura puede variar un poco, dependiendo del enfoque y del tipo de usuario final: directorios en Unix vs carpetas en Windows.
-            </p>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Sistemas de archivos virtuales</h2>
-          </section>
-          <section>
-            <h2>¿Qué son?</h2>
+            <h2>Analogía del archivero</h2>
             <ul>
-              <li>La idea de sistema de archivos tiene más usos, y puede ser usada para exponer datos que no necesariamente están en un <i>soporte</i>.</li>
-              <li>Los sistemas de archivos que funcionaban sobre datos en un soporte se categorizan ahora como <i>'sistemas de archivos de disco'</i>.
-              <ul>
-                <li>Sistemas de archivos de red: sshfs, nfs, ftp</li>
-                <li>Sistemas de archivos de propósito especial: tmpfs, swap, lufs, devfs, sysfs</li>
-              </ul>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>Ejemplos</h2>
-            <ul>
-              <li>Las rutas de una URL tienen forma de ruta de archivo, pero no necesariamente tienen que ser archivos, por eso siempre hablamos de <i>recursos</i>.</li>
-              <li><strong>Filosofía Unix:</strong> todo es un archivo.</li>
-              <li>Archivos especiales: pipas, dispositivos.</li>
-              <li><strong>FUSE:</strong> crea tu propio sistema de archivos.</li>
+              <li>En general, la abstracción del sistema de archivos se parece a un <i>archivero de oficina</i> en la vida real.</li>
+              <li>La nomenclatura puede variar un poco, dependiendo del enfoque y del tipo de usuario final: <i>directorios</i> en Unix vs <i>carpetas</i> en Windows.</li>
             </ul>
           </section>
         </section>
         <section>
           <section>
             <h2>Organización de archivos</h2>
-          </section>
-          <section>
-            <h2>Tipos de sistemas de archivos</h2>
-            <ul>
-              <li>En un sistema de archivos generalmente queremos guardar <i>muchos</i> archivos.</li>
-              <li>Existen varios tipos de sistemas de archivos, según la forma de organizar archivos:
+            <ul style="font-size: smaller;">
+              <li>En un sistema de archivos generalmente queremos guardar <em>muchos</em> archivos.
                 <ul>
-                  <li>Sistemas planos
-                    <ul><li>A pesar de lo simple, aún se usan: Amazon S3</li></ul>
+                  <li>Para manejarlos, debemos establecer una forma de organizarlos.</li>
+                </ul>
+              </li>
+              <li>Podemos clasificar los sistemas de archivos según su forma de organizar archivos:
+                <ul>
+                  <li>Sistemas planos.
+                    <ul><li>A pesar de lo simple, aún se usan: Amazon S3.</li></ul>
                   </li>
-                  <li>Sistemas con etiquetas</li>
-                  <li>Sistemas de profundidad fija</li>
-                  <li>Sistemas con <i>árbol de directorios</i></li>
+                  <li>Sistemas con etiquetas.</li>
+                  <li>Sistemas de profundidad fija.</li>
+                  <li>Sistemas con <strong>árbol de directorios</strong>.
+                    <ul>
+                      <li>Nos centraremos en estos sistemas de ahora en adelante.</li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -1183,96 +1176,170 @@ network={
           <section>
             <h2>Árbol de directorios</h2>
             <ul>
-              <li>El directorio es una estructura para agrupar archivos de forma <i>jerárquica</i>.</li>
+              <li>El directorio es una estructura para agrupar archivos de forma jerárquica.</li>
               <li>Cada directorio está dentro de otro directorio, excepto el directorio raíz.</li>
-              <li>Cada archivo o directorio (inodo) tiene una <i>ruta</i> de búsqueda que lo identifica.</li>
-              <li>Por todo lo anterior, podemos representar al sistema de archivos como un <i>grafo dirigido</i>.</li>
+              <li>Cada archivo o directorio tiene una <strong>ruta</strong> de búsqueda que lo identifica.</li>
+              <li>Por todo lo anterior, podemos representar al sistema de archivos como un <em>grafo dirigido</em>.</li>
             </ul>
           </section>
           <section>
-            <h2>Árbol de directorios</h2>
-            <div>
-              <ul>
-                <li>En muchos sistemas, cada directorio contiene dos directorios especiales:
+            <h2>Directorios especiales</h2>
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li>En muchos sistemas de archivos, cada directorio contiene dos directorios especiales:
                   <ul>
                     <li><strong>.</strong> ⇒ apunta a sí mismo</li>
                     <li><strong>..</strong> ⇒ apunta al directorio padre</li>
                   </ul>
                 </li>
+                <li>Excepto <strong>/..</strong>, que apunta a sí mismo, puesto que el directorio raíz no tiene padre.</li>
               </ul>
-            </div>
-            <div>
-              <p>Excepto <strong>/gfdg</strong>, que apunta a si mismo</p>
-              <img src="images/grafo1.png" alt="árbol de directorios">
+              <img src="images/grafo1.png" alt="Árbol de directorios" />
             </div>
           </section>
         </section>
         <section>
           <section>
-            <h2>Descriptores de archivo</h2>
+            <h2>Inodo</h2>
+            <ul>
+              <li>La estructura de un sistema de archivos que describe un objeto dentro del sistema.
+                <ul>
+                  <li>Coloquialmente, nos referimos a estos objetos como <i>archivos</i>.</li>
+                  <li>Pero, los directorios <strong>no</strong> son archivos.</li>
+                </ul>
+              </li>
+              <li>Almacenan información sobre el objeto, y su ubicación física en el soporte.</li>
+              <li>Los inodos no contienen la ruta del objeto.
+                <ul>
+                  <li>Como consecuencia, varias rutas pueden referir al mismo nodo.</li>
+                </ul>
+              </li>
+            </ul>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Ligaduras</h2>
+            <h2>Metadatos de inodo</h2>
+            <ul>
+              <li>En un sistema de archivos Unix, un inodo tiene, como mínimo, los siguientes atributos:
+                <ul style="column-count: 2;">
+                  <li>Tipo de archivo</li>
+                  <li>Contador de referencias</li>
+                  <li>UID del dueño</li>
+                  <li>GID del dueño</li>
+                  <li><i>Device ID</i>, si el inodo es un dispositivo</li>
+                  <li>Tamaño en bytes</li>
+                  <li><i>ctime</i>, <i>mtime</i> y <i>atime</i></li>
+                  <li>Número de bloques utilizados</li>
+                </ul>
+              </li>
+              <li>El comando <em>stat</em> nos da datos del inodo de una ruta.</li>
+            </ul>
           </section>
           <section>
-            <h2>Duras</h2>
+            <h2>Tipos de inodo</h2>
+            <p>En Unix, los inodos pueden representar varios tipos de objetos:</p>
+            <ul>
+              <li>Regular (-)</li>
+              <li>Directorio (d)</li>
+              <li>Enlace simbólico (l)</li>
+              <li>FIFO (p)</li>
+              <li>De bloque (b)</li>
+              <li>De caracter (c)</li>
+              <li>Socket (s)</li>
+            </ul>
           </section>
           <section>
-            <h2>Simbólicas</h2>
+            <h2>Enlaces duros</h2>
+            <ul style="font-size: smaller;">
+              <li>Todo inodo debe tener, como mínimo, una ruta para poder acceder a él.</li>
+              <li>Cuando creamos un objeto, se crea una entrada en el <em>directorio</em> que apunta a él.</li>
+              <li>Podemos crear más entradas que hagan referencia al mismo inodo en otro punto: un <strong>enlace duro</strong>.
+                <ul>
+                  <li>Les llamamos así porque generalmente los creamos a partir de otra ruta, dando la apariencia de que estamos creando una liga a esa ruta.
+                    <ul>
+                      <li>Pero todas las referencias al inodo tienen la misma categoría.</li>
+                    </ul>
+                  </li>
+                  <li>Los enlaces duros solo pueden hacerse dentro del mismo sistema de archivos.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Enlaces simbólicos</h2>
+            <ul>
+              <li>Son archivos que apuntan a una ruta.</li>
+              <li>Su contenido es la ruta a la que apuntan.</li>
+              <li>Los enlaces simbólicos no están unidos al inodo del objeto al que apuntan.
+                <ul>
+                  <li>La ruta apuntada puede no existir: tenemos entonces un <em>enlace roto</em>.</li>
+                </ul>
+              </li>
+              <li>Al acceder a una ruta de un enlace simbólico, el sistema resolverá automáticamente la ruta a la que apunta, y proveerá ese inodo.</li>
+              <li>A pesar del nombre, no tienen nada qué ver con los enlaces duros.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Enlaces simbólicos en NT</h2>
+            <div style="font-size: smaller;">
+              <p>NTFS tiene varias características similares implementadas.</p>
+              <dl class="lista-natural" style="font-size: smaller;">
+                <dt>Enlaces simbólicos</dt><dd>Muy parecidos a su contraparte en Unix.</dd>
+                <dt><i>Junction points</i></dt><dd>Una característica para directorios, que solo puede apuntar a rutas absolutas locales.</dd>
+                <dt>Accesos directos</dt><dd>Archivos regulares, que contienen información sobre un objeto. Son interpretados por el shell.</dd>
+                <dt>Objetos de shell</dt><dd>Entradas especiales entendidas por el shell para enlazar directorios, definidas en el Registro de Windows.</dd>
+              </dl>
+              <p>De todos estos, los accesos directos son los más utilizados.</p>
+            </div>
           </section>
           <section>
             <h2>Accesos directos</h2>
-          </section>
-          <section>
-            <h2>Buffers</h2>
+            <ul>
+              <li>Son archivos que contienen información sobre el archivo al que apuntan.</li>
+              <li>Tienen la extensión <code>.lnk</code> cuando apuntan a recursos locales, o <code>.url</code>, para recursos remotos.</li>
+              <li>No son implementadas por el sistema: el Explorador de Windows ejecuta la acción sobre el archivo apuntado cuando se intenta acceder al acceso directo.</li>
+            </ul>
           </section>
         </section>
         <section>
           <section>
             <h2>Montaje</h2>
-          </section>
-          <section>
-            <h2>¿Pueden existir dos sistemas de archivos al mismo tiempo?</h2>
-            <ul>
-              <li>El sistema solo puede trabajar con un sistema de archivos a la vez, dado que solo hay un árbol de directorios.</li>
+            <ul style="font-size: smaller;">
+              <li>¿Pueden existir dos sistemas de archivos al mismo tiempo?
+                <ul class="fragment">
+                  <li>El sistema solo puede trabajar con un sistema de archivos a la vez, dado que solo hay un árbol de directorios.</li>
+                </ul>
+              </li>
+              <li class="fragment">Para poder trabajar con otros sistemas de archivos, debemos <em>montarlos</em> en el sistema de archivos principal.
+                <ul>
+                  <li>Esto es <strong>hacer que un sistema de archivos esté accesible desde una ubicación determinada</strong>.</li>
+                  <li>A esa ubicación le llamamos <strong>punto de montaje</strong>: un directorio dentro del sistema de archivos principal.</li>
+                  <li>Si el punto de montaje ya tenía archivos, éstos estarán ocultos.</li>
+                </ul>
+              </li>
             </ul>
           </section>
           <section>
-            <ul>
-              <li>Para poder trabajar con otros sistemas de archivos, debemos <i>montarlos</i>.
-              <ul>
-                <li>Esto es <strong>hacer que un sistema de archivos esté accesible desde una ubicación determinada</strong>.</li>
-                <li>A esa ubicación le llamamos <strong>punto de montaje</strong>: un directorio dentro del sistema de archivos principal.</li>
-              </ul></li>
-              <li>Si el punto de montaje ya tenía archivos, éstos estarán ocultos.</li>
-            </ul>
+            <h2>fstab</h2>
+            <p>En el archivo <code>/etc/fstab</code> están listados los sistemas de archivos que el SO ya conoce, y sabe donde montar.</p>
+            <img src="images/montaje.png" alt="Sistemas de archivos montados" />
           </section>
           <section>
-            <h2>Archivo /etc/fstab</h2>
-            <p>En el archivo /etc/fstab están listados los sistemas de archivos que el SO ya conoce, y sabe donde montar.</p>
-            <img src="images/montaje.png" alt="montar Sistemas de Archivos">
-          </section>
-          <section>
+            <h2>Proceso de montaje</h2>
             <ul>
-              <li>Podemos montar cualquier tipo de sistema de archivos, sin importar su estructura subyacente, siempre y cuando haya algún <strong>controlador</strong> para dicho sistema.
-              <ul>
-                <li>Eso incluye imágenes y archivos regulares.</li>
-              </ul></li>
+              <li>Podemos montar cualquier sistema de archivos, siempre y cuando haya algún <em>controlador</em> para dicho sistema.</li>
               <li>Unix tiene dos utilidades para administrar montajes:
                 <ul>
-                  <li><strong>mount</strong> ⇒ monta sistemas de archivos.</li>
+                  <li><strong>mount</strong> ⇒ monta sistemas de archivos en un directorio.</li>
                   <li><strong>unmount</strong> ⇒ revierte esa operación.</li>
                 </ul>
               </li>
             </ul>
-            <h2 style="font-size: smaller;">mount -t ext4 -o ro,loop /tmp/imagen5.img /mnt/tmp/</h2>
+            <pre class="bash" style="font-size: smaller;"><code>mount -t ext4 -o ro,loop imagen /punto-montaje/</code></pre>
           </section>
         </section>
         <section>
           <section>
-            <h2>Permisos unix</h2>
+            <h2>Permisos Unix</h2>
           </section>
           <section>
             <h2>Propiedad</h2>
@@ -1282,43 +1349,44 @@ network={
               <li>Esto es parte del estándar POSIX.
               </li>
             </ul>
-            <img src="images/permisos.png" alt="permisos">
+            <img src="images/permisos.png" alt="Permisos" />
           </section>
           <section>
-            <h2>chown, chgrp</h2>
-            <p>Estos dos comandos nos permitirán modificar el usuario y grupo dueño de un archivo: chown y chgrp.</p>
-            <p><i>comando</i> [-RL | -h] <i>usuario|grupo objetivo</i></p>
+            <h2>chown y chgrp</h2>
             <ul>
+              <li>Estos dos comandos nos permitirán modificar el usuario y grupo dueño de un archivo: <em>chown</em> y <em>chgrp</em>.
+                <pre class="bash"><code>[comando] [-RL | -h] usuario|grupo objetivo</code></pre>
+              </li>
               <li>Parámetros específicos:
                 <ul>
-                  <li>-R aplica recursivamente</li>
-                  <li>-L atraviesa enlaces simbólicos a directorios</li>
-                  <li>-h aplica la acción sobre el enlace simbólico, en vez de sobre el objeto apuntado</li>
+                  <li><code>-R</code> aplica recursivamente.</li>
+                  <li><code>-L</code> atraviesa enlaces simbólicos a directorios.</li>
+                  <li><code>-h</code> aplica la acción sobre el enlace simbólico, en vez de sobre el objeto apuntado.</li>
                 </ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>Permisos</h2>
-            <p>Todos los archivos y directorios en un sistema Unix tienen 3 tipos de permisos básicos, que indican qué usuarios pueden operar con ellos, y cómo:</p>
-            <table>
+            <p style="font-size: smaller;">Todos los archivos y directorios en un sistema Unix tienen 3 tipos de permisos básicos, que indican qué usuarios pueden operar con ellos, y cómo:</p>
+            <table style="font-size: smaller;">
               <tr>
-                <td>Permiso</td>
-                <td>Archivos</td>
-                <td>Directorios</td>
+                <th scope="col">Permiso</th>
+                <th scope="col">Archivos</th>
+                <th scope="col">Directorios</th>
               </tr>
               <tr>
-                <td>Lectura (r)</td>
+                <th scope="row">Lectura (r)</td>
                 <td>Leer el archivo</td>
                 <td>Listar archivos dentro del directorio (ls)</td>
               </tr>
               <tr>
-                <td>Escritura (w)</td>
+                <th scope="row">Escritura (w)</td>
                 <td>Escribir sobre el archivo</td>
                 <td>Modificar entradas del directorio: crear, renombrar y borrar archivos</td>
               </tr>
               <tr>
-                <td>Ejecución (x)</td>
+                <th scope="row">Ejecución (x)</td>
                 <td>Ejecutar el archivo</td>
                 <td>Moverte al directorio (cd), o buscar dentro del directorio</td>
               </tr>
@@ -1326,10 +1394,10 @@ network={
           </section>
           <section>
             <h2>setuid y setgid</h2>
-            <p>Existe forma de otorgar ciertos permisos <i>‘elevados’</i> a un usuario común <strong>cuando ejecuta un programa</strong>.</p>
+            <p>Existe forma de otorgar ciertos permisos elevados a un usuario común <strong>cuando ejecuta un programa</strong>.</p>
             <ul>
-              <li><strong>Sobre ejecutables:</strong> otorga al usuario los permisos del dueño del ejecutable (setuid), o del grupo (setgid).</li>
-              <li><strong>Sobre directorios:</strong> setuid es ignorado, setgid obliga a que todos los archivos dentro del directorio tengan el mismo grupo dueño.</li>
+              <li><b>Sobre ejecutables</b>: otorga al usuario los permisos del dueño del ejecutable (setuid), o del grupo (setgid).</li>
+              <li><b>Sobre directorios</b>: setuid es ignorado, setgid obliga a que todos los archivos dentro del directorio tengan el mismo grupo dueño.</li>
             </ul>
           </section>
           <section>
@@ -1337,24 +1405,25 @@ network={
             <ul>
               <li>Dos permisos diferentes, en realidad:
                 <ul>
-                  <li><strong>Sobre ejecutables:</strong> hace que un ejecutable se quede residente en memoria principal.</li>
-                  <li><strong>Sobre directorios:</strong> evita que un usuario modifique detalles sobre archivos que no posee.</li>
+                  <li><strong>Sobre ejecutables</strong>: hace que un ejecutable se quede residente en memoria principal.</li>
+                  <li><strong>Sobre directorios</strong>: evita que un usuario modifique detalles sobre archivos que no posee.</li>
                 </ul>
               </li>
               <li>El uso sobre ejecutables ya no se implementa en casi ningún sistema Unix.
-                <ul><li>Sí en UnixWare y HP-UX</li></ul>
+                <ul><li>Sí en UnixWare y HP-UX.</li></ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>chmod</h2>
-            <p>El comando para modificar permisos en archivos es <i>chmod</i>.</p>
-            <p>chmod <i>permisos objetivo</i></p>
             <ul>
+              <li>El comando para modificar permisos en archivos es <em>chmod</em>.
+                <pre><code>chmod [permisos] [objetivo]</code></pre>
+              </li>
               <li>Parámetros específicos:
                 <ul>
-                  <li>-R aplica recursivamente</li>
-                  <li>-L atraviesa enlaces simbólicos a directorios</li>
+                  <li><code>-R</code> aplica recursivamente.</li>
+                  <li><code>-L</code> atraviesa enlaces simbólicos a directorios.</li>
                   <li>chmod no cambia permisos de enlaces simbólicos, puesto que éstos nunca se ocupan en el sistema.</li>
                 </ul>
               </li>
@@ -1363,73 +1432,83 @@ network={
         </section>
         <section>
           <section>
-            <h2>Notación</h2>
+            <h2>Notación de permisos</h2>
           </section>
           <section>
             <h2>Notación numérica o absoluta</h2>
             <p>Consiste en un número octal de tres dígitos, un dígito por agente.</p>
-            <img src="images/numerica.png" alt="notación numérica">
+            <img src="images/numerica.png" alt="Notación numérica" />
           </section>
           <section>
-            <h2>Operaciones con chmod</h2>
-            <p>Establecer permisos base con chmod es sencillo, ejemplos:</p>
+            <h2>Operaciones con chmod (I)</h2>
             <ul>
-              <li> chmod 644 archivo.txt</li>
-            </ul>
-            <p>Establecer los bits setuid, setgid y sticky se hace anteponiendo un dígito octal que establece los tres permisos en el orden descrito:</p>
-            <ul>
-              <li>chmod 1644 archivo.txt</li>
+              <li>Establecer permisos base con chmod es sencillo, ejemplo:
+                <pre><code>chmod 644 archivo.txt</code></pre>
+              </li>
+              <li>Establecer los bits setuid, setgid y sticky se hace anteponiendo un dígito octal que establece los tres permisos en el orden descrito:
+                <pre><code>chmod 1644 archivo.txt</code></pre>
+              </li>
             </ul>
           </section>
           <section>
             <h2>Notación simbólica</h2>
-            <p>Consiste en una cadena de letras, donde cada letra especifica un permiso. Además, incluye otros datos.</p>
-            <img src="images/simbolica.png" alt="notación simbólica">
+            <div class="r-stack">
+              <div>
+                <p>Consiste en una cadena de letras, donde cada letra especifica un permiso. Además, incluye otros datos.</p>
+                <img src="images/simbolica.png" alt="notación simbólica" />
+              </div>
+              <ul class="fragment" style="background-color: var(--r-background-color); font-size: smaller;">
+                <li>En la posición para indicar el permiso ejecutable, pueden haber otros caracteres, dependiendo de si los bits especiales están activos:
+                  <ul>
+                    <li>Si setuid o setgid están activos: s o S, dependiendo de si el archivo es o no ejecutable.</li>
+                    <li>Si sticky está activo, t o T, dependiendo de si el archivo es o no ejecutable.</li>
+                  </ul>
+                </li>
+                <li>Pueden aparecer estos símbolos al final:
+                  <ul>
+                    <li>+ si existen permisos adicionales.</li>
+                    <li>- si existe un contexto SELinux.</li>
+                    <li>@ si existen atributos de archivos extendidos.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </section>
           <section>
+            <h2>Operaciones con chmod (II)</h2>
+            <p>En vez de simplemente establecer todos los permisos, podemos añadir o quitar solo algunos a voluntad:</p>
             <ul>
-              <li>En la posición para indicar el permiso ejecutable, pueden haber otros caracteres, que depende de si los bits especiales están activos:
+              <li>Añadir permisos:
+                <pre class="inline-code bash"><code data-trim="">chmod tipos+permisos</code></pre>
+              </li>
+              <li>Quitar permisos:
+                <pre class="inline-code bash"><code data-trim="">chmod tipos-permisos</code></pre>
+              </li>
+              <li>Establecer permisos:
+                <pre class="inline-code bash"><code data-trim="">chmod tipos=permisos</code></pre>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Sistemas de archivos virtuales</h2>
+            <ul>
+              <li>Hasta ahora hemos hablado de sistemas de archivos que funcionan con datos en un <em>soporte físico</em>: son los <strong>sistemas de archivos de disco</strong>.</li>
+              <li>Pero la analogía del archivero tiene más usos, y puede ser usada para exponer datos que no necesariamente están en un soporte.
                 <ul>
-                  <li>Si setuid o setgid están activos: s o S, dependiendo de si el archivo es o no ejecutable</li>
-                  <li>Si sticky está activo, t o T, dependiendo de si el archivo es o no ejecutable</li>
+                  <li><strong>Sistemas de archivos de red</strong>: sshfs, nfs, ftpfs, ...</li>
+                  <li><strong>Sistemas de archivos de propósito especial</strong>: tmpfs, swap, lufs, devfs, sysfs, ...</li>
                 </ul>
               </li>
-              <li>Pueden aparecer estos símbolos al final:
-                <ul>
-                  <li>+ si existen permisos adicionales
-                  </li>
-                  <li>- si existe un contexto SELinux
-                  </li>
-                  <li>@ si existen atributos de archivos extendidos</li>
-                </ul>
-              </li>
             </ul>
           </section>
           <section>
-            <h2>Operaciones con chmod</h2>
-            <p>Añadir permisos:</p>
+            <h2>Ejemplos</h2>
             <ul>
-              <li><i>tipos+permisos</i></li>
-            </ul>
-            <p>Quitar permisos:</p>
-            <ul>
-              <li><i>tipos-permisos</i></li>
-            </ul>
-            <p>Establecer permisos:</p>
-            <ul>
-              <li><i>tipos=permisos</i></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Tipo de inodo</h2>
-            <ul>
-              <li>Regular (-)</li>
-              <li>Directorio (d)</li>
-              <li>Enlace simbólico (l)</li>
-              <li>FIFO (p)</li>
-              <li>De bloque (b)</li>
-              <li>De caracter (c)</li>
-              <li>Socket (s)</li>
+              <li>Las rutas de una URL tienen forma de ruta de archivo, pero no necesariamente tienen que ser archivos, por eso siempre hablamos de <i>recursos</i>.</li>
+              <li><strong>Filosofía Unix:</strong> todo es un archivo.</li>
+              <li><strong>FUSE:</strong> crea tu propio sistema de archivos.</li>
             </ul>
           </section>
         </section>

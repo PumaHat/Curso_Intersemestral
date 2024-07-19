@@ -71,12 +71,6 @@ h1 {
 h2 code {
   font-size: .7em;
 }
-.txt-img {
-  display: flex;
-}
-.txt-img :is(ul, ol, dl, p):first-child {
-  font-size: smaller;
-}
 .galeria {
   display: flex;
   align-items: stretch;
@@ -132,4 +126,11 @@ table.not-reveal :is(td, th){
   text-align: center;
   vertical-align: middle;
   padding: .5em;
+}
+.reveal .inline-code {
+  width: unset;
+  display: inline-block;
+  vertical-align: middle;
+  --r-block-margin: 6px;
+  margin-left: 1em;
 }
