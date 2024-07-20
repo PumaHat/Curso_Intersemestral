@@ -116,7 +116,7 @@
               </li>
             </ul>
           </section>
-          <section>
+          <section id="unix_i">
             <h2>Unix (I)</h2>
             <ul>
               <li>Unix nació en 1969, en los Laboratorios Bell.</li>
@@ -2023,72 +2023,66 @@ network={
         </section>
         <!--CUARTO TEMA-->
         <section>
-          <section> 
-            <h1>Terminal (bash)</h1>
+          <section>
+            <h2>Tema 4:<br />Shells y bash</h2>
           </section>
           <section>
             <h2>Shell</h2>
-            <p>Una <i>shell</i> o <i>intérprete</i> de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de <i>forma interactiva</i> como por <i>lotes</i>.</p>
-            <img src="images/shell.png" alt="shell">
+            <div class="cont-img">
+              <p>Una <strong>shell</strong> o <strong>intérprete</strong> de línea de comandos, es un programa que permite enviar comandos al sistema, normalmente, tanto de <em>forma interactiva</em> como <em>por lotes</em>.</p>
+              <img style="width: 400px;" src="images/shell.png" alt="shell" />
+            </div>
           </section>
           <section>
             <h2>Terminales</h2>
-            <p>La primera forma de interactuar con una shell es mediante una <i>terminal</i>: interfaz de texto que permite introducir comandos y mostrar el resultado.</p>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Tipos de terminales</h2>
-            <h3>Terminales de hardware</h3>
-            <ul>
-              <li>Teletipos</li>
-              <li>VDUs</li>
-            </ul>
-            <h3>Terminales de software</h3>
-            <ul>
-              <li>Terminales de texto</li>
-              <li>Emuladores de terminal</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Terminales hardware</h2>
-          </section>
-          <section>
-            <h2>Teletipo</h2>
-            <p>Las terminales actuales basan su funcionamiento en la forma en la que trabajan los <i>teletipos</i>: dispositivos para enviar mensajes.</p>
-            <img src="images/teletipos.png" alt="teletipos"> 
-          </section>
-          <section>
-            <h2>Teletype Model 33</h2>
-            <ul>
-              <li>Diseñado en 1963 por Teletype Corp.</li>
-              <li>Bajo precio: fue muy popular entre las minicomputadoras.</li>
-              <li>Fue de las primeras en usar (y popularizar) ASCII.</li>
-              <li>Solo permitía mayúsculas, lo que influyó en la sintaxis de muchos lenguajes.</li>
-              <li>BASIC fue diseñado específicamente para escribirse en este teletipo.</li>
-              <li>Tomlinson usó el símbolo @ para las direcciones de correo por que estaba disponible en este teletipo.
+            <p>La primera forma de interactuar con una shell es mediante una <strong>terminal</strong>: interfaz de texto que permite introducir comandos y mostrar el resultado.</p>
+            <ul class="comparador">
+              <li>Terminales de hardware
+                <ul>
+                  <li>Teletipos</li>
+                  <li>VDUs</li>
+                </ul>
+              </li>
+              <li>Terminales de software
+                <ul>
+                  <li>Terminales de texto</li>
+                  <li>Emuladores de terminal</li>
+                </ul>
               </li>
             </ul>
           </section>
           <section>
-            <h2>Teletype Model 33</h2>
-            <img src="images/tele33.png" alt="Teletype Model 33">
+            <h2>Teletipo</h2>
+            <div class="cont-img">
+              <p>Las terminales actuales basan su funcionamiento en la forma en la que trabajan los <em>teletipos</em>: dispositivos para enviar mensajes.</p>
+              <img src="images/teletipos.png" alt="teletipos" />
+            </div>
           </section>
           <section>
-            <h2>Terminales software</h2>
+            <h2>Teletype Model 33</h2>
+            <div class="cont-img" style="font-size: smaller;">
+              <ul style="font-size: smaller">
+                <li>Diseñado en 1963 por Teletype Corp.</li>
+                <li>Bajo precio: fue muy popular entre las minicomputadoras.</li>
+                <li>Fue de las primeras en usar (y popularizar) ASCII.</li>
+                <li>Solo permitía mayúsculas, lo que influyó en la sintaxis de muchos lenguajes: BASIC, por ejemplo.</li>
+                <li>Tomlinson usó el símbolo @ para las direcciones de correo por que estaba disponible en este teletipo.</li>
+              </ul>
+              <img src="images/tele33.png" alt="Teletype Model 33" />
+            </div>
           </section>
           <section>
             <h2>Terminal de texto</h2>
-            <ul>
-              <li>En Unix, la terminal o consola de texto es el componente del sistema que nos permite interactuar con un shell.</li>
+            <ul style="font-size: smaller;">
+              <li>También llamada <em>consola</em>, es el componente del sistema que nos permite interactuar con una shell.</li>
               <li>Prácticamente las terminales soportan caracteres comodín, tuberías, sintaxis HERE, substitución de comandos, variables, y estructuras de control para iteraciones y condicionales.</li>
-              <li>Dado a que es un software, el sistema nos provee de varias terminales virtuales, accesibles desde /dev/ttyx</li>
+              <li>Dado a que es un software, el sistema nos provee de varias terminales virtuales, accesibles desde <code>/dev/tty<var>x</var></code>.</li>
               <li>Y desde C-M-&lt;fx&gt; (Ctrl-Alt-&lt;Fx&gt;)</li>
             </ul>
           </section>
           <section>
             <h2>Emulador de terminal</h2>
-            <p>En entornos gráficos, también podemos mostrar una <strong>terminal</strong> dentro de una ventana gráfica. El programa que permite esto es el <i>emulador de terminal</i>.</p>
+            <p>En entornos gráficos, también podemos mostrar una terminal de texto dentro de una ventana gráfica. El programa que permite esto es el <strong>emulador de terminal</strong>.</p>
           </section>
           <section>
             <h2>Emuladores más populares</h2>
@@ -2102,66 +2096,51 @@ network={
               <li>xterm y term</li>
             </ul>
           </section>
-        </section>
-        <section>
           <section>
             <h2>Tipos de shells</h2>
-            <ul>
-              <li>Basadas en Bourne-shell</li>
-              <li>Basadas en C-shell</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Basadas en Bourne-shell</h2>
-            <p>Creada en 1979 en los Bell Labs. Es la familia más popular hoy en día. Varios detalles, como el uso de $, fueron propuestos por éste.</p>
-            <ul>
-              <li>Alquimist shell (ash y dash)</li>
-              <li>Bourne-again shell (bash)</li>
-              <li>Korn shell (ksh)</li>
-              <li>Z shell (zsh)</li>
-              <li>Friendly-interactive shell (fish)</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Basadas en C-shell</h2>
-            <p>Creada en la Universidad de Berkeley, toma su sintaxis del lenguaje C.</p>
-            <p>La shell más utilizada es tcsh.</p>
+            <table style="font-size: smaller;">
+              <tr>
+                <th scope="col">Basadas en Bourne-shell</th>
+                <th scope="col">Basadas en C-shell</th>
+              </tr>
+              <tr>
+                <td>
+                  <p>Creada en 1979 en los Bell Labs. Es la familia más popular hoy en día. Varios detalles, como el uso de $, fueron propuestos por éste.</p>
+                  <ul>
+                    <li>Alquimist shell (ash y dash)</li>
+                    <li>Bourne-again shell (bash)</li>
+                    <li>Korn shell (ksh)</li>
+                    <li>Z shell (zsh)</li>
+                    <li>Friendly-interactive shell (fish)</li>
+                  </ul>
+                </td>
+                <td>
+                  <p>Creada en la Universidad de Berkeley, toma su sintaxis del lenguaje C.</p>
+                  <p>La shell más utilizada es tcsh.</p>
+                </td>
+              </tr>
+            </table>
           </section>
         </section>
         <section>
           <section>
-            <h1>Bash</h1>
-            <img src="images/bash.png" alt="bash">
-          </section>
-          <section>
-            <h2>Generalidades</h2>
-            <ul>
-              <li>Bash es el emulador de terminal del proyecto GNU.</li>
-              <li>Creado por Brian Fox en 1989.</li>
-              <li>Es la shell más popular en los sistemas Linux.</li>
-              <li>Bash cumple todas las características descritas por POSIX, pero incluye muchas extensiones</li>
-              <li><a href="https://devhints.io/bash">Cheatsheet de la sintaxis</a></li>
-            </ul>
+            <h2>Bash</h2>
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li>Bash es el emulador de terminal del proyecto GNU.</li>
+                <li>Creado por Brian Fox en 1989.</li>
+                <li>Es la shell más popular en los sistemas Linux.</li>
+                <li>Bash cumple todas las características descritas por POSIX, pero incluye muchas extensiones.</li>
+                <li><a href="https://devhints.io/bash">Cheatsheet de la sintaxis</a>.</li>
+              </ul>
+              <img style="width: 400px;" src="images/bash.png" alt="bash" />
+            </div>
           </section>
         </section>
         <!--QUINTO TEMA-->
         <section>
           <section>
-            <h1>Comandos de terminal</h1>
-          </section>
-          <section>
-            <h2>Generalidades</h2>
-          </section>
-          <section>
-            <h2>Caracteristicas</h2>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Historia</h2>
-          </section>
-          <section>
-            <h2>Unix</h2>
+            <h2>Tema 5:<br />Comandos de terminal</h2>
           </section>
         </section>
         <section>
@@ -2178,9 +2157,9 @@ network={
                 </ul>
               </li>
             </ul>
+            <p><a href="#/unix_i">Regresar</a></p>
           </section>
         </section>
-
       </div>
     </div>
     <script src="assets/reveal.js"></script>

@@ -137,3 +137,15 @@ table.not-reveal :is(td, th){
 .reveal .r-stack .fragment:is(ul, ol, dl) {
   background-color: var(--r-background-color);
 }
+.reveal ul.comparador {
+  display: flex;
+  gap: .5em;
+  font-size: .9em;
+}
+.reveal ul.comparador>li {
+  list-style-type: none;
+  font-weight: bold;
+}
+.reveal ul.comparador>li>ul {
+  font-weight: normal;
+}
