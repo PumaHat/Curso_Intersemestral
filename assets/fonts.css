@@ -134,3 +134,6 @@ table.not-reveal :is(td, th){
   --r-block-margin: 6px;
   margin-left: 1em;
 }
+.reveal .r-stack .fragment:is(ul, ol, dl) {
+  background-color: var(--r-background-color);
+}

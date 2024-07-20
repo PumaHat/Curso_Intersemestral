@@ -1457,7 +1457,7 @@ network={
                 <p>Consiste en una cadena de letras, donde cada letra especifica un permiso. Además, incluye otros datos.</p>
                 <img src="images/simbolica.png" alt="notación simbólica" />
               </div>
-              <ul class="fragment" style="background-color: var(--r-background-color); font-size: smaller;">
+              <ul class="fragment" style="font-size: smaller;">
                 <li>En la posición para indicar el permiso ejecutable, pueden haber otros caracteres, dependiendo de si los bits especiales están activos:
                   <ul>
                     <li>Si setuid o setgid están activos: s o S, dependiendo de si el archivo es o no ejecutable.</li>
@@ -1515,41 +1515,41 @@ network={
         <!--TERCER TEMA-->
         <section>
           <section>
-            <h1>Sistemas de Paquetes</h1>
+            <h2>Tema 3:<br />Sistemas de paquetes</h2>
           </section>
           <section>
             <h2>Introducción</h2>
             <ul>
-              <li>El sistema operativo no realiza funciones útiles para el usuario per se
+              <li>El sistema operativo no realiza funciones útiles para el usuario per se.
                 <ul>
                   <li>Se limita a gestionar los recursos del sistema…
                   </li>
                   <li>…y a proveer interfaces comunes para éstos.</li>
                 </ul>
               </li>
-              <li>Necesita de sistemas para realizar tareas específicas para el usuario: aplicaciones
+              <li>Necesita de sistemas para realizar tareas específicas para el usuario: <em>aplicaciones</em>.
                 <ul>
-                  <li>Necesita de sistemas para administrar los sistemas anteriores, o realizar tareas de apoyo: utilidades.
-                  </li>
+                  <li>Necesita de sistemas para administrar los sistemas anteriores, o realizar tareas de apoyo: <em>utilidades</em>.</li>
                 </ul>
               </li>
             </ul>
           </section>
           <section>
-            <img src="images/GRUB.png" alt="GRUB">
-            <p>Fig: GRUB: una especie de SO con solo una interfaz de línea de comandos</p>
+            <figure>
+              <img class="r-stretch" src="images/GRUB.png" alt="GRUB" />
+              <figcaption>GRUB: una especie de SO con solo una interfaz de línea de comandos.</figcaption>
+            </figure>
           </section>
         </section>
         <section>
           <section>
             <h2>¿Sistemas o programas?</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>Nótese que no hablamos de programas de aplicación, o programas de utilidades, sino de sistemas de aplicación y sistemas de utilidades.
               </li>
               <li>Hay qué notar la diferencia entre conceptos, será importante:
                 <ul>
-                  <li>Un programa es un conjunto de instrucciones: un ejecutable… o bibliotecas con código ejecutable.
-                  </li>
+                  <li>Un programa es un conjunto de instrucciones: un ejecutable… o bibliotecas con código ejecutable.</li>
                   <li>Un sistema puede ser un programa (generalmente lo es), pero no tiene por qué serlo.
                     <ul>
                       <li>Ejemplos: packs de íconos, documentación.</li>
@@ -1560,7 +1560,7 @@ network={
             </ul>
           </section>
           <section>
-            <h2>Sistemas</h2>
+            <h2>Sistema</h2>
             <ul>
               <li>Un sistema se organiza generalmente en varios archivos, con distintas funcionalidades.
                 <ul>
@@ -1578,79 +1578,91 @@ network={
           </section>
           <section>
             <h2>Filesystem Hierarchy Standard</h2>
-            <div>
-              <ul>
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
                 <li>Estándar que especifica la estructura de los directorios en el sistema de archivos de un sistema Unix.</li>
-                <li>Las distribuciones Linux popularizaron el estándar.</li>
-                <li>La mayor parte de las distribuciones lo siguen, con cambios menores.</li>
+                <li>La mayor parte de las distribuciones Linux lo siguen, con cambios menores.</li>
               </ul>
-            </div>
-            <div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png" alt="tmp">
+              <img style="width: 400px;" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ubuntu_Filesystem_Hierarchy.png" alt="Estructura de un sistema FHS" />
             </div>
           </section>
           <section>
-            <ul>
-              <li>/: directorio raíz.</li>
-              <li>/bin: ejecutables que deben estar disponibles en modo monousuario.</li>
-              <li>/boot: archivos para el arranque.</li>
-              <li>/dev: inodos de dispositivo.</li>
-              <li>/etc: archivos de configuración.</li>
-              <li>/home: directorios personales de usuarios.</li>
-              <li>/lib: bibliotecas para los ejecutables en /bin.</li>
-              <li>/lib&lt;qual&gt;: bibliotecas específicas para los ejecutables en /bin, en sistemas que soportan más de un formato ejecutable.</li>
-            </ul>
+            <h2>Directorios FHS (I)</h2>
+            <dl style="font-size: smaller">
+              <dt>/</dt><dd>directorio raíz y <strong>jerarquía primaria</strong>: adminnistrado por el sistema.</dd>
+              <dt>/bin</dt><dd>ejecutables que deben estar disponibles en modo monousuario.</dd>
+              <dt>/boot</dt><dd>archivos para el arranque.</dd>
+              <dt>/dev</dt><dd>inodos de dispositivo.</dd>
+              <dt>/etc</dt><dd>archivos de configuración.</dd>
+              <dt>/home</dt><dd>directorios personales de usuarios.</dd>
+            </dl>
           </section>
           <section>
-            <ul>
-              <li>/media: puntos de montaje para dispositivos removibles.</li>
-              <li>/mnt: puntos de montaje.</li>
-              <li>/opt: paquetes de aplicación variados.</li>
-              <li>/proc: sistemas de archivos virtuales que exponen información sobre procesos y el kernel.</li>
-              <li>/root: directorio personal del superusuario.</li>
-              <li>/run: información sobre la sesión existente del sistema.</li>
-              <li>/sbin: ejecutables para la administración del sistema.</li>
-            </ul>
+            <h2>Directorios FHS (II)</h2>
+            <dl style="font-size: smaller">
+              <dt>/lib</dt><dd>bibliotecas para los ejecutables en /bin.</dd>
+              <dt>/lib&lt;qual&gt;</dt><dd>bibliotecas específicas para los ejecutables en /bin, en sistemas que soportan más de un formato ejecutable.</dd>
+              <dt>/media</dt><dd>puntos de montaje para dispositivos removibles.</dd>
+              <dt>/mnt</dt><dd>puntos de montaje.</dd>
+              <dt>/opt</dt><dd>paquetes de aplicación variados.</dd>
+              <dt>/proc</dt><dd>sistemas de archivos virtuales que exponen información sobre procesos y el kernel.</dd>
+            </dl>
           </section>
           <section>
-            <ul>
-              <li>/srv: datos que el sistema puede servir.</li>
-            <li>/sys: informaci&oacute;n sobre dispositivos y sus controladores.</li>
-            <li>/tmp: archivos temporales.</li>
-            <li>/usr: jerarqu&iacute;a secundaria: directorios para software de aplicaci&oacute;n y de utilidad administrados por el administrador de paquetes.</li>
-            <li>/usr/bin: ejecutables del software de aplicaci&oacute;n y de utilidad.</li>
-            <li>/usr/include: archivos de cabecera de C y C++.</li>
-            <li>/usr/lib: an&aacute;logo de /lib para ejecutables en /usr/bin.</li>
-            </ul>
+            <h2>Directorios FHS (III)</h2>
+            <dl style="font-size: smaller">
+              <dt>/root</dt><dd>directorio personal del superusuario.</dd>
+              <dt>/run</dt><dd>información sobre la sesión existente del sistema.</dd>
+              <dt>/sbin</dt><dd>ejecutables para la administración del sistema.</dd>
+              <dt>/srv</dt><dd>datos que el sistema puede servir.</dd>
+              <dt>/sys</dt><dd>información sobre dispositivos y sus controladores.</dd>
+              <dt>/tmp</dt><dd>archivos temporales.</dd>
+            </dl>
           </section>
           <section>
-            <ul>
-              <li>/usr/libexec: ejecutables que no est&aacute;n pensados.</li>
-              <li>/usr/lib&lt;qual&gt;: an&aacute;logo de /lib&lt;qual&gt; para ejecutables en /usr/bin.</li>
-              <li>/usr/local: jerarqu&iacute;a terciaria: directorios para software de aplicaci&oacute;n y de utilidad administrados por el administrador de sistema.</li>
-              <li>/usr/sbin: an&aacute;logo de /sbin.</li>
-              <li>/usr/share: archivos de datos de aplicaci&oacute;n.</li>
-              <li>/usr/src: c&oacute;digo fuente.</li>
-              <li>/var: directorio para datos variables de una aplicaci&oacute;n.</li>
-              <li>/var/cache: archivos de cach&eacute;.</li>
-            </ul>
+            <h2>Directorios FHS (IV)</h2>
+            <dl style="font-size: smaller">
+              <dt>/usr</dt><dd><strong>jerarquía secundaria</strong>: directorios para software de aplicación y de utilidad administrados por el administrador de paquetes.</dd>
+              <dt>/usr/bin</dt><dd>ejecutables del software de aplicación y de utilidad.</dd>
+              <dt>/usr/include</dt><dd>archivos de cabecera de C y C++.</dd>
+              <dt>/usr/lib</dt><dd>análogo de /lib para ejecutables en /usr/bin.</dd>
+              <dt>/usr/libexec</dt><dd>ejecutables que no están pensados para ejecutarse por sí mismos.</dd>
+            </dl>
           </section>
           <section>
-            <ul>
-              <li>/var/lib: archivos de estados de programas.</li>
-              <li>/var/lock: archivos de bloqueo, representan recursos en uso.</li>
-              <li>/var/log: archivos de logs.</li>
-              <li>/var/mail: correos electr&oacute;nicos del usuario en espera de ser le&iacute;dos.</li>
-              <li>/var/spool: cola para tareas a procesar.</li>
-              <li>/var/tmp: archivos temporales que no deben borrarse entre reinicios.</li>
-            </ul>
+            <h2>Directorios FHS (V)</h2>
+            <dl style="font-size: smaller">
+              <dt>/usr/lib&lt;qual&gt;</dt><dd>análogo de /lib&lt;qual&gt; para ejecutables en /usr/bin.</dd>
+              <dt>/usr/local</dt><dd><strong>jerarquía terciaria</strong>: directorios para software de aplicación y de utilidad administrados por el administrador de sistema.</dd>
+              <dt>/usr/sbin</dt><dd>análogo de /sbin.</dd>
+              <dt>/usr/share</dt><dd>archivos de datos de aplicación.</dd>
+              <dt>/usr/src</dt><dd>código fuente.</dd>
+            </dl>
+          </section>
+          <section>
+            <h2>Directorios FHS (VI)</h2>
+            <dl style="font-size: smaller">
+              <dt>/var</dt><dd>directorio para datos variables de una aplicación.</dd>
+              <dt>/var/cache</dt><dd>archivos de caché.</dd>
+              <dt>/var/lib</dt><dd>archivos de estados de programas.</dd>
+              <dt>/var/lock</dt><dd>archivos de bloqueo, representan recursos en uso.</dd>
+              <dt>/var/log</dt><dd>archivos de logs.</dd>
+              <dt>/var/mail</dt><dd>correos electrónicos del usuario en espera de ser leídos.</dd>
+            </dl>
+          </section>
+          <section>
+            <h2>Directorios FHS (VII)</h2>
+            <dl style="font-size: smaller;">
+              <dt>/var/spool</dt><dd>cola para tareas a procesar.</dd>
+              <dt>/var/tmp</dt><dd>archivos temporales que no deben borrarse entre reinicios.</dd>
+            </dl>
           </section>
         </section>
         <section>
           <section>
             <h2>Configuracion de usuario</h2>
             <ul>
-              <li>Los directorios especificados por FSH en general solo son modificables por el sistema.
+              <li>Los directorios especificados por FHS en general solo son modificables por el sistema.
                 <ul>
                   <li>Un no-superusuario no puede personalizar su propia configuración en estos directorios.
                   </li>
@@ -1665,14 +1677,14 @@ network={
           </section>
           <section>
             <h2>XDG Base Directory Specification</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>El proyecto Freedesktop.org propuso un estándar para especificar directorios para datos de un sistema específicos para un usuario:
                 <ul>
-                  <li>XDG_DATA_HOME ($HOME/.local/share): /usr/share</li>
-                  <li>XDG_CONFIG_HOME ($HOME/.config): /etc</li>
-                  <li>XDG_STATE_HOME ($HOME/.local/state): /var/lib</li>
-                  <li>XDG_CACHE_HOME ($HOME/.cache): /var/cache</li>
-                  <li>XDG_RUNTIME_DIR</li>
+                  <li><code>XDG_DATA_HOME</code> ($HOME/.local/share): /usr/share</li>
+                  <li><code>XDG_CONFIG_HOME</code> ($HOME/.config): /etc</li>
+                  <li><code>XDG_STATE_HOME</code> ($HOME/.local/state): /var/lib</li>
+                  <li><code>XDG_CACHE_HOME</code> ($HOME/.cache): /var/cache</li>
+                  <li><code>XDG_RUNTIME_DIR</code></li>
                 </ul>
               </li>
             </ul>
@@ -1681,16 +1693,14 @@ network={
             <ul>
               <li>Y también para especificar directorios para los datos personales del usuario:
                 <ul>
-                  <li>XDG_DESKTOP_DIR ($HOME/Desktop)
-                  </li>
-                  <li>XDG_DOCUMENTS_DIR ($HOME/Documents)</li>
-                  <li>XDG_DOWNLOAD_DIR ($HOME/Downloads)</li>
-                  <li>XDG_MUSIC_DIR ($HOME/Music)
-                  </li>
-                  <li>XDG_PICTURES_DIR ($HOME/Pictures)</li>
-                  <li>XDG_PUBLICSHARE_DIR ($HOME/Public)</li>
-                  <li>XDG_TEMPLATES_DIR ($HOME/Templates)</li>
-                  <li>XDG_VIDEOS_DIR ($HOME/Videos)</li>
+                  <li><code>XDG_DESKTOP_DIR</code> ($HOME/Desktop)</li>
+                  <li><code>XDG_DOCUMENTS_DIR</code> ($HOME/Documents)</li>
+                  <li><code>XDG_DOWNLOAD_DIR</code> ($HOME/Downloads)</li>
+                  <li><code>XDG_MUSIC_DIR</code> ($HOME/Music)</li>
+                  <li><code>XDG_PICTURES_DIR</code> ($HOME/Pictures)</li>
+                  <li><code>XDG_PUBLICSHARE_DIR</code> ($HOME/Public)</li>
+                  <li><code>XDG_TEMPLATES_DIR</code> ($HOME/Templates)</li>
+                  <li><code>XDG_VIDEOS_DIR</code> ($HOME/Videos)</li>
                 </ul>
               </li>
             </ul>
@@ -1699,16 +1709,11 @@ network={
         <section>
           <section>
             <h2>Paquete</h2>
-            <ul>
-              <li>Para instalar un sistema en el SO, los archivos que le pertenecen deben ubicarse según las convenciones descritas arriba.
-                <ul>
-                  <li>Tarea muy engorrosa si se hiciese a mano.</li>
-                </ul>
-              </li>
-              <li>Para ser distribuidos, todos estos archivos se recopilan en <i>paquetes</i> con un formato determinado.</li>
-              <li>Además de los archivos propios del proyecto, un paquete suele contener metadatos sobre el sistema, e instrucciones para realizar las operaciones sobre el paquete.
-              </li>
-              <li>Los paquetes no se manejan manualmente, normalmente son usados por un <i>administrador de paquetes</i>.
+            <ul style="font-size: smaller;">
+              <li>Para instalar un sistema en el SO, los archivos que lo componen deben ubicarse según las convenciones descritas arriba.</li>
+              <li>Para ser distribuidos, todos estos archivos se recopilan en <strong>paquetes</strong> con un <em>formato determinado</em>.</li>
+              <li>Además de los archivos propios del proyecto, un paquete suele contener metadatos sobre el sistema, e instrucciones para realizar las operaciones sobre el paquete.</li>
+              <li>Los paquetes no se manejan manualmente, normalmente son usados por un <strong>administrador de paquetes</strong>.
               </li>
             </ul>
           </section>
@@ -1718,12 +1723,12 @@ network={
               <li>Sistema que automatiza la administración <strong>de paquetes de forma consistente</strong>.</li>
               <li>¿Qué es administrar un paquete?
                 <ul>
-                  <li>Obtenerlos</li>
-                  <li>Instalarlos</li>
-                  <li>Configurarlos</li>
-                  <li>Actualizarlos</li>
-                  <li>Eliminarlos</li>
-                  <li>Gestionar dependencias entre ellos</li>
+                  <li class="fragment">Obtenerlos</li>
+                  <li class="fragment">Instalarlos</li>
+                  <li class="fragment">Configurarlos</li>
+                  <li class="fragment">Actualizarlos</li>
+                  <li class="fragment">Eliminarlos</li>
+                  <li class="fragment">Gestionar dependencias entre ellos</li>
                 </ul>
               </li>
             </ul>
@@ -1731,55 +1736,57 @@ network={
           <section>
             <h2>Diferencias con un instalador</h2>
             <table style="font-size: smaller;">
+              <col style="width: 50%" />
+              <col style="width: 50%" />
               <tr>
-                <td>Instalador</td>
-                <td>ADP</td>
+                <th scope="col">Instalador</th>
+                <th scope="col">ADP</th>
               </tr>
               <tr>
-                <td>es individual para cada programa</td>
-                <td>gestiona muchos programas (y sus relaciones)
+                <td>Individual para cada programa</td>
+                <td>Gestiona muchos programas (y sus relaciones)
                 </td>
               </tr>
               <tr>
-                <td>es creado por el programador del programa</td>
-                <td>provienen todos de la misma fuente</td>
+                <td>Creado por el programador del programa</td>
+                <td>Provienen todos de la misma fuente</td>
               </tr>
               <tr>
-                <td>cada programador usa el formato que desee</td>
-                <td>establece un formato común</td>
+                <td>Cada programador usa el formato que desee</td>
+                <td>Establece un formato común</td>
               </tr>
               <tr>
-                <td>organiza el contenido de los paquetes a como desee el proveedor</td>
-                <td>organiza el contenido en ubicaciones específicas</td>
+                <td>Organiza el contenido de los paquetes a como desee el proveedor</td>
+                <td>Organiza el contenido en ubicaciones específicas</td>
               </tr>
             </table>
           </section>
           <section>
             <h2>Diferencias con una tienda de aplicaciones</h2>
-            <ul style="font-size: smaller;">
-              <li>Las tiendas de aplicaciones pueden considerarse una clase especial de administradores de paquetes.
-                <ul>
-                  <li>Pero limitadas a instalar software de aplicación.</li>
-                </ul>
-              </li>
-              <li>Están diseñadas generalmente con un propósito <i>comercial</i>.
-                <ul>
-                  <li>Permitir pagos por la aplicación.</li>
-                  <li>Ofrecer paquetes <i>monolíticos</i>, sin dependencias.</li>
-                  <li>Simplificar la experiencia, asemejándola a una tienda real.</li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <ul>
-              <li>Los administradores de paquetes generalmente trabajan con código.
-                <ul>
-                  <li>Existen revisiones manuales de código antes de publicarse.</li>
-                  <li>En las tiendas de aplicaciones no, porque generalmente el código no está disponible.</li>
-                </ul>
-              </li>
-            </ul>
+            <div class="r-stack">
+              <ul style="font-size: smaller;" class="fragment">
+                <li>Las tiendas de aplicaciones pueden considerarse una clase especial de administradores de paquetes.
+                  <ul>
+                    <li>Pero limitadas a instalar software de aplicación.</li>
+                  </ul>
+                </li>
+                <li>Están diseñadas generalmente con un propósito <i>comercial</i>.
+                  <ul>
+                    <li>Permitir pagos por la aplicación.</li>
+                    <li>Ofrecer paquetes <em>monolíticos</em>, sin dependencias.</li>
+                    <li>Simplificar la experiencia, asemejándola a una tienda real.</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="fragment">
+                <li>Los administradores de paquetes generalmente trabajan con código.
+                  <ul>
+                    <li>Existen revisiones manuales de código antes de generar los binarios y publicarse.</li>
+                    <li>En las tiendas de aplicaciones no, porque generalmente el código no está disponible.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
@@ -1798,19 +1805,21 @@ network={
           </section>
           <section>
             <h2>Administradores y formatos más usados</h2>
-            <ul>
-              <li>apk (Alpine Linux)</li>
-              <li>AppImage</li>
-              <li>APPX (Windows 8+)</li>
-              <li>Deb/dpkg (familia Debian)</li>
-              <li>Flatpak</li>
-              <li>Portage/ebuild (Gentoo)</li>
-              <li>Ports (BSD*)</li>
-              <li>RPM/DNF (Red Hat, Fedora)</li>
-              <li>RPM/Yum (Red Hat antes, familia SUSE)</li>
-              <li>Snap</li>
-            </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Application-x-deb.svg" alt="paquetería debian">
+            <div class="cont-img">
+              <ul style="font-size: smaller;">
+                <li>apk (Alpine Linux)</li>
+                <li>AppImage</li>
+                <li>APPX (Windows 8+)</li>
+                <li>Deb/dpkg (familia Debian)</li>
+                <li>Flatpak</li>
+                <li>Portage/ebuild (Gentoo)</li>
+                <li>Ports (BSD*)</li>
+                <li>RPM/DNF (Red Hat, Fedora)</li>
+                <li>RPM/Yum (Red Hat antes, familia SUSE)</li>
+                <li>Snap</li>
+              </ul>
+              <img style="width: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Application-x-deb.svg" alt="Paquet Debian" />
+            </div>
           </section>
           <section>
             <h2>Repositorios</h2>
@@ -1820,14 +1829,14 @@ network={
                   <li>Generalmente provistas por la distribución/sistema operativo.</li>
                 </ul>
               </li>
-              <li>A estas fuentes las llamamos <i>repositorios</i>.</li>
+              <li>A estas fuentes las llamamos <strong>repositorios</strong>.</li>
               <li>Los repositorios pueden estar en Internet (HTTP, FTP), o pueden ser locales (CDs, disquetes)</li>
-              <li>En algunos sistemas, una fuente puede proveer varios ‘canales’.
+              <li>En algunos sistemas, una fuente puede proveer varios <em>canales</em>.
                 <ul>
-                  <li>En el sistema de Debian, a estos canales se les llama ‘componentes’.</li>
+                  <li>En el sistema de Debian, a estos canales se les llama <em>componentes</em>.</li>
                 </ul>
               </li>
-              <li>En este curso, nos enfocaremos en el sistema provisto por Debian y todas sus distribuciones derivadas.
+              <li>En este curso, nos enfocaremos en el sistema provisto por Debian y todas sus distribuciones derivadas: <strong>dpkg</strong>.
               </li>
             </ul>
           </section>
@@ -1846,41 +1855,39 @@ network={
           </section>
           <section>
             <h2>dpkg (II)</h2>
+            <p>Los comandos principales de dpkg son:</p>
             <ul>
-              <li>Los comandos principales de dpkg son: 
-                <ul>
-                  <li>Para instalar un paquete <br>
-                    dpkg -i &lt;archivo&gt;
-                  </li>
-                  <li>Para listar los paquetes instalados <br>
-                  dpkg -l [patrón]
-                  </li>
-                  <li>Para desinstalar un paquete <br>
-                    dpkg -r &lt;paquete&gt;</li>
-                </ul>
+              <li>Instalar un paquete:
+                <pre class="inline-code bash"><code data-trim="">dpkg -i archivo</code></pre>
+              </li>
+              <li>Listar paquetes instalados:
+                <pre class="inline-code bash"><code data-trim="">dpkg -l [patrón]</code></pre>
+              </li>
+              <li>Desinstalar un paquete:
+                <pre class="inline-code bash"><code data-trim="">dpkg -r paquete</code></pre>
               </li>
             </ul>
           </section>
           <section>
             <h2>deb</h2>
             <ul>
-              <li>El formato usado por dpkg para manejar comandos.</li>
+              <li>El formato usado por dpkg para empaquetar.</li>
               <li>Consiste en un archivador ar que contiene tres archivos en este orden:
                 <ul>
-                  <li>debian-binary, que contiene la versión a usar del formato.</li>
-                  <li>control.tar, que contiene los scripts de configuración y metadatos.</li>
-                  <li>data.tar, que contiene los archivos instalables.</li>
+                  <li><i>debian-binary</i>, que contiene la versión a usar del formato.</li>
+                  <li><i>control.tar</i>, que contiene los scripts de configuración y metadatos.</li>
+                  <li><i>data.tar</i>, que contiene los archivos instalables.</li>
                 </ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>apt (I)</h2>
-            <ul>
+            <ul style="font-size: smaller;">
               <li>La interfaz de usuario predeterminada para dpkg.</li>
               <li>apt tiene funciones que complementan y potencian a dpkg.</li>
               <li>apt puede descargar los paquetes desde los repositorios:
-                <ul><li>La lista de repositorios está en <code>/etc/apt/sources.list</code></li></ul>
+                <ul><li>La lista de repositorios está en <code>/etc/apt/sources.list</code>.</li></ul>
               </li>
               <li>apt administra las dependencias durante las operaciones:
                 <ul>
@@ -1894,47 +1901,47 @@ network={
             <h2>apt (II)</h2>
             <ul style="font-size: smaller;">
               <li>apt contiene varios subcomandos para administrar los paquetes:
-                <ul>
-                  <li>apt update: actualiza el listado de paquetes desde los repositorios.</li>
-                  <li>apt upgrade: actualiza los paquetes instalados en el sistema.</li>
-                  <li>apt full-upgrade: como apt upgrade, pero incluso cuando pueden eliminar paquetes.</li>
-                  <li>apt install: instala un paquete, y sus dependencias.</li>
-                  <li>apt remove: desinstala un paquete del sistema.</li>
-                  <li>apt search: busca paquetes por una expresión regular.</li>
-                  <li>apt show: muestra detalles sobre un paquete del repositorio.</li>
-                </ul>
+                <dl class="lista-natural">
+                  <dt><code>apt update</code></dt><dd>Actualiza el listado de paquetes desde los repositorios.</dd>
+                  <dt><code>apt upgrade</code></dt><dd>Actualiza los paquetes instalados.</dd>
+                  <dt><code>apt full-upgrade</code></dt><dd>Como <code>apt upgrade</code>, pero incluso cuando el proceso elimina paquetes.</dd>
+                  <dt><code>apt install</code></dt><dd>Instala un paquete, y sus dependencias.</dd>
+                  <dt><code>apt remove</code></dt><dd>Desinstala un paquete del sistema.</dd>
+                  <dt><code>apt search</code></dt><dd>Busca paquetes por una expresión regular.</dd>
+                  <dt><code>apt show</code></dt><dd>Muestra detalles sobre un paquete del repositorio.</dd>
+                </dl>
               </li>
             </ul>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Componentes en Debian y Ubuntu</h2>
+            <h2>Componentes en Debian</h2>
             <ul>
-              <li>Para Debian, los repositorios apt organizan los repositorios en tres componentes:
+              <li>Los repositorios de Debian se separan en tres componentes:
                 <ul>
-                  <li>main: paquetes con software libre.</li>
-                  <li>contrib: paquetes con software libres, pero que dependen de paquetes no disponibles en main.</li>
-                  <li>non-free: paquetes con software privativo.</li>
+                  <li><i>main</i>: paquetes con software libre.</li>
+                  <li><i>contrib</i>: paquetes con software libre, pero que dependen de paquetes no disponibles en main.</li>
+                  <li><i>non-free</i>: paquetes con software privativo.</li>
                 </ul>
               </li>
-              <li>A diferencia de Debian, Ubuntu es mantenido por una empresa (Canonical), entonces también se diferencian los paquetes mantenidos por éste, y paquetes en los que no:</li>
+              <li>Desde Debian 12, existe un cuarto componente, que contiene solo los controladores que solían estar en <i>non-free</i>: <i>non-free-firmware</i>.</li>
             </ul>
           </section>
           <section>
+            <h2>Componentes en Ubuntu</h2>
+            <p>A diferencia de Debian, Ubuntu es mantenido por una empresa (Canonical), entonces también se separan los paquetes mantenidos por la empresa de los que no:</p>
             <table>
               <tr>
-                <td></td>
-                <td>Software libre</td>
-                <td>Software privativo</td>
+                <th scope="col">Soporte</th>
+                <th scope="col">Software libre</th>
+                <th scope="col">Software privativo</th>
               </tr>
               <tr>
-                <td>Soporte por Canonical</td>
+                <th scope="row">Por Canonical</th>
                 <td>main</td>
                 <td>restricted</td>
               </tr>
               <tr>
-                <td>Soporte comunitario</td>
+                <th scope="row">Comunitario</th>
                 <td>universe</td>
                 <td>multiverse</td>
               </tr>
@@ -1943,26 +1950,27 @@ network={
           <section>
             <h2>apt pinning</h2>
             <ul>
-              <li>En una instalación, pueden existir varios repositorios que hagan referencia al mismo paquete.
+              <li>En una instalación, pueden existir varios repositorios que hagan referencia al mismo paquete (aunque varíen en versiones).</li>
+              <li>Podemos indicarle a apt qué opción debe elegir:
+                <ul>
+                  <li>Para evitar incompatibilidades.</li>
+                  <li>Para escoger especialmente una versión.</li>
+                </ul>
               </li>
-              <li>Podemos indicarle a apt qué versión debe instalar de todas las fuentes.
-                <ul><li>Para evitar incompatibilidades.</li>
-                <li>Para escoger especialmente una versión de un paquete.</li></ul>
-              </li>
-              <li>El archivo que registra estas preferencias se encuentra en /etc/apt/preferences.</li>
+              <li>El archivo que registra estas preferencias se encuentra en <code>/etc/apt/preferences</code>.</li>
             </ul>
           </section>
           <section>
             <h2>Metapaquetes</h2>
             <ul>
-              <li>Hay paquetes que merecen la pena instalar juntos por conveniencia, aunque no sean dependencias directas:
+              <li>Hay paquetes que conviene instalar juntos, aunque no sean dependencias directas:
                 <ul>
-                  <li>Porque agrupan paquetes que comúnmente irían juntos, aunque puedan instalarse por separado: ubuntu-desktop, build-essential.
+                  <li>Porque agrupan paquetes que comúnmente irían juntos, aunque puedan instalarse por separado: <i>ubuntu-desktop</i>, <i>build-essential</i>.
                   </li>
-                  <li>Porque agrupan “versiones” de componentes: texlive-full, texlive-basic</li>
+                  <li>Porque agrupan "ediciones" de componentes: <i>texlive-full</i>, <i>texlive-basic</i>.</li>
                 </ul>
               </li>
-              <li>Para eso, existen los <i>metapaquetes</i>: paquetes virtuales que declaran dependencias hacia otros paquetes, provocando su instalación cuando el metapaquete sea instalado.</li>
+              <li>Para eso, existen los <strong>metapaquetes</strong>: paquetes que declaran dependencias hacia otros paquetes, provocando su instalación cuando el metapaquete sea instalado.</li>
             </ul>
           </section>
           <section>
@@ -1972,15 +1980,14 @@ network={
                 <ul>
                   <li>De ese sistema concreto, pueden existir varias versiones muy similares, que pueden ser utilizadas indistintamente.
                   </li>
-                  <li>Pero el programa no puede declarar dependencias de tipo “uno de grupo” directamente.</li>
+                  <li>Pero un paquete no puede declarar dependencias de tipo "escoge uno de varios" directamente.</li>
                 </ul>
               </li>
-              <li>Para resolver el problema anterior, existen los paquetes virtuales
+              <li>La solución son los <strong>paquetes virtuales</strong>:
                 <ul>
                   <li>Paquetes que no tienen contenido, sino que representan un nombre genérico para un grupo de paquetes.</li>
-                  <li>Se dice entonces que los paquetes del grupo “proveen” el paquete virtual.
-                  </li>
-                  <li>Si un paquete del grupo está instalado, la dependencia hacia el paquete virtual se considera resuelta.</li>
+                  <li>Se dice entonces que los paquetes del grupo pueden "proveer" el paquete virtual.</li>
+                  <li>Si un paquete de dicho grupo está instalado, la dependencia hacia el paquete virtual se considera resuelta.</li>
                 </ul>
               </li>
             </ul>
@@ -1993,14 +2000,14 @@ network={
                   <li>Mucha gente sigue encontrando difícil el manejo de la consola.</li>
                 </ul>
               </li>
-              <li>Existen muchos frontends que usan apt por debajo
+              <li>Existen muchos frontends que usan apt por debajo.
                 <ul><li>Tal como apt usa dpkg por debajo.</li></ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>Frontends para apt (II)</h2>
-            <div>
+            <div class="cont-img">
               <ul>
                 <li>Synaptic</li>
                 <li>Ubuntu Software Center</li>
@@ -2010,9 +2017,7 @@ network={
                 <li>Gnome Software</li>
                 <li>KDE Discover</li>
               </ul>
-            </div>
-            <div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Synaptic_Package_Manager.png" alt="">
+              <img style="width: 400px;" src="https://upload.wikimedia.org/wikipedia/commons/8/87/Synaptic_Package_Manager.png" alt="Synaptic" />
             </div>
           </section>
         </section>
