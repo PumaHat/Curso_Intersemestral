@@ -26,6 +26,7 @@
             <h2>Instructores</h2>
             <ul>
               <li>Alicia Aislinn González Nava</li>
+              <li>Ricardo Organista Álvarez</li>
             </ul>
           </section>
           <section>
@@ -46,8 +47,8 @@
               <li><a href="#primertema">Generalidades del sistema Unix</a></li>
               <li><a href="#segundotema">Sistemas de archivos</a></li>
               <li><a href="#tercertema">Sistemas de paquetes</a></li>
-              <li><a href="#cuartotema">Terminal</a></li>
-              <li><a href="#quintotema">Comandos de terminal</a></li>
+              <li><a href="#cuartotema">Comandos de terminal</a></li>
+              <li><a href="#quintotema">Terminal</a></li>
             </ol>
           </section>
         </section>
@@ -2024,7 +2025,7 @@ network={
         <!--CUARTO TEMA-->
         <section>
           <section id="cuartotema">
-            <h2>Tema 4:<br />Shells y bash</h2>
+            <h2>Tema 4:<br />Shells</h2>
           </section>
           <section>
             <h2>Shell</h2>
@@ -2122,7 +2123,77 @@ network={
             </table>
           </section>
         </section>
+        <!--QUINTO TEMA-->
         <section>
+          <section id="cuartotema">
+            <h2>Tema 5:<br />Comandos de terminal</h2>
+            Programas o utilidades que se ejecutan en linea de comandos.
+          </section>
+          <section>
+            <h2>Rutas</h2>
+            <ul>
+              <li>pwd - print working directory</li>
+              <li>cd - change current directory</li>
+              <ul>
+                <li>/ - directorio base</li>
+                <li>./ - desde el directorio actual</li>
+                <li>~ - directorio home del usuario</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Archivos</h2>
+            <ul>
+              <li>ls - list</li>
+              <li>cat - view files content</li>
+              <li>cp - copy</li>
+              <li>mkdir - make new directory</li>
+              <li>rmdir - remove directory</li>
+              <li>chmod - change files permission</li>
+              <li>mv - move files</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Busqueda</h2>
+            <ul>
+              <li>locate - search files</li>
+              <li>grep - regex</li>
+              <li>find - search</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Usuario</h2>
+            <ul>
+              <li>sudo - superuser</li>
+              <li>whoami - show user</li>
+              <li>su - change user</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Multiples comandos</h2>
+            <ul>
+              <li>| - pasa el output de un comando al siguiente</li>
+              <li>; - sirve para ejecutar comandos de forma secuencial</li>
+              <li>& - ejecuta comandos de forma simultanea</li>
+              <li>&& - condicional</li>
+              <ul><li>com1 && com2 - ejecutar com2 solo si com1 se ejecuta</li></ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Pentesting</h2>
+            <ul>
+              <li>ping - comprobar conexion a una direccion</li>
+              <li>id - muestra informacion del usuario</li>
+              <li>env - ver variables de entorno</li>
+              <li>ifconfig - informacion de la red</li>
+            </ul>
+          </section>
+        </section>
+        <!--Bash-->
+        <section>
+          <section id="cuartotema">
+            <h2>Tema 4:<br />Bash</h2>
+          </section>
           <section>
             <h2>Bash</h2>
             <div class="cont-img">
@@ -2135,29 +2206,6 @@ network={
               </ul>
               <img style="width: 400px;" src="images/bash.png" alt="bash" />
             </div>
-          </section>
-        </section>
-        <!--QUINTO TEMA-->
-        <section>
-          <section id="quintotema">
-            <h2>Tema 5:<br />Comandos de terminal</h2>
-          </section>
-        </section>
-        <section>
-          <section id="portabilidad">
-            <h2>Portabilidad</h2>
-            <ul>
-              <li>En la informática, que un programa sea <i>portable</i> puede significar varias cosas:</li>
-              <li class="fragment">Poder ejecutarse sin necesidad de instalarse.</li>
-              <li class="fragment">Poder ejecutarse en varias plataformas.</li>
-              <li class="fragment">Poder ser compilado para varias plataformas.
-                <ul>
-                  <li>El código debe ser escrito en un lenguaje independiente de la plataforma.</li>
-                  <li>Las características usadas deben existir en las plataformas objetivo.</li>
-                </ul>
-              </li>
-            </ul>
-            <p><a href="#/unix_i">Regresar</a></p>
           </section>
         </section>
       </div>
