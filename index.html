@@ -185,26 +185,20 @@
                 <ul><li>…excepto la parte del kernel (GNU Hurd).</li></ul>
               </li>
             </ul>
-            <img src="images/GNU.svg" alt="logo de GNU">
+            <img src="images/GNU.svg" alt="logo de GNU" style="width: 300px;">
           </section>
           <section>
             <h2>Minix</h2>
             <ul style="font-size: smaller;">
               <li>Andrew S. Tanenbaum, profesor de ciencias de la computación, creó en 1986 un sistema operativo de tipo Unix muy simple para propósitos educativos: <i>Minix</i>.
               </li>
-              <li>Minix funcionaba en plataformas Intel de 16 bits.
-                <ul><li>Pero Intel había ya lanzado al mercado un año antes el 80386, un procesador de 32 bits.
-                </li></ul>
-              </li>
               <li>Linus Torvalds tuvo contacto con el sistema durante una clase de su universidad, en 1990.</li>
-              <li>La licencia de Minix permitía ver su código, pero no modificarlo.
-                <ul><li>Linus empezó a escribir un kernel para utilizar las funciones de su equipo, un 386.</li></ul>
+                <ul><li>Linus empezó a escribir un kernel para utilizar las funciones del nuevo microprocesador Intel 80386.</li></ul>
               </li>
             </ul>
           </section>
           <section>
             <h2>Inicios de Linux</h2>
-            <p>Linus finalmente anunció su proyecto en agosto de 1991, en el grupo de noticias comp.os.minix:</p>
             <ul>
               <li>Linux inicialmente tenía una licencia privativa.
                 <ul><li>En diciembre de 1992 finalmente cambió a la licencia GPLv2.</li></ul>
@@ -479,7 +473,7 @@
           <section>
             <h2>Netfilter</h2>
             <ul>
-              <li>Framework dentro del kernel que permite realizar varias operaciones sobre la red, en forma de hooks.
+              <li>Permite realizar varias operaciones sobre la red, en forma de hooks.
               </li>
               <li>Se usa mucho para filtrado de paquetes y traducción de puertos y direcciones de red (NAT).</li>
               <li>Netfilter empezó a usarse desde estas utilidades:
@@ -598,13 +592,6 @@ iptables -P OUTPUT ACCEPT</code></pre>
                   <li>Su principal función es la de proveer el sistema init.</li>
                 </ul>
               </li>
-              <li>La mayor parte de las distribuciones Linux han adoptado systemd.
-                <ul>
-                  <li>Aunque existen críticas sobre su amplio alcance:
-                    <ul><li>Existen distros que evitan systemd: Devuan</li></ul>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </section>
           <section>
@@ -624,9 +611,8 @@ iptables -P OUTPUT ACCEPT</code></pre>
           <section>
             <h2>cron</h2>
             <ul>
-              <li>Un planificador de tareas (o job scheduler) es el sistema que permite al sistema operativo ejecutar tareas desatendidamente cuando se den ciertas condiciones.
+              <li>Un planificador de tareas es el sistema que permite ejecutar tareas desatendidamente cuando se den ciertas condiciones.
                 <ul>
-                  <li>Normalmente, condiciones temporales.</li>
                   <li>No confundir con el <i>planificador de procesos</i>, parte integral de cualquier sistema operativo multitarea.</li>
                 </ul>
               </li>
