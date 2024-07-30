@@ -951,7 +951,7 @@ network={
         <!--SEGUNDO TEMA-->
         <section>
           <section id="segundotema">
-            <h2>Tema 2:<br />Sistemas de Archivos</h2>
+            <h2>Tema 2:<br />Sistemas de archivos</h2>
           </section>
           <section>
             <h2>Antecedentes</h2>
@@ -1114,9 +1114,9 @@ network={
           <section>
             <h2>Organización de archivos</h2>
             <ul style="font-size: smaller;">
-              <li>En un sistema de archivos generalmente queremos guardar <em>muchos</em> archivos.
+              <li>En un sistema de archivos generalmente se guardan <em>muchos</em> archivos.
                 <ul>
-                  <li>Para manejarlos, debemos establecer una forma de organizarlos.</li>
+                  <li>Para manejarlos, debemos <i>organizarlos</i>.</li>
                 </ul>
               </li>
               <li>Podemos clasificar los sistemas de archivos según su forma de organizar archivos:
@@ -1245,10 +1245,10 @@ network={
             <div style="font-size: smaller;">
               <p>NTFS tiene varias características similares implementadas.</p>
               <dl class="lista-natural" style="font-size: smaller;">
-                <dt>Enlaces simbólicos</dt><dd>Muy parecidos a su contraparte en Unix.</dd>
+                <dt>Enlaces simbólicos</dt><dd>Muy parecidos a los de Unix.</dd>
                 <dt><i>Junction points</i></dt><dd>Una característica para directorios, que solo puede apuntar a rutas absolutas locales.</dd>
                 <dt>Accesos directos</dt><dd>Archivos regulares, que contienen información sobre un objeto. Son interpretados por el shell.</dd>
-                <dt>Objetos de shell</dt><dd>Entradas especiales entendidas por el shell para enlazar directorios, definidas en el Registro de Windows.</dd>
+                <dt>Objetos de shell</dt><dd>Entradas especiales entendidas por el shell, definidas en el Registro de Windows.</dd>
               </dl>
               <p>De todos estos, los accesos directos son los más utilizados.</p>
             </div>
@@ -1260,6 +1260,82 @@ network={
               <li>Tienen la extensión <code>.lnk</code> cuando apuntan a recursos locales, o <code>.url</code>, para recursos remotos.</li>
               <li>No son implementadas por el sistema: el Explorador de Windows ejecuta la acción sobre el archivo apuntado cuando se intenta acceder al acceso directo.</li>
             </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Sistemas de archivos virtuales</h2>
+            <ul style="font-size: smaller;">
+              <li>Hasta ahora hemos hablado de sistemas de archivos que representan datos en un <em>soporte físico</em>: son los <strong>sistemas de archivos de disco</strong>.</li>
+              <li>Pero la analogía del archivero tiene más usos, y puede ser usada para exponer datos que no necesariamente están en un soporte.
+                <ul>
+                  <li><strong>Sistemas de archivos de red</strong>: sshfs, nfs, ftpfs, ...</li>
+                  <li><strong>Sistemas de archivos de propósito especial</strong>: tmpfs, swap, lufs, devfs, sysfs, ...</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ejemplos</h2>
+            <ul>
+              <li>Las rutas de una URL tienen forma de ruta de archivo, pero no necesariamente tienen que ser archivos, por eso siempre hablamos de <i>recursos</i>.</li>
+              <li><strong>Filosofía Unix</strong>: <em>todo es un archivo</em>.
+                <ul><li>Concepto fundamental en cualquier sistema Unix.</li></ul>
+              </li>
+              <li><strong>FUSE</strong>: crea tu propio sistema de archivos.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>«Todo es un archivo»</h2>
+            <ul>
+              <li>Esquema de diseño que plantea que casi todos los recursos del sistema pueden ser tratados como <em>archivos</em>.</li>
+              <li>¿De qué recursos hablamos?
+                <ul>
+                  <li>Archvios en sí</li>
+                  <li>Dispositivos</li>
+                  <li>Interfaces de red</li>
+                  <li>Interfaces IPC</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Descriptor de archivo</h2>
+            <ul>
+              <li>Cuando un proceso quiere abrir un archivo, no interactúa directamente con el sistema de archivos.<ul>
+                <li>El SO le da un objeto para manejar ese archivo: el <strong>descriptor de archivo</strong>.</li>
+              </ul></li>
+              <li>Los descriptores contienen el modo en el que se ha abierto un archivo.</li>
+              <li>Cada descriptor tiene un número que lo identifica.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Flujos estándar (I)</h2>
+            <ul>
+              <li>En Unix, todos los procesos obtienen automáticamente tres descriptores de archivos:
+                <dl class="lista-natural">
+                  <dt>stdin</dt><dd>Entrada estándar</dd>
+                  <dt>stdout</dt><dd>Salida estándar</dd>
+                  <dt>stderr</dt><dd>Salida de error estándar</dd>
+                </dl>
+              </li>
+              <li>Esos descriptores son la forma estándar que tiene un proceso para enviar y recibir datos.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Flujos estándar (II)</h2>
+            <div class="cont-img">
+              <ul>
+                <li>Los descriptores tienen los siguientes ids:
+                  <dl class="lista-natural">
+                    <dt>stdin</dt><dd>descriptor 0</dd>
+                    <dt>stdout</dt><dd>descriptor 1</dd>
+                    <dt>stderr</dt><dd>descriptor 2</dd>
+                  </dl>
+                </li>
+              </ul>
+              <img src="images/stdstreams.jpeg" alt="Flujos estándar" />
+            </div>
           </section>
         </section>
         <section>
@@ -1451,26 +1527,25 @@ network={
               </li>
             </ul>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Sistemas de archivos virtuales</h2>
-            <ul>
-              <li>Hasta ahora hemos hablado de sistemas de archivos que funcionan con datos en un <em>soporte físico</em>: son los <strong>sistemas de archivos de disco</strong>.</li>
-              <li>Pero la analogía del archivero tiene más usos, y puede ser usada para exponer datos que no necesariamente están en un soporte.
-                <ul>
-                  <li><strong>Sistemas de archivos de red</strong>: sshfs, nfs, ftpfs, ...</li>
-                  <li><strong>Sistemas de archivos de propósito especial</strong>: tmpfs, swap, lufs, devfs, sysfs, ...</li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>Ejemplos</h2>
-            <ul>
-              <li>Las rutas de una URL tienen forma de ruta de archivo, pero no necesariamente tienen que ser archivos, por eso siempre hablamos de <i>recursos</i>.</li>
-              <li><strong>Filosofía Unix:</strong> todo es un archivo.</li>
-              <li><strong>FUSE:</strong> crea tu propio sistema de archivos.</li>
+            <h2>Ejercicios</h2>
+            <ul style="column-count: 2;">
+              <li>chmod a+r myfile</li>
+              <li>chmod +r myfile</li>
+              <li>chmod go-rw myfile</li>
+              <li>chmod a-w+x myfile</li>
+              <li>chmod go=r myfile</li>
+              <li>chmod o-w mydir</li>
+              <li>chmod o-w</li>
+              <li>chmod -R o+x mydir</li>
+              <li>chmod u-x,g+wx,o=x myfile</li>
+              <li>chmod 751 myfile</li>
+              <li>chmod 744 myfile</li>
+              <li></li>
+              <li>-rwxr-xr-x</li>
+              <li>crw-rw-r--</li>
+              <li>dr-x------</li>
+              <li>-rwsr-Sr-t</li>
             </ul>
           </section>
         </section>
@@ -2169,6 +2244,17 @@ network={
               </ul>
               <img style="width: 400px;" src="images/bash.png" alt="bash" />
             </div>
+          </section>
+          <section>
+            <h2>Ejercicios</h2>
+            <p>Hacer un script que...</p>
+            <ul>
+              <li>...actualice los paquetes de tu sistema.</li>
+              <li>...que muestre solo los directorios que hay en un directorio.</li>
+              <li>...pregunte tu edad, y determine aproximadamente en qué año naciste.</li>
+              <li>...elimine todos los archivos ocultos.</li>
+              <li>...guarde en un archivo de texto la lista de nombres de archivo que hay en un directorio pasado por parámetro.</li>
+            </ul>
           </section>
         </section>
       </div>
